@@ -26,11 +26,20 @@ _layouts/             Page templates, shared by both languages
 _projects/en/         One Markdown file per project, English
 _projects/hu/         One Markdown file per project, Hungarian (same file names)
 en/, hu/              Tiny files that pick a layout for each page
-css/style.css         All styles
+css/style.css         All styles; palette and grain at the top
+assets/images/        Images (noise.png = grain texture)
 js/projects.js        Search, filters and sorting on the Projects page
 js/site.js            Mobile menu; remembers the language chosen with the switch
 index.html            Root redirect to /en/ or /hu/
 ```
+
+## Colours and grain
+
+At the top of `css/style.css`:
+
+- `--red`, `--orange`, `--cream`, `--teal`, `--ink`: the palette. All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site.
+- `--grain-opacity`: strength of the film-grain texture (`assets/images/noise.png`) laid over the page. `0` turns it off.
+- The dark-mode values are in the `prefers-color-scheme: dark` block just below.
 
 ## Changing text
 
