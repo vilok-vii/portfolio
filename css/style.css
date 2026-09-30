@@ -209,9 +209,12 @@ h3 {
 .welcome {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 16px;
 	max-width: 720px;
+	margin-inline: auto;
 	padding-block: clamp(48px, 10vw, 112px) 48px;
+	text-align: center;
 }
 
 .welcome h1 {
@@ -237,6 +240,7 @@ h3 {
 	background: var(--surface);
 	border: 1px solid var(--line);
 	border-radius: var(--radius);
+	text-align: center;
 	text-decoration: none;
 	transition: border-color 0.2s;
 }
