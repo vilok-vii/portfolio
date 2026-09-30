@@ -68,16 +68,23 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* Grain: a noise texture laid over everything, clicks pass through it */
-body::after {
+/* Grain: a noise texture on the page background only. It sits behind the
+	content (z-index: -1), so text, cards, buttons and fields stay clean. */
+body::after,
+.site-header::before {
 	content: "";
 	position: fixed;
 	inset: 0;
-	z-index: 50;
+	z-index: -1;
 	pointer-events: none;
 	background: url("../assets/images/noise.png") repeat;
 	background-size: 256px;
 	opacity: var(--grain-opacity);
+}
+
+/* The header has its own background, so it gets its own grain layer */
+.site-header::before {
+	position: absolute;
 }
 
 img {
@@ -500,7 +507,7 @@ h3 {
 .tags li {
 	font-size: 13px;
 	padding: 2px 10px;
-	background: color-mix(in srgb, var(--teal) 16%, transparent);
+	background: color-mix(in srgb, var(--teal) 16%, var(--bg));
 	border-radius: 999px;
 	color: var(--text);
 }
