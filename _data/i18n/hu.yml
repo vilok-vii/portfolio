@@ -1,6 +1,7 @@
 # Magyar felületi szövegek. A kulcsoknak egyezniük kell az en.yml-lel.
 language_name: Magyar
 name: Horváth Vilmos
+tagline: Kreatív szakember
 switch_to: English
 switch_label: EN
 
@@ -10,6 +11,8 @@ nav:
   label: Fő navigáció
   home: Főoldal
   projects: Projektek
+  open_menu: Menü megnyitása
+  close_menu: Menü bezárása
   about: Rólam
 
 footer: "© 2026 Horváth Vilmos"

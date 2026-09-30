@@ -1,6 +1,7 @@
 # English interface text. Keys must match hu.yml.
 language_name: English
 name: Vilmos Horváth
+tagline: Creative Professional
 switch_to: Magyar
 switch_label: HU
 
@@ -10,6 +11,8 @@ nav:
   label: Main
   home: Home
   projects: Projects
+  open_menu: Open menu
+  close_menu: Close menu
   about: About
 
 footer: "© 2026 Vilmos Horváth"

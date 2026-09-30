@@ -28,7 +28,7 @@ _projects/hu/         One Markdown file per project, Hungarian (same file names)
 en/, hu/              Tiny files that pick a layout for each page
 css/style.css         All styles
 js/projects.js        Search, filters and sorting on the Projects page
-js/lang.js            Remembers the language chosen with the switch
+js/site.js            Mobile menu; remembers the language chosen with the switch
 index.html            Root redirect to /en/ or /hu/
 ```
 
