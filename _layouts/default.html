@@ -9,6 +9,7 @@
 	{%- assign other_lang = "en" -%}
 	{%- assign other_url = en_url -%}
 {%- endif -%}
+{%- assign v = site.time | date: "%s" -%}
 <!doctype html>
 <html lang="{{ page.lang }}">
 <head>
@@ -22,7 +23,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+	<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}?v={{ v }}">
 </head>
 <body>
 	<header class="site-header">
@@ -43,9 +44,9 @@
 	<footer class="site-footer">
 		<div class="container">{{ t.footer }}</div>
 	</footer>
-	<script src="{{ '/js/lang.js' | relative_url }}"></script>
+	<script src="{{ '/js/lang.js' | relative_url }}?v={{ v }}"></script>
 {%- for script in page.scripts %}
-	<script src="{{ '/js/' | append: script | relative_url }}"></script>
+	<script src="{{ '/js/' | append: script | relative_url }}?v={{ v }}"></script>
 {%- endfor %}
 </body>
 </html>
