@@ -16,7 +16,7 @@
 						: `<div class="ph">Project image</div>`}
 				</a>
 				<div class="showcase__body">
-					<span class="label">${esc(p.category)} · ${p.year}</span>
+					<span class="label">${esc(p.role)} · ${p.year}</span>
 					<h2>${esc(p.title)}</h2>
 					<p class="muted">${esc(p.summary)}</p>
 					<ul class="tags">${p.tools.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
