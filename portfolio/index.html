@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio — Vilmos Horváth</title>
+	<meta name="description" content="Portfolio of Vilmos Horváth.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container site-header__inner">
+			<a href="../" class="site-logo">Vilmos Horváth</a>
+			<nav aria-label="Main">
+				<ul class="site-nav">
+					<li><a href="../">Home</a></li>
+					<li><a href="../projects/">Projects</a></li>
+					<li><a href="../about/">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container page">
+		<header class="page__head">
+			<h1>Portfolio</h1>
+			<p class="muted">Intro placeholder: a short line about the selection below.</p>
+		</header>
+
+		<!-- Filled from js/projects-data.js (projects with featured: true) -->
+		<div class="showcase" id="showcase" data-root="../"></div>
+
+		<p><a class="btn" href="../projects/">See all projects</a></p>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">&copy; 2026 Vilmos Horváth</div>
+	</footer>
+	<script src="../js/projects-data.js"></script>
+	<script src="../js/portfolio.js"></script>
+</body>
+</html>

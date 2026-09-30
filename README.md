@@ -1,32 +1,33 @@
 # Vilmos Horváth — Portfolio
 
-Plain HTML/CSS portfolio, migrated from Framer. No build step, no JavaScript.
+Plain HTML/CSS/JS portfolio. No build step. Currently placeholders only.
 
-## Pages
+## Structure
 
-| URL | File |
-| --- | --- |
-| `/` | `index.html` (welcome + sticky-note cards) |
-| `/projects/` | `projects/index.html` (project list) |
-| `/projects/seldom-and-shade/` | `projects/seldom-and-shade/index.html` |
-| `/projects/woolhalla/` | `projects/woolhalla/index.html` |
-| `/ui-ux-portfolio/` | `ui-ux-portfolio/index.html` |
+| URL | File | What it is |
+| --- | --- | --- |
+| `/` | `index.html` | Home: welcome message, entries to Portfolio and All projects |
+| `/portfolio/` | `portfolio/index.html` | Scrollable, curated list of project summaries |
+| `/projects/` | `projects/index.html` | Searchable, filterable list of all projects |
+| `/projects/<slug>/` | `projects/<slug>/index.html` | Individual project page |
+| `/about/` | `about/index.html` | About |
 
-URLs match the old Framer site.
+Navigation bar: Home, Projects, About.
 
-## Styling
-
-Everything lives in `css/style.css`:
-
-- Fonts: Lilita One (titles), Exo (subtitle), Inter (body), loaded from Google Fonts.
-- Page themes: add `class="theme-slate"` or `class="theme-blue"` to `<body>` for a project page background. Add a new theme by copying one of the `.theme-*` blocks.
-- `assets/images/` holds the paper textures, torn header strip and the Seldom & Shade stickers.
+```
+css/style.css         All styles; colors and fonts at the top
+js/projects-data.js   The list of projects (single source for Portfolio and Projects)
+js/portfolio.js       Renders featured projects on the Portfolio page
+js/projects.js        Search, category chips, year/tool filters and sorting
+```
 
 ## Adding a project
 
-1. Copy `projects/woolhalla/` to `projects/<name>/` and edit the text.
-2. Add it to the list in `projects/index.html`.
-3. Update the ‹ / › links at the bottom of the neighbouring project pages.
+1. Add an entry to `js/projects-data.js` (title, summary, category, year, role, tools, `featured`).
+2. Copy an existing folder in `projects/` to `projects/<slug>/` and edit the text.
+3. Update the previous/next links at the bottom of the neighbouring project pages.
+
+Set `featured: true` to also show the project on the Portfolio page. The filter options on the Projects page are built from the data automatically.
 
 ## Run locally
 
@@ -35,7 +36,3 @@ python3 -m http.server
 ```
 
 Then open http://localhost:8000.
-
-## Hosting
-
-Works as-is on GitHub Pages (Settings → Pages → deploy from branch), Netlify or Vercel.

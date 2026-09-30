@@ -4,40 +4,75 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Projects — Vilmos Horváth</title>
-	<meta name="description" content="Portfolio of Vilmos Horváth, creative professional: UI/UX, game design and creative projects.">
+	<meta name="description" content="Portfolio of Vilmos Horváth.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&family=Inter:wght@400;600&family=Lilita+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 	<header class="site-header">
-		<a href="../" class="brand">
-			<span class="brand__name">Vilmos Horváth</span>
-			<span class="brand__sub">Creative Professional</span>
-		</a>
-		<ul class="site-nav">
-			<li><a href="../">Home</a></li>
-			<li><a href="../projects/" aria-current="page">Projects</a></li>
-			<li><span>About</span></li>
-		</ul>
+		<div class="container site-header__inner">
+			<a href="../" class="site-logo">Vilmos Horváth</a>
+			<nav aria-label="Main">
+				<ul class="site-nav">
+					<li><a href="../">Home</a></li>
+					<li><a href="../projects/" aria-current="page">Projects</a></li>
+					<li><a href="../about/">About</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 
-	<main class="simple">
-		<ul class="project-list">
-			<li>
-				<a href="seldom-and-shade/">
-					<span class="project-list__thumb"></span>
-					Seldom &amp; Shade
-				</a>
-			</li>
-			<li>
-				<a href="woolhalla/">
-					<span class="project-list__thumb"></span>
-					Woolhalla
-				</a>
-			</li>
-		</ul>
+	<main class="container page">
+		<header class="page__head">
+			<h1>Projects</h1>
+			<p class="muted">All projects. Search, filter and sort to find what you are looking for.</p>
+		</header>
+
+		<div class="filters">
+			<div class="field filters__search">
+				<label class="label" for="search">Search</label>
+				<input type="search" id="search" placeholder="Title, tool, keyword…" autocomplete="off">
+			</div>
+			<div class="field">
+				<label class="label" for="filter-year">Year</label>
+				<select id="filter-year">
+					<option value="">All years</option>
+				</select>
+			</div>
+			<div class="field">
+				<label class="label" for="filter-tool">Tool</label>
+				<select id="filter-tool">
+					<option value="">All tools</option>
+				</select>
+			</div>
+			<div class="field">
+				<label class="label" for="sort">Sort</label>
+				<select id="sort">
+					<option value="newest">Newest first</option>
+					<option value="oldest">Oldest first</option>
+					<option value="az">A–Z</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="chips" id="category-chips" role="group" aria-label="Category"></div>
+
+		<div class="results-bar">
+			<span id="result-count" aria-live="polite"></span>
+			<button type="button" class="link-btn" id="clear-filters" hidden>Clear filters</button>
+		</div>
+
+		<!-- Filled from js/projects-data.js -->
+		<div class="grid" id="project-grid" data-root="../"></div>
+		<p class="empty" id="empty" hidden>No projects match these filters.</p>
 	</main>
+
+	<footer class="site-footer">
+		<div class="container">&copy; 2026 Vilmos Horváth</div>
+	</footer>
+	<script src="../js/projects-data.js"></script>
+	<script src="../js/projects.js"></script>
 </body>
 </html>
