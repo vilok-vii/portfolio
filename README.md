@@ -1,22 +1,32 @@
-# Portfolio
+# Vilmos Horváth — Portfolio
 
-Plain HTML/CSS/JS portfolio (migrated from Framer). No build step.
+Plain HTML/CSS portfolio, migrated from Framer. No build step, no JavaScript.
 
-## Structure
+## Pages
 
-```
-index.html                            Home: hero, work grid, about, contact
-projects/seldom-and-shade/index.html  Case study page (same URL path as on Framer)
-css/style.css                         All styles; design tokens at the top
-js/main.js                            Sticky nav, mobile menu, scroll reveal
-assets/images/                        Put project images here
-```
+| URL | File |
+| --- | --- |
+| `/` | `index.html` (welcome + sticky-note cards) |
+| `/projects/` | `projects/index.html` (project list) |
+| `/projects/seldom-and-shade/` | `projects/seldom-and-shade/index.html` |
+| `/projects/woolhalla/` | `projects/woolhalla/index.html` |
+| `/ui-ux-portfolio/` | `ui-ux-portfolio/index.html` |
 
-## Editing
+URLs match the old Framer site.
 
-- Colors, fonts, spacing: change the variables in `:root` at the top of `css/style.css`.
-- New project: copy `projects/seldom-and-shade/` to `projects/<name>/`, then add a card in the work grid in `index.html`.
-- Images: replace a `<div class="placeholder">` with `<img src="..." alt="...">`.
+## Styling
+
+Everything lives in `css/style.css`:
+
+- Fonts: Lilita One (titles), Exo (subtitle), Inter (body), loaded from Google Fonts.
+- Page themes: add `class="theme-slate"` or `class="theme-blue"` to `<body>` for a project page background. Add a new theme by copying one of the `.theme-*` blocks.
+- `assets/images/` holds the paper textures, torn header strip and the Seldom & Shade stickers.
+
+## Adding a project
+
+1. Copy `projects/woolhalla/` to `projects/<name>/` and edit the text.
+2. Add it to the list in `projects/index.html`.
+3. Update the ‹ / › links at the bottom of the neighbouring project pages.
 
 ## Run locally
 

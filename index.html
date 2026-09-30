@@ -3,134 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Portfolio — Your Name</title>
-	<meta name="description" content="Portfolio of Your Name — selected projects and case studies.">
+	<title>Vilmos Horváth</title>
+	<meta name="description" content="Portfolio of Vilmos Horváth, creative professional: UI/UX, game design and creative projects.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&family=Inter:wght@400;600&family=Lilita+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header class="nav">
-		<div class="container nav__inner">
-			<a href="./" class="nav__logo">Your Name</a>
-			<button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-			<ul class="nav__links" id="nav-links">
-				<li><a href="#work">Work</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</div>
+	<header class="site-header">
+		<a href="./" class="brand">
+			<span class="brand__name">Vilmos Horváth</span>
+			<span class="brand__sub">Creative Professional</span>
+		</a>
+		<ul class="site-nav">
+			<li><a href="./" aria-current="page">Home</a></li>
+			<li><a href="projects/">Projects</a></li>
+			<li><span>About</span></li>
+		</ul>
 	</header>
 
-	<main>
-		<!-- Hero -->
-		<section class="hero">
-			<div class="container">
-				<p class="eyebrow reveal">Designer &amp; Developer</p>
-				<h1 class="reveal">Short headline about what you make.</h1>
-				<p class="reveal">One or two sentences introducing yourself, your focus and where you study or work.</p>
-				<div class="hero__actions reveal">
-					<a href="#work" class="btn btn--solid">View work</a>
-					<a href="#contact" class="btn">Get in touch</a>
-				</div>
+	<main class="home">
+		<h1>Welcome to my site!</h1>
+		<p class="home__lead">What are you looking for?</p>
+
+		<div class="notes">
+			<a href="ui-ux-portfolio/" class="note note--mint">
+				<div class="note__art"></div>
+				<span class="note__label">UI/UX portfolio</span>
+			</a>
+			<!-- Not linked yet: change the div to <a href="..."> once the page exists -->
+			<div class="note">
+				<div class="note__art"></div>
+				<span class="note__label">Game Design Portfolio</span>
 			</div>
-		</section>
-
-		<!-- Work -->
-		<section class="section" id="work">
-			<div class="container">
-				<div class="section__head reveal">
-					<h2>Selected work</h2>
-					<span class="muted">2024 — 2026</span>
-				</div>
-
-				<div class="projects">
-					<!-- Duplicate a card for every project -->
-					<a href="projects/seldom-and-shade/" class="card reveal">
-						<div class="card__media">
-							<!-- <img src="assets/images/seldom-and-shade/cover.jpg" alt="Seldom &amp; Shade cover" loading="lazy"> -->
-							<div class="placeholder">Project image</div>
-						</div>
-						<div class="card__body">
-							<span class="card__title">Seldom &amp; Shade</span>
-							<span class="card__tags">Category · Year</span>
-						</div>
-					</a>
-
-					<a href="#" class="card reveal">
-						<div class="card__media">
-							<div class="placeholder">Project image</div>
-						</div>
-						<div class="card__body">
-							<span class="card__title">Project two</span>
-							<span class="card__tags">Category · Year</span>
-						</div>
-					</a>
-
-					<a href="#" class="card reveal">
-						<div class="card__media">
-							<div class="placeholder">Project image</div>
-						</div>
-						<div class="card__body">
-							<span class="card__title">Project three</span>
-							<span class="card__tags">Category · Year</span>
-						</div>
-					</a>
-
-					<a href="#" class="card reveal">
-						<div class="card__media">
-							<div class="placeholder">Project image</div>
-						</div>
-						<div class="card__body">
-							<span class="card__title">Project four</span>
-							<span class="card__tags">Category · Year</span>
-						</div>
-					</a>
-				</div>
+			<div class="note">
+				<div class="note__art"></div>
+				<span class="note__label">Creative Portfolio</span>
 			</div>
-		</section>
-
-		<!-- About -->
-		<section class="section" id="about">
-			<div class="container about">
-				<div class="reveal">
-					<p class="eyebrow">About</p>
-					<h2>A bit about me</h2>
-				</div>
-				<div class="reveal">
-					<p class="about__text">Write a short bio here: your background, what drives your work and what you are looking for next.</p>
-					<ul class="about__list">
-						<li>Skill or tool</li>
-						<li>Skill or tool</li>
-						<li>Skill or tool</li>
-						<li>Skill or tool</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<!-- Contact -->
-		<section class="section contact" id="contact">
-			<div class="container">
-				<p class="eyebrow reveal">Contact</p>
-				<h2 class="reveal">Let's make something together.</h2>
-				<a href="mailto:you@example.com" class="contact__mail reveal">you@example.com</a>
-			</div>
-		</section>
-	</main>
-
-	<footer class="footer">
-		<div class="container footer__inner">
-			<span>&copy; <span data-year></span> Your Name</span>
-			<ul class="footer__social">
-				<li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-				<li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-				<li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
-			</ul>
+			<a href="projects/" class="note">
+				<div class="note__art"></div>
+				<span class="note__label">All projects</span>
+			</a>
 		</div>
-	</footer>
-
-	<script src="js/main.js"></script>
+	</main>
 </body>
 </html>
