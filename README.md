@@ -39,7 +39,7 @@ At the top of `css/style.css`:
 
 - `--red`, `--orange`, `--cream`, `--teal`, `--ink`: the palette. All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site.
 - `--grain-opacity`: strength of the film-grain texture (`assets/images/noise.png`) laid over the page. `0` turns it off.
-- The dark-mode values are in the `prefers-color-scheme: dark` block just below.
+- Dark-mode colours are in the `:root[data-theme="dark"]` block just below. The site starts in light mode; visitors switch with the moon/sun button next to the language button, and their choice is remembered.
 
 ## Changing text
 

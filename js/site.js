@@ -12,6 +12,29 @@ document.querySelectorAll(".lang-switch").forEach((link) => {
 	});
 });
 
+// Dark mode toggle. Light is the default; the choice is remembered.
+// (A small script in the page head applies a saved choice before the page draws.)
+(function () {
+	const root = document.documentElement;
+	document.querySelectorAll(".theme-toggle").forEach((button) => {
+		button.setAttribute("aria-pressed", String(root.dataset.theme === "dark"));
+		button.addEventListener("click", () => {
+			const dark = root.dataset.theme !== "dark";
+			if (dark) {
+				root.dataset.theme = "dark";
+			} else {
+				delete root.dataset.theme;
+			}
+			button.setAttribute("aria-pressed", String(dark));
+			try {
+				localStorage.setItem("theme", dark ? "dark" : "light");
+			} catch (e) {
+				// Storage blocked: the toggle still works for this page
+			}
+		});
+	});
+})();
+
 // Menu panel on narrow screens
 (function () {
 	const toggle = document.querySelector(".menu-toggle");

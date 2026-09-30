@@ -13,6 +13,7 @@ nav:
   projects: Projects
   open_menu: Open menu
   close_menu: Close menu
+  dark_mode: Dark mode
   about: About
 
 footer: "© 2026 Vilmos Horváth"

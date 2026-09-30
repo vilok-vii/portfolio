@@ -6,6 +6,11 @@ permalink: /404.html
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		try {
+			if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark";
+		} catch (e) {}
+	</script>
 	<title>Page not found — Vilmos Horváth</title>
 	<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 </head>
