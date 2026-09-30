@@ -1,0 +1,51 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign home_url = "/" | append: page.lang | append: "/" -%}
+{%- assign en_url = page.url | replace_first: "/hu/", "/en/" -%}
+{%- assign hu_url = page.url | replace_first: "/en/", "/hu/" -%}
+{%- if page.lang == "en" -%}
+	{%- assign other_lang = "hu" -%}
+	{%- assign other_url = hu_url -%}
+{%- else -%}
+	{%- assign other_lang = "en" -%}
+	{%- assign other_url = en_url -%}
+{%- endif -%}
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if page.title %}{{ page.title }} — {% endif %}{{ t.name }}</title>
+	<meta name="description" content="{{ page.summary | default: t.site_description }}">
+	<link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+	<link rel="alternate" hreflang="hu" href="{{ hu_url | absolute_url }}">
+	<link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container site-header__inner">
+			<a href="{{ home_url | relative_url }}" class="site-logo">{{ t.name }}</a>
+			<nav aria-label="{{ t.nav.label }}">
+				<ul class="site-nav">
+					<li><a href="{{ home_url | relative_url }}"{% if page.section == "home" %} aria-current="page"{% endif %}>{{ t.nav.home }}</a></li>
+					<li><a href="{{ home_url | append: 'projects/' | relative_url }}"{% if page.section == "projects" %} aria-current="page"{% endif %}>{{ t.nav.projects }}</a></li>
+					<li><a href="{{ home_url | append: 'about/' | relative_url }}"{% if page.section == "about" %} aria-current="page"{% endif %}>{{ t.nav.about }}</a></li>
+					<li><a class="lang-switch" href="{{ other_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-lang="{{ other_lang }}" title="{{ t.switch_to }}" aria-label="{{ t.switch_to }}">{{ t.switch_label }}</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+{{ content }}
+	<footer class="site-footer">
+		<div class="container">{{ t.footer }}</div>
+	</footer>
+	<script src="{{ '/js/lang.js' | relative_url }}"></script>
+{%- for script in page.scripts %}
+	<script src="{{ '/js/' | append: script | relative_url }}"></script>
+{%- endfor %}
+</body>
+</html>

@@ -1,0 +1,80 @@
+# Magyar felületi szövegek. A kulcsoknak egyezniük kell az en.yml-lel.
+language_name: Magyar
+name: Horváth Vilmos
+switch_to: English
+switch_label: EN
+
+site_description: Horváth Vilmos portfóliója.
+
+nav:
+  label: Fő navigáció
+  home: Főoldal
+  projects: Projektek
+  about: Rólam
+
+footer: "© 2026 Horváth Vilmos"
+
+categories:
+  game-design: Játéktervezés
+  ui-ux: UI/UX
+  creative: Kreatív
+
+home:
+  title: Ide kerül az üdvözlő üzenet.
+  text: Egy-két mondat arról, ki vagy és mivel foglalkozol.
+  entries_label: Merre tovább
+  portfolio_title: Portfólió
+  portfolio_image: Portfólió kép
+  portfolio_text: Válogatás a legjobb munkáimból, mindegyikhez rövid összefoglalóval.
+  portfolio_cta: Portfólió megtekintése
+  projects_title: Összes projekt
+  projects_image: Projektek kép
+  projects_text: Minden projektem egy helyen. Keress és szűrj kategória, év vagy eszköz szerint.
+  projects_cta: Összes projekt böngészése
+
+portfolio:
+  title: Portfólió
+  intro: "Bevezető helyőrző: egy rövid mondat az alábbi válogatásról."
+  image: Projekt kép
+  view_project: Projekt megtekintése
+  see_all: Összes projekt
+
+projects:
+  title: Projektek
+  intro: Az összes projektem. Keress, szűrj és rendezz, hogy megtaláld, amit keresel.
+  search: Keresés
+  search_placeholder: Cím, eszköz, kulcsszó…
+  year: Év
+  all_years: Minden év
+  tool: Eszköz
+  all_tools: Minden eszköz
+  sort: Rendezés
+  sort_newest: Legújabb elöl
+  sort_oldest: Legrégebbi elöl
+  sort_az: A–Z
+  category: Kategória
+  all_categories: Mind
+  count: "{shown} / {total} projekt"
+  clear: Szűrők törlése
+  empty: Nincs a szűrőknek megfelelő projekt.
+  thumbnail: Bélyegkép
+
+about:
+  title: Rólam
+  portrait: Portré
+  bio_1: "Bemutatkozás helyőrző: ki vagy, milyen háttérrel rendelkezel, és mi hajtja a munkádat."
+  bio_2: "Második bekezdés helyőrző: tanulmányok, tapasztalat, vagy hogy mit keresel a következő lépésként."
+  skills: Készségek
+  skill: Készség
+  contact: Kapcsolat
+  email: email@example.com
+
+project:
+  back: Összes projekt
+  cover: Borítókép / videó
+  image: Kép
+  role: Szerep
+  year: Év
+  category: Kategória
+  tools: Eszközök
+  more: További projektek

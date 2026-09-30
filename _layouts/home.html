@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+	<main class="container page">
+		<section class="welcome">
+			<h1>{{ t.home.title }}</h1>
+			<p>{{ t.home.text }}</p>
+		</section>
+
+		<section class="entries" aria-label="{{ t.home.entries_label }}">
+			<a href="{{ '/' | append: page.lang | append: '/portfolio/' | relative_url }}" class="entry">
+				<div class="ph">{{ t.home.portfolio_image }}</div>
+				<h2>{{ t.home.portfolio_title }}</h2>
+				<p class="muted">{{ t.home.portfolio_text }}</p>
+				<span class="entry__more">{{ t.home.portfolio_cta }} &rarr;</span>
+			</a>
+			<a href="{{ '/' | append: page.lang | append: '/projects/' | relative_url }}" class="entry">
+				<div class="ph">{{ t.home.projects_image }}</div>
+				<h2>{{ t.home.projects_title }}</h2>
+				<p class="muted">{{ t.home.projects_text }}</p>
+				<span class="entry__more">{{ t.home.projects_cta }} &rarr;</span>
+			</a>
+		</section>
+	</main>

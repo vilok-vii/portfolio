@@ -1,0 +1,53 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign projects = site.projects | where: "lang", page.lang | sort: "order" -%}
+{%- for p in projects -%}
+	{%- if p.url == page.url -%}
+		{%- assign i = forloop.index0 -%}
+	{%- endif -%}
+{%- endfor -%}
+{%- assign prev_i = i | minus: 1 -%}
+{%- assign next_i = i | plus: 1 -%}
+{%- if i > 0 %}{% assign prev = projects[prev_i] %}{% endif -%}
+{%- assign next = projects[next_i] -%}
+	<main class="container page">
+		<a href="{{ '/' | append: page.lang | append: '/projects/' | relative_url }}" class="back">&larr; {{ t.project.back }}</a>
+
+		<header class="page__head">
+			<span class="label">{{ t.categories[page.category] }} · {{ page.year }}</span>
+			<h1>{{ page.title }}</h1>
+			<p class="muted">{{ page.summary }}</p>
+		</header>
+
+		{% if page.image %}<img class="ph" src="{{ page.image | relative_url }}" alt="">{% else %}<div class="ph">{{ t.project.cover }}</div>{% endif %}
+
+		<dl class="project-meta">
+			<div>
+				<dt>{{ t.project.role }}</dt>
+				<dd>{{ page.role }}</dd>
+			</div>
+			<div>
+				<dt>{{ t.project.year }}</dt>
+				<dd>{{ page.year }}</dd>
+			</div>
+			<div>
+				<dt>{{ t.project.category }}</dt>
+				<dd>{{ t.categories[page.category] }}</dd>
+			</div>
+			<div>
+				<dt>{{ t.project.tools }}</dt>
+				<dd>{{ page.tools | join: ", " }}</dd>
+			</div>
+		</dl>
+
+		<div class="project-body">
+{{ content }}
+		</div>
+
+		<nav class="pager" aria-label="{{ t.project.more }}">
+			{% if prev %}<a href="{{ prev.url | relative_url }}">&larr; {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+			{% if next %}<a href="{{ next.url | relative_url }}">{{ next.title }} &rarr;</a>{% else %}<span></span>{% endif %}
+		</nav>
+	</main>

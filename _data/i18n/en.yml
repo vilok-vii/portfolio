@@ -1,0 +1,80 @@
+# English interface text. Keys must match hu.yml.
+language_name: English
+name: Vilmos Horváth
+switch_to: Magyar
+switch_label: HU
+
+site_description: Portfolio of Vilmos Horváth.
+
+nav:
+  label: Main
+  home: Home
+  projects: Projects
+  about: About
+
+footer: "© 2026 Vilmos Horváth"
+
+categories:
+  game-design: Game Design
+  ui-ux: UI/UX
+  creative: Creative
+
+home:
+  title: Welcome message goes here.
+  text: One or two sentences introducing who you are and what you make.
+  entries_label: Where to go next
+  portfolio_title: Portfolio
+  portfolio_image: Portfolio image
+  portfolio_text: A curated selection of my best work, with a short summary of each project.
+  portfolio_cta: View portfolio
+  projects_title: All projects
+  projects_image: Projects image
+  projects_text: Every project I have made. Search and filter by category, year or tool.
+  projects_cta: Browse all projects
+
+portfolio:
+  title: Portfolio
+  intro: "Intro placeholder: a short line about the selection below."
+  image: Project image
+  view_project: View project
+  see_all: See all projects
+
+projects:
+  title: Projects
+  intro: All projects. Search, filter and sort to find what you are looking for.
+  search: Search
+  search_placeholder: Title, tool, keyword…
+  year: Year
+  all_years: All years
+  tool: Tool
+  all_tools: All tools
+  sort: Sort
+  sort_newest: Newest first
+  sort_oldest: Oldest first
+  sort_az: A–Z
+  category: Category
+  all_categories: All
+  count: "{shown} of {total} projects"
+  clear: Clear filters
+  empty: No projects match these filters.
+  thumbnail: Thumbnail
+
+about:
+  title: About
+  portrait: Portrait
+  bio_1: "Bio placeholder: who you are, your background and what drives your work."
+  bio_2: "Second paragraph placeholder: studies, experience or what you are looking for next."
+  skills: Skills
+  skill: Skill
+  contact: Contact
+  email: email@example.com
+
+project:
+  back: All projects
+  cover: Cover image / video
+  image: Image
+  role: Role
+  year: Year
+  category: Category
+  tools: Tools
+  more: More projects

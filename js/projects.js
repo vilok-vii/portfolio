@@ -1,10 +1,19 @@
-// Search, filter and sort for the Projects page. Reads projects-data.js.
+// Search, filter and sort for the Projects page.
+// The cards are rendered by Jekyll; this script only shows, hides and reorders them.
 (function () {
 	const grid = document.getElementById("project-grid");
-	if (!grid || !window.PROJECTS) return;
+	if (!grid) return;
 
-	const root = grid.dataset.root || "";
-	const projects = window.PROJECTS;
+	const lang = document.documentElement.lang;
+	const cards = [...grid.querySelectorAll(".card")].map((el, i) => ({
+		el,
+		order: i,
+		title: el.dataset.title,
+		category: el.dataset.category,
+		year: Number(el.dataset.year),
+		tools: el.dataset.tools ? el.dataset.tools.split("|") : [],
+		search: el.dataset.search
+	}));
 	const els = {
 		search: document.getElementById("search"),
 		year: document.getElementById("filter-year"),
@@ -15,54 +24,50 @@
 		clear: document.getElementById("clear-filters"),
 		empty: document.getElementById("empty")
 	};
-	const state = { q: "", category: "All", year: "", tool: "", sort: "newest" };
-	const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+	const state = { q: "", category: "", year: "", tool: "", sort: "newest" };
 	const unique = (arr) => [...new Set(arr)];
 
-	// Build filter options from the data
-	const categories = ["All", ...unique(projects.map((p) => p.category)).sort()];
-	els.chips.innerHTML = categories
-		.map((c) => `<button type="button" class="chip" data-category="${esc(c)}" aria-pressed="${c === "All"}">${esc(c)}</button>`)
-		.join("");
-	unique(projects.map((p) => p.year)).sort((a, b) => b - a)
+	// Fill the year and tool dropdowns from the cards
+	unique(cards.map((c) => c.year)).sort((a, b) => b - a)
 		.forEach((y) => els.year.add(new Option(y, y)));
-	unique(projects.flatMap((p) => p.tools)).sort()
+	unique(cards.flatMap((c) => c.tools)).sort((a, b) => a.localeCompare(b, lang))
 		.forEach((t) => els.tool.add(new Option(t, t)));
 
-	function matches(p) {
-		if (state.category !== "All" && p.category !== state.category) return false;
-		if (state.year && String(p.year) !== state.year) return false;
-		if (state.tool && !p.tools.includes(state.tool)) return false;
-		if (state.q) {
-			const hay = [p.title, p.summary, p.category, p.role, p.year, ...p.tools].join(" ").toLowerCase();
-			if (!state.q.split(/\s+/).every((word) => hay.includes(word))) return false;
-		}
+	function matches(c) {
+		if (state.category && c.category !== state.category) return false;
+		if (state.year && String(c.year) !== state.year) return false;
+		if (state.tool && !c.tools.includes(state.tool)) return false;
+		if (state.q && !state.q.split(/\s+/).every((word) => c.search.includes(word))) return false;
 		return true;
 	}
 
 	const sorters = {
-		newest: (a, b) => b.year - a.year || a.title.localeCompare(b.title),
-		oldest: (a, b) => a.year - b.year || a.title.localeCompare(b.title),
-		az: (a, b) => a.title.localeCompare(b.title)
+		newest: (a, b) => b.year - a.year || a.order - b.order,
+		oldest: (a, b) => a.year - b.year || a.order - b.order,
+		az: (a, b) => a.title.localeCompare(b.title, lang)
 	};
 
 	function render() {
-		const list = projects.filter(matches).sort(sorters[state.sort]);
-		grid.innerHTML = list
-			.map((p) => `
-				<a class="card" href="${root}projects/${p.slug}/">
-					${p.image
-						? `<img class="ph" src="${root}${esc(p.image)}" alt="">`
-						: `<div class="ph">Thumbnail</div>`}
-					<span class="card__title">${esc(p.title)}</span>
-					<span class="card__meta">${esc(p.category)} · ${p.year}</span>
-					<ul class="tags">${p.tools.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
-				</a>`)
-			.join("");
-		els.empty.hidden = list.length > 0;
-		els.count.textContent = `${list.length} of ${projects.length} projects`;
-		const filtered = state.q || state.category !== "All" || state.year || state.tool;
-		els.clear.hidden = !filtered;
+		const sorted = [...cards].sort(sorters[state.sort]);
+		let shown = 0;
+		sorted.forEach((c) => {
+			const visible = matches(c);
+			c.el.hidden = !visible;
+			if (visible) shown++;
+			grid.appendChild(c.el);
+		});
+		els.empty.hidden = shown > 0;
+		els.count.textContent = els.count.dataset.template
+			.replace("{shown}", shown)
+			.replace("{total}", cards.length);
+		els.clear.hidden = !(state.q || state.category || state.year || state.tool);
+	}
+
+	function setCategory(value) {
+		state.category = value;
+		els.chips.querySelectorAll(".chip").forEach((chip) => {
+			chip.setAttribute("aria-pressed", String(chip.dataset.category === value));
+		});
 	}
 
 	els.search.addEventListener("input", () => {
@@ -84,16 +89,15 @@
 	els.chips.addEventListener("click", (e) => {
 		const chip = e.target.closest(".chip");
 		if (!chip) return;
-		state.category = chip.dataset.category;
-		els.chips.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+		setCategory(chip.dataset.category);
 		render();
 	});
 	els.clear.addEventListener("click", () => {
-		Object.assign(state, { q: "", category: "All", year: "", tool: "" });
+		Object.assign(state, { q: "", year: "", tool: "" });
 		els.search.value = "";
 		els.year.value = "";
 		els.tool.value = "";
-		els.chips.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.category === "All")));
+		setCategory("");
 		render();
 	});
 

@@ -4,50 +4,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Vilmos Horváth</title>
-	<meta name="description" content="Portfolio of Vilmos Horváth.">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="alternate" hreflang="en" href="https://vilok-vii.github.io/portfolio/en/">
+	<link rel="alternate" hreflang="hu" href="https://vilok-vii.github.io/portfolio/hu/">
+	<script>
+		// Send visitors to their language: a saved choice first, otherwise the browser's language.
+		(function () {
+			var lang;
+			try {
+				lang = localStorage.getItem("lang");
+			} catch (e) {}
+			if (lang !== "en" && lang !== "hu") {
+				var prefs = navigator.languages || [navigator.language || ""];
+				lang = /^hu\b/i.test(prefs[0] || "") ? "hu" : "en";
+			}
+			location.replace(lang + "/");
+		})();
+	</script>
 </head>
 <body>
-	<header class="site-header">
-		<div class="container site-header__inner">
-			<a href="./" class="site-logo">Vilmos Horváth</a>
-			<nav aria-label="Main">
-				<ul class="site-nav">
-					<li><a href="./" aria-current="page">Home</a></li>
-					<li><a href="projects/">Projects</a></li>
-					<li><a href="about/">About</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<main class="container page">
-		<section class="welcome">
-			<h1>Welcome message goes here.</h1>
-			<p>One or two sentences introducing who you are and what you make.</p>
-		</section>
-
-		<section class="entries" aria-label="Where to go next">
-			<a href="portfolio/" class="entry">
-				<div class="ph">Portfolio image</div>
-				<h2>Portfolio</h2>
-				<p class="muted">A curated selection of my best work, with a short summary of each project.</p>
-				<span class="entry__more">View portfolio &rarr;</span>
-			</a>
-			<a href="projects/" class="entry">
-				<div class="ph">Projects image</div>
-				<h2>All projects</h2>
-				<p class="muted">Every project I have made. Search and filter by category, year or tool.</p>
-				<span class="entry__more">Browse all projects &rarr;</span>
-			</a>
-		</section>
-	</main>
-
-	<footer class="site-footer">
-		<div class="container">&copy; 2026 Vilmos Horváth</div>
-	</footer>
+	<p><a href="en/">English</a> · <a href="hu/">Magyar</a></p>
 </body>
 </html>

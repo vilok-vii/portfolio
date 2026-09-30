@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign projects = site.projects | where: "lang", page.lang | sort: "order" -%}
+{%- assign categories = projects | map: "category" | uniq -%}
+	<main class="container page">
+		<header class="page__head">
+			<h1>{{ t.projects.title }}</h1>
+			<p class="muted">{{ t.projects.intro }}</p>
+		</header>
+
+		<div class="filters">
+			<div class="field filters__search">
+				<label class="label" for="search">{{ t.projects.search }}</label>
+				<input type="search" id="search" placeholder="{{ t.projects.search_placeholder }}" autocomplete="off">
+			</div>
+			<div class="field">
+				<label class="label" for="filter-year">{{ t.projects.year }}</label>
+				<select id="filter-year">
+					<option value="">{{ t.projects.all_years }}</option>
+				</select>
+			</div>
+			<div class="field">
+				<label class="label" for="filter-tool">{{ t.projects.tool }}</label>
+				<select id="filter-tool">
+					<option value="">{{ t.projects.all_tools }}</option>
+				</select>
+			</div>
+			<div class="field">
+				<label class="label" for="sort">{{ t.projects.sort }}</label>
+				<select id="sort">
+					<option value="newest">{{ t.projects.sort_newest }}</option>
+					<option value="oldest">{{ t.projects.sort_oldest }}</option>
+					<option value="az">{{ t.projects.sort_az }}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="chips" id="category-chips" role="group" aria-label="{{ t.projects.category }}">
+			<button type="button" class="chip" data-category="" aria-pressed="true">{{ t.projects.all_categories }}</button>
+			{%- for c in categories %}
+			<button type="button" class="chip" data-category="{{ c }}" aria-pressed="false">{{ t.categories[c] }}</button>
+			{%- endfor %}
+		</div>
+
+		<div class="results-bar">
+			<span id="result-count" aria-live="polite" data-template="{{ t.projects.count }}"></span>
+			<button type="button" class="link-btn" id="clear-filters" hidden>{{ t.projects.clear }}</button>
+		</div>
+
+		<div class="grid" id="project-grid">
+{%- for p in projects %}
+			{%- capture search %}{{ p.title }} {{ p.summary }} {{ t.categories[p.category] }} {{ p.role }} {{ p.year }} {{ p.tools | join: " " }}{% endcapture %}
+			<a class="card" href="{{ p.url | relative_url }}" data-title="{{ p.title | escape }}" data-category="{{ p.category }}" data-year="{{ p.year }}" data-tools="{{ p.tools | join: '|' | escape }}" data-search="{{ search | downcase | escape }}">
+				{% if p.image %}<img class="ph" src="{{ p.image | relative_url }}" alt="">{% else %}<div class="ph">{{ t.projects.thumbnail }}</div>{% endif %}
+				<span class="card__title">{{ p.title }}</span>
+				<span class="card__meta">{{ t.categories[p.category] }} · {{ p.year }}</span>
+				<ul class="tags">
+					{%- for tool in p.tools %}
+					<li>{{ tool }}</li>
+					{%- endfor %}
+				</ul>
+			</a>
+{%- endfor %}
+		</div>
+		<p class="empty" id="empty" hidden>{{ t.projects.empty }}</p>
+	</main>
