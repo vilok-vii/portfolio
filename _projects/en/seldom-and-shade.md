@@ -22,6 +22,8 @@ design_docs:
     caption: Onion model
   - src: /assets/images/seldom-and-shade/collision-matrix.png
     caption: Collision matrix
+  - src: /assets/images/seldom-and-shade/spec-seldom.png
+    caption: "Feature spec: Seldom"
 palette: seldom-and-shade
 theme_default: dark
 ---

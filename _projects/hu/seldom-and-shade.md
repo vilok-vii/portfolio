@@ -22,6 +22,8 @@ design_docs:
     caption: Hagymamodell
   - src: /assets/images/seldom-and-shade/collision-matrix.png
     caption: Ütközési mátrix
+  - src: /assets/images/seldom-and-shade/spec-seldom.png
+    caption: "Funkcióleírás: Seldom"
 palette: seldom-and-shade
 theme_default: dark
 ---
