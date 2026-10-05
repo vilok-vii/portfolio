@@ -11,6 +11,15 @@ skills: ["Design documentation", "Planning and testing", "Technical design", "Un
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE
+screenshots:
+  - src: /assets/images/seldom-and-shade/screenshot-1.webp
+    caption: "Seldom and Shade connected by a glowing blue leash, with an enemy nearby"
+  - src: /assets/images/seldom-and-shade/screenshot-2.webp
+    caption: "Seldom surrounded by red enemies, with arrows at the screen edge pointing to off-screen enemies"
+  - src: /assets/images/seldom-and-shade/screenshot-3.webp
+    caption: "The leash stretched between Seldom and Shade during a 13x combo"
+  - src: /assets/images/seldom-and-shade/screenshot-4.webp
+    caption: "End screen with the score breakdown and the leaderboard"
 design_docs:
   - src: /assets/images/seldom-and-shade/high-concept.png
     caption: Design high concept
@@ -59,12 +68,7 @@ I made this game for Block A of Year 2 during my studies at Breda University of 
 
 Surprisingly, the unconventional controls did not turn out to be as jarring as I had anticipated, and the game turned out to be exactly what an arcade game should be: people were excited to play, kept jumping back in to reach a new high score, and had fun in the meantime.
 
-<div class="gallery gallery--grid">
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-1.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-1.webp' | relative_url }}" alt="Seldom and Shade connected by a glowing blue leash, with an enemy nearby" loading="lazy"></a>
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-2.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-2.webp' | relative_url }}" alt="Seldom surrounded by red enemies, with arrows at the screen edge pointing to off-screen enemies" loading="lazy"></a>
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-3.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-3.webp' | relative_url }}" alt="The leash stretched between Seldom and Shade during a 13x combo" loading="lazy"></a>
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-4.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-4.webp' | relative_url }}" alt="End screen with the score breakdown and the leaderboard" loading="lazy"></a>
-</div>
+{% include album.html items=page.screenshots ratio="16 / 9" %}
 
 ## Design documentation
 
