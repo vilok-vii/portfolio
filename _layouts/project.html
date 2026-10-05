@@ -45,6 +45,31 @@ layout: default
 				<dd>{{ page.tools | join: ", " }}</dd>
 			</div>
 		</dl>
+{%- if page.responsibilities or page.skills %}
+
+		<div class="project-focus">
+			{%- if page.responsibilities %}
+			<section>
+				<h2 class="label">{{ t.project.responsibilities }}</h2>
+				<ul>
+					{%- for item in page.responsibilities %}
+					<li>{{ item }}</li>
+					{%- endfor %}
+				</ul>
+			</section>
+			{%- endif %}
+			{%- if page.skills %}
+			<section>
+				<h2 class="label">{{ t.project.skills }}</h2>
+				<ul>
+					{%- for item in page.skills %}
+					<li>{{ item }}</li>
+					{%- endfor %}
+				</ul>
+			</section>
+			{%- endif %}
+		</div>
+{%- endif %}
 
 		<div class="project-body">
 {{ content }}
