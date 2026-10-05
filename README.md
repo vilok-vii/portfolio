@@ -52,9 +52,10 @@ At the top of `css/style.css`:
 2. Fill in the front matter (between the `---` lines):
 	- `title`, `summary`, `role`: text shown on cards and the project page
 	- `order`: position in lists and previous/next links (1 = first)
-	- `category`: `game-design`, `ui-ux` or `creative` (labels come from the i18n files; add new ones there)
+	- `category`: `tech-design`, `game-design`, `ui-ux` or `creative` (labels come from the i18n files; add new ones there)
 	- `year`, `tools`, `featured` (`true` = also shown under Selected work on the home page)
 	- `image`: optional cover/thumbnail path, e.g. `/assets/images/my-game/cover.jpg`
+	- `video`: optional YouTube video ID (the part after `youtu.be/`), shown instead of the cover image on the project page; `image` is still used for cards
 3. Write the project text below the front matter in Markdown.
 4. Create the same file name in `_projects/hu/` with the Hungarian text. Keep `order`, `category`, `year`, `tools` and `featured` the same.
 

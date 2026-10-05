@@ -1,0 +1,53 @@
+---
+title: Seldom & Shade
+order: 1
+summary: "Seldom & Shade is an arcade twin-stick action game where you play as Seldom, the ghost, and his dog, Shade, at the same time, with one joystick each. You navigate a nightmarish field, evading and destroying enemies by luring them into the ethereally strong bond between the two characters (the 'leash'). But beware! Some of your foes have the means to cut this bond!"
+category: tech-design
+year: 2025
+role: Solo developer
+tools: ["Unreal Engine", "Miro"]
+featured: true
+image: /assets/images/seldom-and-shade/screenshot-3.webp
+video: 7bEQdVEKjgE
+---
+
+## Overview
+
+I made this game for Block A of Year 2 during my studies at Breda University of Applied Sciences. As I was specializing in technical design, my task was to build on top of a twin-stick shooter template. I wanted to make something unique, with a clean and simple design, so I settled on a game where the player controls two characters at the same time, one with each joystick.
+
+Surprisingly, the unconventional controls did not turn out to be as jarring as I had anticipated, and the game turned out to be exactly what an arcade game should be: people were excited to play, kept jumping back in to reach a new high score, and had fun in the meantime.
+
+<div class="gallery gallery--grid">
+	<a href="{{ '/assets/images/seldom-and-shade/screenshot-1.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-1.webp' | relative_url }}" alt="Seldom and Shade connected by a glowing blue leash, with an enemy nearby" loading="lazy"></a>
+	<a href="{{ '/assets/images/seldom-and-shade/screenshot-2.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-2.webp' | relative_url }}" alt="Seldom surrounded by red enemies, with arrows at the screen edge pointing to off-screen enemies" loading="lazy"></a>
+	<a href="{{ '/assets/images/seldom-and-shade/screenshot-3.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-3.webp' | relative_url }}" alt="The leash stretched between Seldom and Shade during a 13x combo" loading="lazy"></a>
+	<a href="{{ '/assets/images/seldom-and-shade/screenshot-4.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-4.webp' | relative_url }}" alt="End screen with the score breakdown and the leaderboard" loading="lazy"></a>
+</div>
+
+## Design documentation
+
+Using a given template, I documented the game's high concept, then created individual feature specs for every feature I made. Here you can see the filled-out pitch template, the core loop and a few feature specs.
+
+<div class="gallery">
+	<div class="ph">Pitch template</div>
+	<div class="ph">Core loop</div>
+	<div class="ph">Feature spec</div>
+</div>
+
+## Planning and testing
+
+- Every week I kept a conditions of satisfaction document alongside the design and implementation work.
+- I also kept a weekly reflection log on my process.
+- I ran playtests throughout the project.
+
+For example, players played defensively, as opposed to my intention. When they stretched the leash, their characters ended up too close to the edge of the screen, where an enemy could kill them unexpectedly. My solution was to add arrows on the edge of the screen that indicate nearby off-screen enemies.
+
+## Technical design
+
+Placeholder: the idea behind the push-and-pull playstyle.
+
+Seldom & Shade was later chosen as one of the example games for the next year's students.
+
+## Unreal Engine
+
+The game was made in Unreal Engine 5. Placeholder: what you changed and added compared to the twin-stick shooter template.

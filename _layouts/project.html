@@ -21,7 +21,11 @@ layout: default
 			<p class="muted">{{ page.summary }}</p>
 		</header>
 
-		{% if page.image %}<img class="ph" src="{{ page.image | relative_url }}" alt="">{% else %}<div class="ph">{{ t.project.cover }}</div>{% endif %}
+		{% if page.video %}
+		<div class="video">
+			<iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="{{ page.title | escape }}: {{ t.project.video }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+		{% elsif page.image %}<img class="ph" src="{{ page.image | relative_url }}" alt="">{% else %}<div class="ph">{{ t.project.cover }}</div>{% endif %}
 
 		<dl class="project-meta">
 			<div>
