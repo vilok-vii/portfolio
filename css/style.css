@@ -484,6 +484,30 @@ img.ph {
 	color: var(--accent-text);
 }
 
+.btn--play {
+	flex: 0 0 auto;
+	padding: 10px 22px;
+	font-weight: 600;
+}
+
+/* Project title with a Play button on the right */
+.page__title-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px 24px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
 /* ==========================================================================
 	Home
 	========================================================================== */

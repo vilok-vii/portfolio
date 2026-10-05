@@ -17,7 +17,17 @@ layout: default
 
 		<header class="page__head page__head--wide">
 			<span class="label">{{ t.categories[page.category] }} · {{ page.year }}</span>
+			{%- if page.play_url %}
+			<div class="page__title-row">
+				<h1>{{ page.title }}</h1>
+				<a class="btn btn--solid btn--play" href="{{ page.play_url }}" target="_blank" rel="noopener">
+					<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
+					{{ t.project.play }}<span class="visually-hidden"> ({{ t.project.new_tab }})</span>
+				</a>
+			</div>
+			{%- else %}
 			<h1>{{ page.title }}</h1>
+			{%- endif %}
 			<p class="muted">{{ page.summary }}</p>
 		</header>
 
