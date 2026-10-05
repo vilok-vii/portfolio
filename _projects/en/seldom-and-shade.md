@@ -58,6 +58,21 @@ playtests:
     caption: "Playtest 1"
   - src: /assets/images/seldom-and-shade/playtest-2.png
     caption: "Playtest 2"
+progress:
+  - src: /assets/images/seldom-and-shade/progress-1.jpg
+    caption: "pre0.1: greybox on the template's level, with placeholder characters, the first leash and enemies"
+  - src: /assets/images/seldom-and-shade/progress-2.jpg
+    caption: "pre0.1: a new ground texture, with the leash crackling red"
+  - src: /assets/images/seldom-and-shade/progress-3.jpg
+    caption: "CoS 0.12: the first ghost and dog characters and glowing red enemies"
+  - src: /assets/images/seldom-and-shade/progress-4.jpg
+    caption: "CoS 0.23: a darker look, red obstacles and a score counter"
+  - src: /assets/images/seldom-and-shade/progress-5.jpg
+    caption: "CoS v.0.3: the new HUD with timer, score, combo and distance, and stone obstacles"
+  - src: /assets/images/seldom-and-shade/progress-6.jpg
+    caption: "CoS v.0.4: a refined HUD and level layout"
+  - src: /assets/images/seldom-and-shade/progress-7.jpg
+    caption: "CoS v.0.5: multiplier pickups and arrows at the screen edge for off-screen enemies"
 palette: seldom-and-shade
 theme_default: dark
 ---
@@ -85,6 +100,12 @@ Using a given template, I documented the game's high concept, then created indiv
 For example, players played defensively, as opposed to my intention. When they stretched the leash, their characters ended up too close to the edge of the screen, where an enemy could kill them unexpectedly. My solution was to add arrows on the edge of the screen that indicate nearby off-screen enemies.
 
 {% include album.html items=page.playtests ratio="4 / 3" %}
+
+## Development progress
+
+The game went through several versions during the block, from a greybox on the template's level to the final look. The screenshots below follow the versions in order.
+
+{% include album.html items=page.progress ratio="16 / 9" %}
 
 ## Technical design
 

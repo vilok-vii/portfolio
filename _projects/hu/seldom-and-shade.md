@@ -58,6 +58,21 @@ playtests:
     caption: "1. játékteszt"
   - src: /assets/images/seldom-and-shade/playtest-2.png
     caption: "2. játékteszt"
+progress:
+  - src: /assets/images/seldom-and-shade/progress-1.jpg
+    caption: "pre0.1: greybox a sablon pályáján, helyőrző karakterekkel, az első pórázzal és ellenségekkel"
+  - src: /assets/images/seldom-and-shade/progress-2.jpg
+    caption: "pre0.1: új talajtextúra, pirosan szikrázó pórázzal"
+  - src: /assets/images/seldom-and-shade/progress-3.jpg
+    caption: "CoS 0.12: az első szellem- és kutyakarakter, izzó piros ellenségek"
+  - src: /assets/images/seldom-and-shade/progress-4.jpg
+    caption: "CoS 0.23: sötétebb megjelenés, piros akadályok és pontszámláló"
+  - src: /assets/images/seldom-and-shade/progress-5.jpg
+    caption: "CoS v.0.3: az új HUD időzítővel, pontszámmal, kombóval és távolsággal, kő akadályok"
+  - src: /assets/images/seldom-and-shade/progress-6.jpg
+    caption: "CoS v.0.4: finomított HUD és pályaelrendezés"
+  - src: /assets/images/seldom-and-shade/progress-7.jpg
+    caption: "CoS v.0.5: szorzó pickupok és nyilak a képernyő szélén a képen kívüli ellenségekhez"
 palette: seldom-and-shade
 theme_default: dark
 ---
@@ -85,6 +100,12 @@ Egy megadott sablon alapján dokumentáltam a játék alapkoncepcióját, majd m
 Például a játékosok a szándékommal ellentétben védekezően játszottak. Amikor kifeszítették a pórázt, a karaktereik túl közel kerültek a képernyő széléhez, ahol egy ellenség váratlanul megölhette őket. Megoldásként a képernyő szélére nyilakat tettem, amelyek a közeli, képen kívüli ellenségeket jelzik.
 
 {% include album.html items=page.playtests ratio="4 / 3" %}
+
+## A fejlesztés menete
+
+A játék a blokk során több verzión ment keresztül, a sablon pályáján készült greyboxtól a végleges megjelenésig. Az alábbi képernyőképek sorrendben követik a verziókat.
+
+{% include album.html items=page.progress ratio="16 / 9" %}
 
 ## Technikai tervezés
 
