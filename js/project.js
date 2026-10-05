@@ -92,12 +92,12 @@ document.querySelectorAll(".album").forEach((album) => {
 	function show(i) {
 		index = (i + group.length) % group.length;
 		const link = group[index];
-		const figure = link.closest("figure");
+		const figure = link.closest(".album__item");
 		dialog.classList.remove("lightbox--tall");
 		img.src = link.href;
 		img.alt = link.querySelector("img").alt;
 		dialog.scrollTop = 0;
-		caption.textContent = figure ? figure.querySelector("figcaption").textContent : "";
+		caption.textContent = link.dataset.caption || (figure ? figure.querySelector("figcaption").textContent : "");
 		caption.hidden = !caption.textContent;
 	}
 
@@ -108,7 +108,7 @@ document.querySelectorAll(".album").forEach((album) => {
 		dialog.classList.toggle("lightbox--tall", tall);
 	});
 
-	document.querySelectorAll(".gallery, .album__track").forEach((container) => {
+	document.querySelectorAll(".gallery, .album__track, .icon-grid").forEach((container) => {
 		const links = [...container.querySelectorAll("a")].filter((a) => a.querySelector("img"));
 		links.forEach((link, i) => {
 			link.addEventListener("click", (e) => {

@@ -1,0 +1,18 @@
+{%- comment -%}
+	Icons shown as their making-of steps (clay photo(s) → finished icon), in a compact grid.
+	Usage in a project file: {% include icons.html items=page.icons %}
+	where icons is a front-matter list of { label, steps: [ { src, alt } ] }.
+{%- endcomment -%}
+<div class="icon-grid">
+	{%- for icon in include.items %}
+	<figure class="icon-set">
+		<div class="icon-set__steps">
+			{%- for step in icon.steps %}
+			{%- unless forloop.first %}<span class="icon-set__arrow" aria-hidden="true">&rarr;</span>{% endunless %}
+			<a href="{{ step.src | relative_url }}" data-caption="{{ step.alt | escape }}"><img src="{{ step.src | relative_url }}" alt="{{ step.alt | escape }}" loading="lazy"></a>
+			{%- endfor %}
+		</div>
+		<figcaption>{{ icon.label }}</figcaption>
+	</figure>
+	{%- endfor %}
+</div>

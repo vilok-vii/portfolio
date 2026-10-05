@@ -45,6 +45,41 @@ screens:
     caption: "Merchant screen"
   - src: /assets/images/woolhalla/screen-sheep-sacrifice.webp
     caption: "Sheep sacrifice"
+icons:
+  - label: "Hourglass (time left)"
+    steps:
+      - src: /assets/images/woolhalla/icon-hourglass-clay.webp
+        alt: "Hourglass shaped from clay"
+      - src: /assets/images/woolhalla/icon-hourglass.webp
+        alt: "Coloured hourglass icon in the game"
+  - label: "Ship (ship damages)"
+    steps:
+      - src: /assets/images/woolhalla/icon-ship-clay.webp
+        alt: "Ship shaped from clay"
+      - src: /assets/images/woolhalla/icon-ship.webp
+        alt: "Coloured ship icon in the game"
+  - label: "Inventory slot"
+    steps:
+      - src: /assets/images/woolhalla/icon-slot-clay.webp
+        alt: "Inventory slot shaped from clay"
+      - src: /assets/images/woolhalla/icon-slot.webp
+        alt: "Coloured inventory slot in the game"
+  - label: "Close button"
+    steps:
+      - src: /assets/images/woolhalla/icon-close-clay-1.webp
+        alt: "Ball of clay"
+      - src: /assets/images/woolhalla/icon-close-clay-2.webp
+        alt: "The ball pressed flat"
+      - src: /assets/images/woolhalla/icon-close.webp
+        alt: "Red close button in the game"
+  - label: "Menu button"
+    steps:
+      - src: /assets/images/woolhalla/icon-menu-button-clay-1.webp
+        alt: "Bar of clay"
+      - src: /assets/images/woolhalla/icon-menu-button-clay-2.webp
+        alt: "The bar pressed flat"
+      - src: /assets/images/woolhalla/icon-menu-button.webp
+        alt: "Restart button in the game"
 palette: woolhalla
 ---
 
@@ -121,7 +156,7 @@ The base of both minigames was built by others, but I added the materials, their
 
 I made some icons from actual clay and coloured them in Photoshop, or in Unreal Engine using a UI material.
 
-<div class="ph ph--pending">Icon images (coming)</div>
+{% include icons.html items=page.icons %}
 
 ## Animation and sound
 

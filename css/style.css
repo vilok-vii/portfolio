@@ -1040,6 +1040,63 @@ img.ph {
 	outline-color: #fff;
 }
 
+/* Icons: making-of steps (clay → finished icon) in compact cards */
+.icon-grid {
+	--icon-tile: 112px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-block: 16px;
+}
+
+.icon-set {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0;
+	padding: 12px;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+}
+
+.icon-set__steps {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.icon-set__steps a {
+	display: block;
+	width: var(--icon-tile);
+	aspect-ratio: 4 / 3;
+	border-radius: 6px;
+	overflow: hidden;
+	background: #3b3734;
+	cursor: zoom-in;
+}
+
+.icon-set__steps img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.icon-set__arrow {
+	color: var(--muted);
+}
+
+.icon-set figcaption {
+	font-size: 14px;
+	color: var(--muted);
+}
+
+@media (max-width: 560px) {
+	.icon-grid {
+		--icon-tile: 88px;
+	}
+}
+
 /* Image album: one image at a time, arrows and thumbnails below */
 .album {
 	display: flex;
