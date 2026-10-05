@@ -6,8 +6,8 @@ Bilingual (English / Hungarian) portfolio built with [Jekyll](https://jekyllrb.c
 
 | English | Hungarian | Page |
 | --- | --- | --- |
-| `/en/` | `/hu/` | Home: welcome message, entries to Portfolio and All projects |
-| `/en/portfolio/` | `/hu/portfolio/` | Scrollable, curated list of project summaries |
+| `/en/` | `/hu/` | Home: intro (who I am, what I do), selected work, link to all projects |
+| `/en/portfolio/` | `/hu/portfolio/` | Old address; redirects to the selected work on the home page |
 | `/en/projects/` | `/hu/projects/` | Searchable, filterable list of all projects |
 | `/en/projects/<slug>/` | `/hu/projects/<slug>/` | Individual project page |
 | `/en/about/` | `/hu/about/` | About |
@@ -22,7 +22,7 @@ _data/i18n/en.yml     All English interface text (nav, buttons, labels, …)
 _data/i18n/hu.yml     All Hungarian interface text; same keys as en.yml
 _layouts/             Page templates, shared by both languages
 	default.html      Header (navigation, language switch), footer
-	home.html, portfolio.html, projects.html, about.html, project.html
+	home.html, projects.html, about.html, project.html
 _projects/en/         One Markdown file per project, English
 _projects/hu/         One Markdown file per project, Hungarian (same file names)
 en/, hu/              Tiny files that pick a layout for each page
@@ -53,7 +53,7 @@ At the top of `css/style.css`:
 	- `title`, `summary`, `role`: text shown on cards and the project page
 	- `order`: position in lists and previous/next links (1 = first)
 	- `category`: `game-design`, `ui-ux` or `creative` (labels come from the i18n files; add new ones there)
-	- `year`, `tools`, `featured` (`true` = also shown on the Portfolio page)
+	- `year`, `tools`, `featured` (`true` = also shown under Selected work on the home page)
 	- `image`: optional cover/thumbnail path, e.g. `/assets/images/my-game/cover.jpg`
 3. Write the project text below the front matter in Markdown.
 4. Create the same file name in `_projects/hu/` with the Hungarian text. Keep `order`, `category`, `year`, `tools` and `featured` the same.

@@ -24,24 +24,23 @@ categories:
   creative: Creative
 
 home:
-  title: Welcome message goes here.
-  text: One or two sentences introducing who you are and what you make.
-  entries_label: Where to go next
-  portfolio_title: Portfolio
-  portfolio_image: Portfolio image
-  portfolio_text: A curated selection of my best work, with a short summary of each project.
-  portfolio_cta: View portfolio
-  projects_title: All projects
-  projects_image: Projects image
-  projects_text: Every project I have made. Search and filter by category, year or tool.
-  projects_cta: Browse all projects
-
-portfolio:
-  title: Portfolio
-  intro: "Intro placeholder: a short line about the selection below."
+  hello: "Hi, I'm Vilmos Horváth"
+  # The headline is split in three so the middle part can be highlighted
+  title_before: "I'm a "
+  title_role: game & UI/UX designer
+  title_after: " who builds playful, easy-to-use experiences."
+  lead: "Placeholder: one or two sentences on what you do and for whom, e.g. I design gameplay systems, interfaces and player journeys, from the first sketch to a playable prototype."
+  focus_label: What I do
+  focus: ["Game design", "UI/UX design", "Prototyping", "Creative work"]
+  cta_work: See my work
+  cta_about: About me
+  work_title: Selected work
+  work_intro: "A few projects I am proud of, with what I did on each."
   image: Project image
   view_project: View project
-  see_all: See all projects
+  more_title: Want to see more?
+  more_text: "Browse all %total% projects. Search and filter by category, year or tool."
+  more_cta: All projects
 
 projects:
   title: Projects

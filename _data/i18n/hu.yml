@@ -24,24 +24,23 @@ categories:
   creative: Kreatív
 
 home:
-  title: Ide kerül az üdvözlő üzenet.
-  text: Egy-két mondat arról, ki vagy és mivel foglalkozol.
-  entries_label: Merre tovább
-  portfolio_title: Portfólió
-  portfolio_image: Portfólió kép
-  portfolio_text: Válogatás a legjobb munkáimból, mindegyikhez rövid összefoglalóval.
-  portfolio_cta: Portfólió megtekintése
-  projects_title: Összes projekt
-  projects_image: Projektek kép
-  projects_text: Minden projektem egy helyen. Keress és szűrj kategória, év vagy eszköz szerint.
-  projects_cta: Összes projekt böngészése
-
-portfolio:
-  title: Portfólió
-  intro: "Bevezető helyőrző: egy rövid mondat az alábbi válogatásról."
+  hello: "Szia, Horváth Vilmos vagyok"
+  # A címsor három részből áll, hogy a középső kiemelhető legyen
+  title_before: ""
+  title_role: Játék- és UI/UX-tervező
+  title_after: " vagyok, aki játékos és könnyen használható élményeket készít."
+  lead: "Helyőrző: egy-két mondat arról, mit csinálsz és kinek, pl. játékmenet-rendszereket, felületeket és játékosélményeket tervezek, az első vázlattól a játszható prototípusig."
+  focus_label: Amivel foglalkozom
+  focus: ["Játéktervezés", "UI/UX-tervezés", "Prototípus-készítés", "Kreatív munka"]
+  cta_work: Munkáim
+  cta_about: Rólam
+  work_title: Válogatott munkák
+  work_intro: "Néhány projekt, amire büszke vagyok, és hogy mi volt bennük a szerepem."
   image: Projekt kép
   view_project: Projekt megtekintése
-  see_all: Összes projekt
+  more_title: Kíváncsi vagy a többire?
+  more_text: "Böngészd mind a(z) %total% projektet. Keress és szűrj kategória, év vagy eszköz szerint."
+  more_cta: Összes projekt
 
 projects:
   title: Projektek
