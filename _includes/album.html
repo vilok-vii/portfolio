@@ -2,9 +2,10 @@
 	Image album: one image at a time, with arrows and thumbnails.
 	Usage in a project file: {% include album.html items=page.design_docs %}
 	where design_docs is a front-matter list of { src, caption }.
+	Optional: ratio="4 / 3" for a taller frame (the default is 16 / 10).
 {%- endcomment -%}
 {%- assign t = site.data.i18n[page.lang] -%}
-<div class="album">
+<div class="album"{% if include.ratio %} style="--album-ratio: {{ include.ratio }}"{% endif %}>
 	<div class="album__track" tabindex="0" aria-label="{{ t.project.album }}">
 		{%- for item in include.items %}
 		<figure class="album__item">

@@ -44,6 +44,11 @@ design_docs:
     caption: "Feature spec: Score calculation"
   - src: /assets/images/seldom-and-shade/spec-direction-indicators.png
     caption: "Feature spec: Direction indicators"
+playtests:
+  - src: /assets/images/seldom-and-shade/playtest-1.png
+    caption: "Playtest 1"
+  - src: /assets/images/seldom-and-shade/playtest-2.png
+    caption: "Playtest 2"
 palette: seldom-and-shade
 theme_default: dark
 ---
@@ -74,6 +79,8 @@ Using a given template, I documented the game's high concept, then created indiv
 - I ran playtests throughout the project.
 
 For example, players played defensively, as opposed to my intention. When they stretched the leash, their characters ended up too close to the edge of the screen, where an enemy could kill them unexpectedly. My solution was to add arrows on the edge of the screen that indicate nearby off-screen enemies.
+
+{% include album.html items=page.playtests ratio="4 / 3" %}
 
 ## Technical design
 

@@ -907,6 +907,16 @@ img.ph {
 	place-items: center;
 }
 
+/* Tall images open at a readable width; the viewer scrolls down through them */
+.lightbox--tall[open] {
+	place-items: start center;
+	overflow-y: auto;
+}
+
+.lightbox--tall .lightbox__img {
+	max-height: none;
+}
+
 .lightbox::backdrop {
 	background: rgba(0, 0, 0, 0.88);
 }
@@ -1018,7 +1028,7 @@ img.ph {
 
 .album__item a {
 	display: block;
-	aspect-ratio: 16 / 10;
+	aspect-ratio: var(--album-ratio, 16 / 10);
 	background: var(--surface);
 	border: 1px solid var(--line);
 	border-radius: var(--radius);

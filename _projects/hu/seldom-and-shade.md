@@ -44,6 +44,11 @@ design_docs:
     caption: "Funkcióleírás: A pontszám kiszámítása"
   - src: /assets/images/seldom-and-shade/spec-direction-indicators.png
     caption: "Funkcióleírás: Irányjelzők"
+playtests:
+  - src: /assets/images/seldom-and-shade/playtest-1.png
+    caption: "1. játékteszt"
+  - src: /assets/images/seldom-and-shade/playtest-2.png
+    caption: "2. játékteszt"
 palette: seldom-and-shade
 theme_default: dark
 ---
@@ -74,6 +79,8 @@ Egy megadott sablon alapján dokumentáltam a játék alapkoncepcióját, majd m
 - A projekt során játékteszteket tartottam.
 
 Például a játékosok a szándékommal ellentétben védekezően játszottak. Amikor kifeszítették a pórázt, a karaktereik túl közel kerültek a képernyő széléhez, ahol egy ellenség váratlanul megölhette őket. Megoldásként a képernyő szélére nyilakat tettem, amelyek a közeli, képen kívüli ellenségeket jelzik.
+
+{% include album.html items=page.playtests ratio="4 / 3" %}
 
 ## Technikai tervezés
 

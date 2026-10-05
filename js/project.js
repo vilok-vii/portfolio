@@ -87,11 +87,20 @@ document.querySelectorAll(".album").forEach((album) => {
 		index = (i + group.length) % group.length;
 		const link = group[index];
 		const figure = link.closest("figure");
+		dialog.classList.remove("lightbox--tall");
 		img.src = link.href;
 		img.alt = link.querySelector("img").alt;
+		dialog.scrollTop = 0;
 		caption.textContent = figure ? figure.querySelector("figcaption").textContent : "";
 		caption.hidden = !caption.textContent;
 	}
+
+	// Much taller than the screen: show it at a readable width and let the viewer scroll
+	img.addEventListener("load", () => {
+		const shown = Math.min(img.naturalWidth, dialog.clientWidth - 2 * parseFloat(getComputedStyle(dialog).paddingLeft));
+		const tall = (img.naturalHeight * shown) / img.naturalWidth > window.innerHeight * 1.2;
+		dialog.classList.toggle("lightbox--tall", tall);
+	});
 
 	document.querySelectorAll(".gallery, .album__track").forEach((container) => {
 		const links = [...container.querySelectorAll("a")].filter((a) => a.querySelector("img"));
