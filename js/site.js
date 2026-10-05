@@ -13,9 +13,11 @@ document.querySelectorAll(".lang-switch").forEach((link) => {
 });
 
 // Dark mode toggle. Light is the default; the choice is remembered.
+// Pages with their own palette remember it under their own key (data-theme-key).
 // (A small script in the page head applies a saved choice before the page draws.)
 (function () {
 	const root = document.documentElement;
+	const key = root.dataset.themeKey || "theme";
 	document.querySelectorAll(".theme-toggle").forEach((button) => {
 		button.setAttribute("aria-pressed", String(root.dataset.theme === "dark"));
 		button.addEventListener("click", () => {
@@ -27,7 +29,7 @@ document.querySelectorAll(".lang-switch").forEach((link) => {
 			}
 			button.setAttribute("aria-pressed", String(dark));
 			try {
-				localStorage.setItem("theme", dark ? "dark" : "light");
+				localStorage.setItem(key, dark ? "dark" : "light");
 			} catch (e) {
 				// Storage blocked: the toggle still works for this page
 			}

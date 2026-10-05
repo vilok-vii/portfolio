@@ -9,6 +9,8 @@ tools: ["Unreal Engine", "Miro"]
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE
+palette: seldom-and-shade
+theme_default: dark
 ---
 
 ## Overview

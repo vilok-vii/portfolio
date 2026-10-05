@@ -56,6 +56,7 @@ At the top of `css/style.css`:
 	- `year`, `tools`, `featured` (`true` = also shown under Selected work on the home page)
 	- `image`: optional cover/thumbnail path, e.g. `/assets/images/my-game/cover.jpg`
 	- `video`: optional YouTube video ID (the part after `youtu.be/`), shown instead of the cover image on the project page; `image` is still used for cards
+	- `palette`, `theme_default`: optional own colour palette for the project page (defined in `css/style.css`, e.g. `seldom-and-shade`) and `dark` to open the page in dark mode; visitors can still switch, and that choice is remembered for this page only
 3. Write the project text below the front matter in Markdown.
 4. Create the same file name in `_projects/hu/` with the Hungarian text. Keep `order`, `category`, `year`, `tools` and `featured` the same.
 

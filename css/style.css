@@ -49,6 +49,33 @@
 	color-scheme: dark;
 }
 
+/* Seldom & Shade project page: the game's own palette (dark by default) */
+:root[data-palette="seldom-and-shade"] {
+	--red: #16fffd;
+	--orange: #f5fd2a;
+	--cream: #fefefe;
+	--teal: #16fffd;
+	--ink: #232122;
+
+	--muted: color-mix(in srgb, var(--ink) 72%, var(--cream));
+	/* Cyan is too light on white, so light mode uses a deeper shade of it */
+	--accent: color-mix(in srgb, var(--teal) 40%, var(--ink));
+	--accent-text: var(--cream);
+}
+
+:root[data-palette="seldom-and-shade"][data-theme="dark"] {
+	--bg: var(--ink);
+	--surface: color-mix(in srgb, var(--cream) 6%, var(--ink));
+	--text: var(--cream);
+	--muted: color-mix(in srgb, var(--cream) 70%, var(--ink));
+	--line: color-mix(in srgb, var(--cream) 16%, var(--ink));
+	--accent: var(--teal);
+	--accent-text: var(--ink);
+	--tint-red: color-mix(in srgb, var(--teal) 30%, var(--ink));
+	--tint-orange: color-mix(in srgb, var(--orange) 30%, var(--ink));
+	--tint-teal: color-mix(in srgb, var(--teal) 30%, var(--ink));
+}
+
 /* ==========================================================================
 	Base
 	========================================================================== */
@@ -132,6 +159,11 @@ h3 {
 	gap: 12px;
 	margin-bottom: 40px;
 	max-width: 60ch;
+}
+
+/* Project pages: as wide as the cover image / video */
+.page__head--wide {
+	max-width: none;
 }
 
 .page__head h1 {
@@ -753,7 +785,6 @@ img.ph {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	max-width: 65ch;
 }
 
 .project-body h2 {
