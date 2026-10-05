@@ -60,19 +60,19 @@ playtests:
     caption: "Playtest 2"
 progress:
   - src: /assets/images/seldom-and-shade/progress-1.jpg
-    caption: "pre0.1: greybox on the template's level, with placeholder characters, the first leash and enemies"
+    caption: "1. Greybox on the template's level, with placeholder characters, the first leash and enemies"
   - src: /assets/images/seldom-and-shade/progress-2.jpg
-    caption: "pre0.1: a new ground texture, with the leash crackling red"
+    caption: "2. A new ground texture, with the leash crackling red"
   - src: /assets/images/seldom-and-shade/progress-3.jpg
-    caption: "CoS 0.12: the first ghost and dog characters and glowing red enemies"
+    caption: "3. The first ghost and dog characters and glowing red enemies"
   - src: /assets/images/seldom-and-shade/progress-4.jpg
-    caption: "CoS 0.23: a darker look, red obstacles and a score counter"
+    caption: "4. A darker look, red obstacles and a score counter"
   - src: /assets/images/seldom-and-shade/progress-5.jpg
-    caption: "CoS v.0.3: the new HUD with timer, score, combo and distance, and stone obstacles"
+    caption: "5. The new HUD with timer, score, combo and distance, and stone obstacles"
   - src: /assets/images/seldom-and-shade/progress-6.jpg
-    caption: "CoS v.0.4: a refined HUD and level layout"
+    caption: "6. A refined HUD and level layout"
   - src: /assets/images/seldom-and-shade/progress-7.jpg
-    caption: "CoS v.0.5: multiplier pickups and arrows at the screen edge for off-screen enemies"
+    caption: "7. Multiplier pickups and arrows at the screen edge for off-screen enemies"
 palette: seldom-and-shade
 theme_default: dark
 ---

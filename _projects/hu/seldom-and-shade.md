@@ -60,19 +60,19 @@ playtests:
     caption: "2. játékteszt"
 progress:
   - src: /assets/images/seldom-and-shade/progress-1.jpg
-    caption: "pre0.1: greybox a sablon pályáján, helyőrző karakterekkel, az első pórázzal és ellenségekkel"
+    caption: "1. Greybox a sablon pályáján, helyőrző karakterekkel, az első pórázzal és ellenségekkel"
   - src: /assets/images/seldom-and-shade/progress-2.jpg
-    caption: "pre0.1: új talajtextúra, pirosan szikrázó pórázzal"
+    caption: "2. Új talajtextúra, pirosan szikrázó pórázzal"
   - src: /assets/images/seldom-and-shade/progress-3.jpg
-    caption: "CoS 0.12: az első szellem- és kutyakarakter, izzó piros ellenségek"
+    caption: "3. Az első szellem- és kutyakarakter, izzó piros ellenségek"
   - src: /assets/images/seldom-and-shade/progress-4.jpg
-    caption: "CoS 0.23: sötétebb megjelenés, piros akadályok és pontszámláló"
+    caption: "4. Sötétebb megjelenés, piros akadályok és pontszámláló"
   - src: /assets/images/seldom-and-shade/progress-5.jpg
-    caption: "CoS v.0.3: az új HUD időzítővel, pontszámmal, kombóval és távolsággal, kő akadályok"
+    caption: "5. Az új HUD időzítővel, pontszámmal, kombóval és távolsággal, kő akadályok"
   - src: /assets/images/seldom-and-shade/progress-6.jpg
-    caption: "CoS v.0.4: finomított HUD és pályaelrendezés"
+    caption: "6. Finomított HUD és pályaelrendezés"
   - src: /assets/images/seldom-and-shade/progress-7.jpg
-    caption: "CoS v.0.5: szorzó pickupok és nyilak a képernyő szélén a képen kívüli ellenségekhez"
+    caption: "7. Szorzó pickupok és nyilak a képernyő szélén a képen kívüli ellenségekhez"
 palette: seldom-and-shade
 theme_default: dark
 ---
