@@ -24,6 +24,16 @@ design_docs:
     caption: Collision matrix
   - src: /assets/images/seldom-and-shade/spec-seldom.png
     caption: "Feature spec: Seldom"
+  - src: /assets/images/seldom-and-shade/spec-shade.png
+    caption: "Feature spec: Shade"
+  - src: /assets/images/seldom-and-shade/spec-leash.png
+    caption: "Feature spec: Leash"
+  - src: /assets/images/seldom-and-shade/spec-score.png
+    caption: "Feature spec: Score"
+  - src: /assets/images/seldom-and-shade/spec-enemies.png
+    caption: "Feature spec: Enemies"
+  - src: /assets/images/seldom-and-shade/spec-multiplier-pickup.png
+    caption: "Feature spec: Multiplier pickup"
 palette: seldom-and-shade
 theme_default: dark
 ---
