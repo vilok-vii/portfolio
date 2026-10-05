@@ -6,6 +6,8 @@ category: tech-design
 year: 2025
 role: Egyéni fejlesztő
 tools: ["Unreal Engine", "Miro"]
+responsibilities: ["Moment-to-moment játékmenet", "3C (karakter, kamera, irányítás)", "Visszajelzés a játékosnak és UX", "Játéktesztelés"]
+skills: ["Tervezési dokumentáció", "Tervezés és tesztelés", "Technikai tervezés", "Unreal Engine"]
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE

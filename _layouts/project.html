@@ -13,7 +13,7 @@ layout: default
 {%- if i > 0 %}{% assign prev = projects[prev_i] %}{% endif -%}
 {%- assign next = projects[next_i] -%}
 	<main class="container page">
-		<a href="{{ '/' | append: page.lang | append: '/projects/' | relative_url }}" class="back">&larr; {{ t.project.back }}</a>
+		<a href="{{ '/' | append: page.lang | append: '/projects/' | relative_url }}" class="back" data-home-href="{{ '/' | append: page.lang | append: '/' | relative_url }}#work" data-home-label="{{ t.project.back_home }}">&larr; <span>{{ t.project.back }}</span></a>
 
 		<header class="page__head page__head--wide">
 			<span class="label">{{ t.categories[page.category] }} · {{ page.year }}</span>
@@ -45,6 +45,31 @@ layout: default
 				<dd>{{ page.tools | join: ", " }}</dd>
 			</div>
 		</dl>
+{%- if page.responsibilities or page.skills %}
+
+		<div class="project-focus">
+			{%- if page.responsibilities %}
+			<section>
+				<h2 class="label">{{ t.project.responsibilities }}</h2>
+				<ul>
+					{%- for item in page.responsibilities %}
+					<li>{{ item }}</li>
+					{%- endfor %}
+				</ul>
+			</section>
+			{%- endif %}
+			{%- if page.skills %}
+			<section>
+				<h2 class="label">{{ t.project.skills }}</h2>
+				<ul>
+					{%- for item in page.skills %}
+					<li>{{ item }}</li>
+					{%- endfor %}
+				</ul>
+			</section>
+			{%- endif %}
+		</div>
+{%- endif %}
 
 		<div class="project-body">
 {{ content }}
@@ -54,4 +79,11 @@ layout: default
 			{% if prev %}<a href="{{ prev.url | relative_url }}">&larr; {{ prev.title }}</a>{% else %}<span></span>{% endif %}
 			{% if next %}<a href="{{ next.url | relative_url }}">{{ next.title }} &rarr;</a>{% else %}<span></span>{% endif %}
 		</nav>
+
+		<dialog class="lightbox" aria-label="{{ t.project.viewer }}">
+			<button type="button" class="lightbox__close" aria-label="{{ t.project.close }}" title="{{ t.project.close }}">
+				<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+			</button>
+			<img class="lightbox__img" alt="">
+		</dialog>
 	</main>

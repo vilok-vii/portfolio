@@ -12,6 +12,18 @@ document.querySelectorAll(".lang-switch").forEach((link) => {
 	});
 });
 
+// Remember whether projects were opened from the home page or from All projects,
+// so the back link on a project page can lead to the same place (see project.js).
+(function () {
+	const origin = document.querySelector("[data-back-origin]");
+	if (!origin) return;
+	try {
+		sessionStorage.setItem("backOrigin", origin.dataset.backOrigin);
+	} catch (e) {
+		// Storage blocked: the back link keeps pointing to All projects
+	}
+})();
+
 // Dark mode toggle. Light is the default; the choice is remembered.
 // Pages with their own palette remember it under their own key (data-theme-key).
 // (A small script in the page head applies a saved choice before the page draws.)

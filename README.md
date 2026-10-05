@@ -54,6 +54,7 @@ At the top of `css/style.css`:
 	- `order`: position in lists and previous/next links (1 = first)
 	- `category`: `tech-design`, `game-design`, `ui-ux` or `creative` (labels come from the i18n files; add new ones there)
 	- `year`, `tools`, `featured` (`true` = also shown under Selected work on the home page)
+	- `responsibilities`, `skills`: optional lists shown below the facts row on the project page (Key responsibilities, Relevant skills)
 	- `image`: optional cover/thumbnail path, e.g. `/assets/images/my-game/cover.jpg`
 	- `video`: optional YouTube video ID (the part after `youtu.be/`), shown instead of the cover image on the project page; `image` is still used for cards
 	- `palette`, `theme_default`: optional own colour palette for the project page (defined in `css/style.css`, e.g. `seldom-and-shade`) and `dark` to open the page in dark mode; visitors can still switch, and that choice is remembered for this page only

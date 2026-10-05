@@ -4,7 +4,7 @@ layout: default
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign projects = site.projects | where: "lang", page.lang | sort: "order" -%}
 {%- assign categories = projects | map: "category" | uniq -%}
-	<main class="container page">
+	<main class="container page" data-back-origin="projects">
 		<header class="page__head">
 			<h1>{{ t.projects.title }}</h1>
 			<p class="muted">{{ t.projects.intro }}</p>

@@ -71,6 +71,7 @@ about:
 
 project:
   back: All projects
+  back_home: Home
   cover: Cover image / video
   video: Gameplay video
   image: Image
@@ -78,4 +79,8 @@ project:
   year: Year
   category: Category
   tools: Tools
+  responsibilities: Key responsibilities
+  skills: Relevant skills
   more: More projects
+  viewer: Image viewer
+  close: Close

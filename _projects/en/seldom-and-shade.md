@@ -6,6 +6,8 @@ category: tech-design
 year: 2025
 role: Solo developer
 tools: ["Unreal Engine", "Miro"]
+responsibilities: ["Moment-to-moment gameplay", "3Cs", "Player feedback and UX", "Playtesting"]
+skills: ["Design documentation", "Planning and testing", "Technical design", "Unreal Engine"]
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE
