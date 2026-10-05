@@ -24,6 +24,16 @@ design_docs:
     caption: Ütközési mátrix
   - src: /assets/images/seldom-and-shade/spec-seldom.png
     caption: "Funkcióleírás: Seldom"
+  - src: /assets/images/seldom-and-shade/spec-shade.png
+    caption: "Funkcióleírás: Shade"
+  - src: /assets/images/seldom-and-shade/spec-leash.png
+    caption: "Funkcióleírás: Póráz"
+  - src: /assets/images/seldom-and-shade/spec-score.png
+    caption: "Funkcióleírás: Pontozás"
+  - src: /assets/images/seldom-and-shade/spec-enemies.png
+    caption: "Funkcióleírás: Ellenségek"
+  - src: /assets/images/seldom-and-shade/spec-multiplier-pickup.png
+    caption: "Funkcióleírás: Szorzó pickup"
 palette: seldom-and-shade
 theme_default: dark
 ---
