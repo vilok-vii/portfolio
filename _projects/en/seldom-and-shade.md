@@ -34,6 +34,16 @@ design_docs:
     caption: "Feature spec: Enemies"
   - src: /assets/images/seldom-and-shade/spec-multiplier-pickup.png
     caption: "Feature spec: Multiplier pickup"
+  - src: /assets/images/seldom-and-shade/spec-essence-of-shade.png
+    caption: "Feature spec: Essence of Shade"
+  - src: /assets/images/seldom-and-shade/spec-spawning-shade.png
+    caption: "Feature spec: Spawning Shade (with explosion)"
+  - src: /assets/images/seldom-and-shade/spec-pulling-shade.png
+    caption: "Feature spec: Pulling Shade"
+  - src: /assets/images/seldom-and-shade/spec-score-calculation.png
+    caption: "Feature spec: Score calculation"
+  - src: /assets/images/seldom-and-shade/spec-direction-indicators.png
+    caption: "Feature spec: Direction indicators"
 palette: seldom-and-shade
 theme_default: dark
 ---
