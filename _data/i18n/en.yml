@@ -84,3 +84,6 @@ project:
   more: More projects
   viewer: Image viewer
   close: Close
+  previous: Previous image
+  next: Next image
+  album: Image album
