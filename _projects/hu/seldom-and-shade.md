@@ -11,6 +11,17 @@ skills: ["Tervezési dokumentáció", "Tervezés és tesztelés", "Technikai ter
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE
+design_docs:
+  - src: /assets/images/seldom-and-shade/high-concept.png
+    caption: Design high concept (alapkoncepció)
+  - src: /assets/images/seldom-and-shade/controller-layout.png
+    caption: Irányítási séma
+  - src: /assets/images/seldom-and-shade/core-loop.png
+    caption: Core loop
+  - src: /assets/images/seldom-and-shade/onion-model.png
+    caption: Hagymamodell
+  - src: /assets/images/seldom-and-shade/collision-matrix.png
+    caption: Ütközési mátrix
 palette: seldom-and-shade
 theme_default: dark
 ---
@@ -32,11 +43,7 @@ Meglepő módon a szokatlan irányítás egyáltalán nem lett olyan zavaró, mi
 
 Egy megadott sablon alapján dokumentáltam a játék alapkoncepcióját, majd minden elkészített funkcióhoz külön funkcióleírást írtam. Itt látható a kitöltött pitch sablon, a core loop és néhány funkcióleírás.
 
-<div class="gallery">
-	<div class="ph">Pitch sablon</div>
-	<div class="ph">Core loop</div>
-	<div class="ph">Funkcióleírás</div>
-</div>
+{% include album.html items=page.design_docs %}
 
 ## Tervezés és tesztelés
 

@@ -11,6 +11,17 @@ skills: ["Design documentation", "Planning and testing", "Technical design", "Un
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE
+design_docs:
+  - src: /assets/images/seldom-and-shade/high-concept.png
+    caption: Design high concept
+  - src: /assets/images/seldom-and-shade/controller-layout.png
+    caption: Controller layout
+  - src: /assets/images/seldom-and-shade/core-loop.png
+    caption: Core loop
+  - src: /assets/images/seldom-and-shade/onion-model.png
+    caption: Onion model
+  - src: /assets/images/seldom-and-shade/collision-matrix.png
+    caption: Collision matrix
 palette: seldom-and-shade
 theme_default: dark
 ---
@@ -32,11 +43,7 @@ Surprisingly, the unconventional controls did not turn out to be as jarring as I
 
 Using a given template, I documented the game's high concept, then created individual feature specs for every feature I made. Here you can see the filled-out pitch template, the core loop and a few feature specs.
 
-<div class="gallery">
-	<div class="ph">Pitch template</div>
-	<div class="ph">Core loop</div>
-	<div class="ph">Feature spec</div>
-</div>
+{% include album.html items=page.design_docs %}
 
 ## Planning and testing
 

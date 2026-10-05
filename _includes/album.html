@@ -1,0 +1,29 @@
+{%- comment -%}
+	Image album: one image at a time, with arrows and thumbnails.
+	Usage in a project file: {% include album.html items=page.design_docs %}
+	where design_docs is a front-matter list of { src, caption }.
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+<div class="album">
+	<div class="album__track" tabindex="0" aria-label="{{ t.project.album }}">
+		{%- for item in include.items %}
+		<figure class="album__item">
+			<a href="{{ item.src | relative_url }}"><img src="{{ item.src | relative_url }}" alt="{{ item.caption | escape }}" loading="lazy"></a>
+			<figcaption>{{ item.caption }}</figcaption>
+		</figure>
+		{%- endfor %}
+	</div>
+	<div class="album__bar" hidden>
+		<button type="button" class="album__nav" data-step="-1" aria-label="{{ t.project.previous }}">
+			<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</button>
+		<div class="album__thumbs">
+			{%- for item in include.items %}
+			<button type="button" class="album__thumb" aria-label="{{ item.caption | escape }}"><img src="{{ item.src | relative_url }}" alt="" loading="lazy"></button>
+			{%- endfor %}
+		</div>
+		<button type="button" class="album__nav" data-step="1" aria-label="{{ t.project.next }}">
+			<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+		</button>
+	</div>
+</div>
