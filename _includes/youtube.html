@@ -1,0 +1,12 @@
+{%- comment -%}
+	YouTube video in the page text, with an optional caption.
+	Usage: {% include youtube.html id="VIDEO_ID" title="What the video shows" caption="Optional caption" %}
+{%- endcomment -%}
+<figure class="video-figure">
+	<div class="video">
+		<iframe src="https://www.youtube-nocookie.com/embed/{{ include.id }}" title="{{ include.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	{%- if include.caption %}
+	<figcaption>{{ include.caption }}</figcaption>
+	{%- endif %}
+</figure>
