@@ -24,6 +24,15 @@ wireframes:
     caption: "Merchant"
   - src: /assets/images/woolhalla/wireframe-sheep-sacrifice.png
     caption: "Sheep sacrifice"
+hud:
+  - src: /assets/images/woolhalla/hud-1.webp
+    caption: "1. Wireframe of the HUD layout: ship damages, ship time left, inventory and day cycle"
+  - src: /assets/images/woolhalla/hud-2.webp
+    caption: "2. First prototype in the engine, with placeholder elements"
+  - src: /assets/images/woolhalla/hud-3.webp
+    caption: "3. Clay-styled elements and a new layout, with the inventory moved to the bottom"
+  - src: /assets/images/woolhalla/hud-4.webp
+    caption: "4. The final HUD in the game"
 palette: woolhalla
 ---
 
@@ -54,7 +63,7 @@ I made these in Figma. This was my first time using the software.
 
 I made the HUD and most of its elements in Unreal Engine. Below you can see the iterations from prototype to presentable. The layout was changed based on feedback I got from some team members.
 
-<div class="ph ph--pending">HUD iterations (images coming)</div>
+{% include album.html items=page.hud %}
 
 ## Inventory
 

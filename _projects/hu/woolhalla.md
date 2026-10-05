@@ -24,6 +24,15 @@ wireframes:
     caption: "Kereskedő"
   - src: /assets/images/woolhalla/wireframe-sheep-sacrifice.png
     caption: "Birkaáldozat"
+hud:
+  - src: /assets/images/woolhalla/hud-1.webp
+    caption: "1. A HUD elrendezésének wireframe-je: hajósérülések, a hajó hátralévő ideje, inventory és napciklus"
+  - src: /assets/images/woolhalla/hud-2.webp
+    caption: "2. Az első prototípus a motorban, helyőrző elemekkel"
+  - src: /assets/images/woolhalla/hud-3.webp
+    caption: "3. Agyag stílusú elemek és új elrendezés, az inventory alulra került"
+  - src: /assets/images/woolhalla/hud-4.webp
+    caption: "4. A végleges HUD a játékban"
 palette: woolhalla
 ---
 
@@ -54,7 +63,7 @@ Ezeket Figmában készítettem. Ez volt az első alkalom, hogy ezt a programot h
 
 A HUD-ot és a legtöbb elemét Unreal Engine-ben készítettem. Lent láthatók az iterációk a prototípustól a bemutatható változatig. Az elrendezés néhány csapattárs visszajelzése alapján változott.
 
-<div class="ph ph--pending">HUD-iterációk (a képek hamarosan)</div>
+{% include album.html items=page.hud %}
 
 ## Inventory
 
