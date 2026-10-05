@@ -71,6 +71,7 @@ about:
 
 project:
   back: All projects
+  back_home: Home
   cover: Cover image / video
   video: Gameplay video
   image: Image
@@ -79,3 +80,5 @@ project:
   category: Category
   tools: Tools
   more: More projects
+  viewer: Image viewer
+  close: Close

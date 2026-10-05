@@ -71,6 +71,7 @@ about:
 
 project:
   back: Összes projekt
+  back_home: Főoldal
   cover: Borítókép / videó
   video: Játékmenet videó
   image: Kép
@@ -79,3 +80,5 @@ project:
   category: Kategória
   tools: Eszközök
   more: További projektek
+  viewer: Képnézegető
+  close: Bezárás

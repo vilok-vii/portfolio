@@ -4,7 +4,7 @@ layout: default
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign projects = site.projects | where: "lang", page.lang | where: "featured", true | sort: "order" -%}
 {%- assign all_projects = site.projects | where: "lang", page.lang -%}
-	<main class="container page page--home">
+	<main class="container page page--home" data-back-origin="home">
 		<section class="hero" aria-labelledby="hero-title">
 			<p class="hero__hello">{{ t.home.hello }}</p>
 			<h1 id="hero-title">{{ t.home.title_before }}<span class="hero__accent">{{ t.home.title_role }}</span>{{ t.home.title_after }}</h1>

@@ -17,6 +17,7 @@ defaults:
       layout: project
       section: projects
       permalink: /en/projects/:name/
+      scripts: ["project.js"]
   - scope:
       path: "_projects/hu"
       type: projects
@@ -25,6 +26,7 @@ defaults:
       layout: project
       section: projects
       permalink: /hu/projects/:name/
+      scripts: ["project.js"]
 
 exclude:
   - README.md
