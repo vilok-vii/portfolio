@@ -1091,9 +1091,30 @@ img.ph {
 	color: var(--muted);
 }
 
+/* Bigger, wider tiles for screenshots of materials */
+.icon-grid--large {
+	--icon-tile: 220px;
+}
+
+.icon-grid--large .icon-set {
+	max-width: 100%;
+}
+
+.icon-grid--large .icon-set__steps {
+	flex-wrap: wrap;
+}
+
+.icon-grid--large .icon-set__steps a {
+	aspect-ratio: 16 / 9;
+}
+
 @media (max-width: 560px) {
 	.icon-grid {
 		--icon-tile: 88px;
+	}
+
+	.icon-grid--large {
+		--icon-tile: 140px;
 	}
 }
 

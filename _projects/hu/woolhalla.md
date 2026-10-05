@@ -80,6 +80,23 @@ icons:
         alt: "A laposra nyomott henger"
       - src: /assets/images/woolhalla/icon-menu-button.webp
         alt: "Az újrakezdés gomb a játékban"
+assets:
+  - label: "Csempézhető ablak-material: két material instance eltérő színekkel és méretekkel"
+    steps:
+      - src: /assets/images/woolhalla/asset-window-square.png
+        alt: "Négyzetes ablak: sárga háttér, piros deszkák, kék szögek, 3 × 3 egység"
+      - src: /assets/images/woolhalla/asset-window-wide.png
+        alt: "Széles ablak: krémszínű háttér, lila deszkák, zöld szögek, 6 × 3 egység"
+        no_arrow: true
+  - label: "Szöveg-material: a szöveg előtte → utána, és a material node-gráfja"
+    steps:
+      - src: /assets/images/woolhalla/asset-text-before.webp
+        alt: "Sima szöveg a material nélkül"
+      - src: /assets/images/woolhalla/asset-text-after.webp
+        alt: "Ugyanaz a szöveg az agyagszerű szöveg-materiallal"
+      - src: /assets/images/woolhalla/asset-text-graph.webp
+        alt: "A szöveg-material node-gráfja, a betűtípus signed distance fieldje alapján"
+        no_arrow: true
 palette: woolhalla
 ---
 
@@ -157,6 +174,13 @@ Mindkét minijáték alapját mások készítették, de én adtam hozzá a mater
 Néhány ikont valódi agyagból készítettem, és Photoshopban vagy Unreal Engine-ben, egy UI material segítségével színeztem ki.
 
 {% include icons.html items=page.icons %}
+
+## Egyéb assetek
+
+- **Csempézhető, színben és méretben testreszabható háttér:** én készítettem a játék legtöbb ablakának hátterét, a UI-artist által készített 9×9-es textúra felhasználásával. Az UV-t úgy számolom ki, hogy a középső négyzetek csempézve ismétlődjenek. A szélesség és a magasság egységekben állítható, ahogy a színek is. A játék különböző ablakaihoz material instance-eket használunk.
+- **Szöveg-material:** én készítettem a játékbeli szövegek materialját, hogy játékosabbak és agyagszerűbbek legyenek. A betűtípus distance field renderelést használ, ami az Unreal Engine 5.7 új funkciója!
+
+{% include icons.html items=page.assets large=true %}
 
 ## Animáció és hang
 

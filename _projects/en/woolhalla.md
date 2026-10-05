@@ -80,6 +80,23 @@ icons:
         alt: "The bar pressed flat"
       - src: /assets/images/woolhalla/icon-menu-button.webp
         alt: "Restart button in the game"
+assets:
+  - label: "Tileable window material: two material instances with different colours and sizes"
+    steps:
+      - src: /assets/images/woolhalla/asset-window-square.png
+        alt: "Square window instance: yellow background, red boards, blue nails, 3 × 3 units"
+      - src: /assets/images/woolhalla/asset-window-wide.png
+        alt: "Wide window instance: cream background, purple boards, green nails, 6 × 3 units"
+        no_arrow: true
+  - label: "Text material: the text before → after, and the material's node graph"
+    steps:
+      - src: /assets/images/woolhalla/asset-text-before.webp
+        alt: "Plain text without the material"
+      - src: /assets/images/woolhalla/asset-text-after.webp
+        alt: "The same text with the clay-like text material"
+      - src: /assets/images/woolhalla/asset-text-graph.webp
+        alt: "The text material's node graph, based on the font's signed distance field"
+        no_arrow: true
 palette: woolhalla
 ---
 
@@ -157,6 +174,13 @@ The base of both minigames was built by others, but I added the materials, their
 I made some icons from actual clay and coloured them in Photoshop, or in Unreal Engine using a UI material.
 
 {% include icons.html items=page.icons %}
+
+## Other assets
+
+- **Tileable overlay with customizable colours and size:** I made the background for most windows in the game, using the 9×9 texture the UI artist made. I calculate the UV so that the middle squares tile. The width and height are customizable in units, as are the colours. We use material instances for the different windows in the game.
+- **Text material:** I made the material for the texts in the game to make them more playful and clay-like. It uses distance field rendering in the font, which is a new Unreal Engine 5.7 feature!
+
+{% include icons.html items=page.assets large=true %}
 
 ## Animation and sound
 

@@ -2,13 +2,14 @@
 	Icons shown as their making-of steps (clay photo(s) → finished icon), in a compact grid.
 	Usage in a project file: {% include icons.html items=page.icons %}
 	where icons is a front-matter list of { label, steps: [ { src, alt } ] }.
+	Optional: large=true for bigger, wider tiles; no_arrow: true on a step to leave out the arrow before it.
 {%- endcomment -%}
-<div class="icon-grid">
+<div class="icon-grid{% if include.large %} icon-grid--large{% endif %}">
 	{%- for icon in include.items %}
 	<figure class="icon-set">
 		<div class="icon-set__steps">
 			{%- for step in icon.steps %}
-			{%- unless forloop.first %}<span class="icon-set__arrow" aria-hidden="true">&rarr;</span>{% endunless %}
+			{%- unless forloop.first or step.no_arrow %}<span class="icon-set__arrow" aria-hidden="true">&rarr;</span>{% endunless %}
 			<a href="{{ step.src | relative_url }}" data-caption="{{ step.alt | escape }}"><img src="{{ step.src | relative_url }}" alt="{{ step.alt | escape }}" loading="lazy"></a>
 			{%- endfor %}
 		</div>
