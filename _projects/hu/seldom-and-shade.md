@@ -34,6 +34,16 @@ design_docs:
     caption: "Funkcióleírás: Ellenségek"
   - src: /assets/images/seldom-and-shade/spec-multiplier-pickup.png
     caption: "Funkcióleírás: Szorzó pickup"
+  - src: /assets/images/seldom-and-shade/spec-essence-of-shade.png
+    caption: "Funkcióleírás: Shade esszenciája"
+  - src: /assets/images/seldom-and-shade/spec-spawning-shade.png
+    caption: "Funkcióleírás: Shade megidézése (robbanással)"
+  - src: /assets/images/seldom-and-shade/spec-pulling-shade.png
+    caption: "Funkcióleírás: Shade visszahúzása"
+  - src: /assets/images/seldom-and-shade/spec-score-calculation.png
+    caption: "Funkcióleírás: A pontszám kiszámítása"
+  - src: /assets/images/seldom-and-shade/spec-direction-indicators.png
+    caption: "Funkcióleírás: Irányjelzők"
 palette: seldom-and-shade
 theme_default: dark
 ---
