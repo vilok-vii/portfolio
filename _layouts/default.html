@@ -11,14 +11,19 @@
 {%- endif -%}
 {%- assign v = site.time | date: "%s" -%}
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang }}"{% if page.palette %} data-palette="{{ page.palette }}" data-theme-key="theme-{{ page.palette }}"{% endif %}{% if page.theme_default == "dark" %} data-theme="dark"{% endif %}>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
-		// Apply a saved dark-mode choice before the page draws (light is the default)
+		// Apply a saved dark-mode choice before the page draws. Light is the default,
+		// except on pages with their own palette and theme_default: dark; those
+		// remember the visitor's choice separately (data-theme-key).
 		try {
-			if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark";
+			var root = document.documentElement;
+			var saved = localStorage.getItem(root.dataset.themeKey || "theme");
+			if (saved === "dark") root.dataset.theme = "dark";
+			if (saved === "light") delete root.dataset.theme;
 		} catch (e) {}
 	</script>
 	<title>{% if page.title %}{{ page.title }} — {% endif %}{{ t.name }}</title>
