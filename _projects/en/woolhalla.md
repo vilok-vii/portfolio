@@ -11,6 +11,7 @@ skills: ["Figma", "Photoshop", "Unreal Engine"]
 featured: true
 image: /assets/images/woolhalla/cover.jpg
 video: iODmqBy-M4w
+play_url: https://buas.itch.io/woolhalla
 wireframes:
   - src: /assets/images/woolhalla/wireframe-main-menu.webp
     caption: "Main menu"
