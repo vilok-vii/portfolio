@@ -140,7 +140,7 @@ Egy több részből álló inventory-rendszert készítettem:
 
 Ez a rendszer kissé szétszórt lett; jó lett volna a projekt elején az egészet újraszervezni. Az adatot tároló UI-ok és játékbeli blueprintek is kissé szokatlanok, és rontják az átfogó architektúrát. Ennek ellenére jelentős hozzájárulás volt.
 
-<div class="ph ph--pending">Inventory videó (hamarosan)</div>
+{% include youtube.html id="tT2BzW_f00A" title="A Woolhalla inventory prototípusa" %}
 
 ## Menük
 
@@ -167,7 +167,10 @@ Mindkét minijáték alapját mások készítették, de én adtam hozzá a mater
 - **Varrás:** én adtam hozzá a forgó tűt, a cérnát (UI-ban ez nagyon trükkös: egy téglalap egy canvason) és a célpontok változó színeit, valamint az összhatást, például a háttér elsötétítését és az összes animációt.
 - **Favágás:** a materialokat és animációikat adtam hozzá, a fent említett apróbb fejlesztésekkel együtt.
 
-<div class="ph ph--pending">Minijáték-videók (hamarosan)</div>
+<div class="video-pair">
+{% include youtube.html id="7VaWAh4If4U" title="A Woolhalla varrós minijátéka" caption="Varrás" %}
+{% include youtube.html id="0vEnKHWswAE" title="A Woolhalla favágós minijátéka" caption="Favágás" %}
+</div>
 
 ## Ikonok
 
@@ -186,4 +189,4 @@ Néhány ikont valódi agyagból készítettem, és Photoshopban vagy Unreal Eng
 
 Az egész játék UI-jához animációt és hangeffekteket adtam. Itt néhányat meg is nézhetsz és hallgathatsz. A játék többi hangját, például a zenét és az ambientet, más csapattagok építették be.
 
-<div class="ph ph--pending">Animáció- és hangpéldák (hamarosan)</div>
+{% include youtube.html id="RwTv7cHLxk4" title="A Woolhalla UI bemutatója animációval és hanggal" %}

@@ -140,7 +140,7 @@ I made an inventory system that consists of multiple parts:
 
 This system is a bit all over the place; it would have been nice to restructure the whole thing early in the project. UIs and in-game blueprints holding data are both a bit unconventional and hurt the overall architecture. It was a substantial contribution, however.
 
-<div class="ph ph--pending">Inventory video (coming)</div>
+{% include youtube.html id="tT2BzW_f00A" title="Woolhalla inventory prototype" %}
 
 ## Menus
 
@@ -167,7 +167,10 @@ The base of both minigames was built by others, but I added the materials, their
 - **Sewing:** I added the rotating needle, the string (super tricky to do in UI: it's a rectangle on a canvas) and the changing colours of the target points, as well as the overall look, like the darkening of the background and all animations.
 - **Woodchopping:** I added the materials and their animations, along with the same small improvements mentioned above.
 
-<div class="ph ph--pending">Minigame videos (coming)</div>
+<div class="video-pair">
+{% include youtube.html id="7VaWAh4If4U" title="Woolhalla sewing minigame" caption="Sewing" %}
+{% include youtube.html id="0vEnKHWswAE" title="Woolhalla woodchopping minigame" caption="Woodchopping" %}
+</div>
 
 ## Icons
 
@@ -186,4 +189,4 @@ I made some icons from actual clay and coloured them in Photoshop, or in Unreal 
 
 I added animation and sound effects to the whole UI in the game. Here you can see and listen to some of them. The other game sounds, like the music and the ambience, were implemented by other team members.
 
-<div class="ph ph--pending">Animation and sound examples (coming)</div>
+{% include youtube.html id="RwTv7cHLxk4" title="Woolhalla UI showcase with animation and sound" %}

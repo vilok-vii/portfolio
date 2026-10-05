@@ -930,6 +930,35 @@ img.ph {
 	border: 0;
 }
 
+/* Videos in the page text */
+.video-figure {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 16px 0;
+}
+
+.video-figure figcaption {
+	font-size: 14px;
+	color: var(--muted);
+}
+
+.video-pair {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+}
+
+.video-pair .video-figure {
+	margin: 0;
+}
+
+@media (max-width: 560px) {
+	.video-pair {
+		grid-template-columns: 1fr;
+	}
+}
+
 /* Image viewer: gallery images open over the page */
 .gallery a {
 	cursor: zoom-in;
