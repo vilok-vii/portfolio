@@ -26,12 +26,12 @@ categories:
 home:
   hello: "Hi, I'm Vilmos Horváth"
   # The headline is split in three so the middle part can be highlighted
-  title_before: "I'm a "
-  title_role: game & UI/UX designer
-  title_after: " who builds playful, easy-to-use experiences."
-  lead: "Placeholder: one or two sentences on what you do and for whom, e.g. I design gameplay systems, interfaces and player journeys, from the first sketch to a playable prototype."
+  title_before: "Headline placeholder: "
+  title_role: your role
+  title_after: " and what you do."
+  lead: "Placeholder: one or two sentences on what you do and for whom."
   work_title: Selected work
-  work_intro: "A few projects I am proud of, with what I did on each."
+  work_intro: "Placeholder: a short line about the selection below."
   image: Project image
   view_project: View project
   more_title: Want to see more?

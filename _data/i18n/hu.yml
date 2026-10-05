@@ -26,12 +26,12 @@ categories:
 home:
   hello: "Szia, Horváth Vilmos vagyok"
   # A címsor három részből áll, hogy a középső kiemelhető legyen
-  title_before: ""
-  title_role: Játék- és UI/UX-tervező
-  title_after: " vagyok, aki játékos és könnyen használható élményeket készít."
-  lead: "Helyőrző: egy-két mondat arról, mit csinálsz és kinek, pl. játékmenet-rendszereket, felületeket és játékosélményeket tervezek, az első vázlattól a játszható prototípusig."
+  title_before: "Címsor helyőrző: "
+  title_role: a szereped
+  title_after: " és hogy mivel foglalkozol."
+  lead: "Helyőrző: egy-két mondat arról, mit csinálsz és kinek."
   work_title: Válogatott munkák
-  work_intro: "Néhány projekt, amire büszke vagyok, és hogy mi volt bennük a szerepem."
+  work_intro: "Bevezető helyőrző: egy rövid mondat az alábbi válogatásról."
   image: Projekt kép
   view_project: Projekt megtekintése
   more_title: Kíváncsi vagy a többire?
