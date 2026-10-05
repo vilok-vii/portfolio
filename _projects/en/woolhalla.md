@@ -18,6 +18,12 @@ wireframes:
     caption: "Options opened from the main menu"
   - src: /assets/images/woolhalla/wireframe-hud.webp
     caption: "HUD"
+  - src: /assets/images/woolhalla/wireframe-shed.webp
+    caption: "Shed inventory"
+  - src: /assets/images/woolhalla/wireframe-merchant.webp
+    caption: "Merchant"
+  - src: /assets/images/woolhalla/wireframe-sheep-sacrifice.png
+    caption: "Sheep sacrifice"
 palette: woolhalla
 ---
 

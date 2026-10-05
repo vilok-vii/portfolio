@@ -18,6 +18,12 @@ wireframes:
     caption: "A főmenüből megnyitott beállítások"
   - src: /assets/images/woolhalla/wireframe-hud.webp
     caption: "HUD"
+  - src: /assets/images/woolhalla/wireframe-shed.webp
+    caption: "Fészer-inventory"
+  - src: /assets/images/woolhalla/wireframe-merchant.webp
+    caption: "Kereskedő"
+  - src: /assets/images/woolhalla/wireframe-sheep-sacrifice.png
+    caption: "Birkaáldozat"
 palette: woolhalla
 ---
 
