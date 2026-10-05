@@ -45,6 +45,41 @@ screens:
     caption: "Kereskedőképernyő"
   - src: /assets/images/woolhalla/screen-sheep-sacrifice.webp
     caption: "Birkaáldozat"
+icons:
+  - label: "Homokóra (hátralévő idő)"
+    steps:
+      - src: /assets/images/woolhalla/icon-hourglass-clay.webp
+        alt: "Agyagból formázott homokóra"
+      - src: /assets/images/woolhalla/icon-hourglass.webp
+        alt: "A kiszínezett homokóra ikon a játékban"
+  - label: "Hajó (hajósérülések)"
+    steps:
+      - src: /assets/images/woolhalla/icon-ship-clay.webp
+        alt: "Agyagból formázott hajó"
+      - src: /assets/images/woolhalla/icon-ship.webp
+        alt: "A kiszínezett hajó ikon a játékban"
+  - label: "Inventory slot"
+    steps:
+      - src: /assets/images/woolhalla/icon-slot-clay.webp
+        alt: "Agyagból formázott inventory slot"
+      - src: /assets/images/woolhalla/icon-slot.webp
+        alt: "A kiszínezett inventory slot a játékban"
+  - label: "Bezárás gomb"
+    steps:
+      - src: /assets/images/woolhalla/icon-close-clay-1.webp
+        alt: "Agyaggolyó"
+      - src: /assets/images/woolhalla/icon-close-clay-2.webp
+        alt: "A laposra nyomott golyó"
+      - src: /assets/images/woolhalla/icon-close.webp
+        alt: "A piros bezárás gomb a játékban"
+  - label: "Menügomb"
+    steps:
+      - src: /assets/images/woolhalla/icon-menu-button-clay-1.webp
+        alt: "Agyaghenger"
+      - src: /assets/images/woolhalla/icon-menu-button-clay-2.webp
+        alt: "A laposra nyomott henger"
+      - src: /assets/images/woolhalla/icon-menu-button.webp
+        alt: "Az újrakezdés gomb a játékban"
 palette: woolhalla
 ---
 
@@ -121,7 +156,7 @@ Mindkét minijáték alapját mások készítették, de én adtam hozzá a mater
 
 Néhány ikont valódi agyagból készítettem, és Photoshopban vagy Unreal Engine-ben, egy UI material segítségével színeztem ki.
 
-<div class="ph ph--pending">Ikonképek (hamarosan)</div>
+{% include icons.html items=page.icons %}
 
 ## Animáció és hang
 
