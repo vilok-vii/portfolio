@@ -50,7 +50,13 @@ document.querySelectorAll(".album").forEach((album) => {
 		thumbs.forEach((t, i) => t.setAttribute("aria-current", String(i === current)));
 		prev.disabled = current === 0;
 		next.disabled = current === items.length - 1;
-		thumbs[current].scrollIntoView({ block: "nearest", inline: "nearest" });
+		// Keep the current thumbnail visible by scrolling only the thumbnail row
+		// (scrollIntoView would also scroll the page to the album)
+		const strip = thumbs[current].parentElement;
+		const t = thumbs[current].getBoundingClientRect();
+		const s = strip.getBoundingClientRect();
+		if (t.left < s.left) strip.scrollLeft -= s.left - t.left;
+		else if (t.right > s.right) strip.scrollLeft += t.right - s.right;
 	};
 
 	prev.addEventListener("click", () => go(current - 1));
