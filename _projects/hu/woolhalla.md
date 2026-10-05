@@ -33,6 +33,18 @@ hud:
     caption: "3. Agyag stílusú elemek és új elrendezés, az inventory alulra került"
   - src: /assets/images/woolhalla/hud-4.webp
     caption: "4. A végleges HUD a játékban"
+menus:
+  - src: /assets/images/woolhalla/menu-main.webp
+    caption: "Főmenü"
+  - src: /assets/images/woolhalla/menu-pause.webp
+    caption: "Szünetmenü"
+screens:
+  - src: /assets/images/woolhalla/screen-shed.webp
+    caption: "Fészer-inventory"
+  - src: /assets/images/woolhalla/screen-merchant.webp
+    caption: "Kereskedőképernyő"
+  - src: /assets/images/woolhalla/screen-sheep-sacrifice.webp
+    caption: "Birkaáldozat"
 palette: woolhalla
 ---
 
@@ -82,7 +94,7 @@ Ez a rendszer kissé szétszórt lett; jó lett volna a projekt elején az egés
 
 Én készítettem a főmenüt és a szünetmenüt, mindkettő működésével együtt, kivéve az egérérzékenységet. Nincs róluk sok mondanivaló, elég egyszerű menük. A szokásos iterációs folyamaton mentek keresztül, főleg vizuálisan. A vizuális részről lentebb írok bővebben.
 
-<div class="ph ph--pending">Menüképek (hamarosan)</div>
+{% include album.html items=page.menus ratio="16 / 9" %}
 
 ## Játékképernyők
 
@@ -94,7 +106,7 @@ A legtöbb UI-képernyőért én feleltem a motorban.
 
 A többi képernyőt, például a megerősítő felugró ablakokat, mások készítették, később pedig én egységesítettem a stílusukat.
 
-<div class="ph ph--pending">Játékképernyők képei (hamarosan)</div>
+{% include album.html items=page.screens ratio="16 / 9" %}
 
 ## Minijátékok
 

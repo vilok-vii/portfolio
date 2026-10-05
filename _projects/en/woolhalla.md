@@ -33,6 +33,18 @@ hud:
     caption: "3. Clay-styled elements and a new layout, with the inventory moved to the bottom"
   - src: /assets/images/woolhalla/hud-4.webp
     caption: "4. The final HUD in the game"
+menus:
+  - src: /assets/images/woolhalla/menu-main.webp
+    caption: "Main menu"
+  - src: /assets/images/woolhalla/menu-pause.webp
+    caption: "Pause menu"
+screens:
+  - src: /assets/images/woolhalla/screen-shed.webp
+    caption: "Shed inventory"
+  - src: /assets/images/woolhalla/screen-merchant.webp
+    caption: "Merchant screen"
+  - src: /assets/images/woolhalla/screen-sheep-sacrifice.webp
+    caption: "Sheep sacrifice"
 palette: woolhalla
 ---
 
@@ -82,7 +94,7 @@ This system is a bit all over the place; it would have been nice to restructure 
 
 I created the main menu and the pause menu, including the functionality of both, except for the mouse sensitivity. There's not much to say about them; they are fairly straightforward menus. They went through the usual iteration process, mostly visual. I talk more about the visuals further down.
 
-<div class="ph ph--pending">Menu images (coming)</div>
+{% include album.html items=page.menus ratio="16 / 9" %}
 
 ## Game screens
 
@@ -94,7 +106,7 @@ I was responsible for most UI screens in the engine.
 
 Other screens, such as confirmation pop-ups, were made by other people and later unified in style by me.
 
-<div class="ph ph--pending">Game screen images (coming)</div>
+{% include album.html items=page.screens ratio="16 / 9" %}
 
 ## Minigames
 
