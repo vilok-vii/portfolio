@@ -76,6 +76,46 @@
 	--tint-teal: color-mix(in srgb, var(--teal) 30%, var(--ink));
 }
 
+/* Woolhalla project page: the game's palette (light by default) */
+:root[data-palette="woolhalla"] {
+	--red: #862c2c;
+	--orange: #a78e56;
+	--cream: #fefcf6;
+	--teal: #862c2c;
+	--ink: #361b0b;
+
+	--bg: var(--orange);
+	--surface: color-mix(in srgb, var(--cream) 30%, var(--orange));
+	--text: var(--ink);
+	/* Close to the text colour: lighter browns are too faint on the tan background */
+	--muted: color-mix(in srgb, var(--ink) 92%, var(--orange));
+	--line: color-mix(in srgb, var(--ink) 30%, var(--orange));
+	--accent: var(--red);
+	--accent-text: var(--cream);
+	--tint-red: color-mix(in srgb, var(--red) 35%, var(--cream));
+	--tint-orange: color-mix(in srgb, var(--orange) 55%, var(--cream));
+	--tint-teal: color-mix(in srgb, var(--cream) 55%, var(--orange));
+}
+
+:root[data-palette="woolhalla"][data-theme="dark"] {
+	--bg: var(--ink);
+	--surface: color-mix(in srgb, var(--cream) 6%, var(--ink));
+	--text: var(--cream);
+	--muted: color-mix(in srgb, var(--cream) 70%, var(--ink));
+	--line: color-mix(in srgb, var(--cream) 16%, var(--ink));
+	/* The red is too dark on the dark background, so dark mode uses a lighter shade */
+	--accent: color-mix(in srgb, var(--red) 55%, var(--cream));
+	--accent-text: var(--ink);
+	--tint-red: color-mix(in srgb, var(--red) 45%, var(--ink));
+	--tint-orange: color-mix(in srgb, var(--orange) 35%, var(--ink));
+	--tint-teal: color-mix(in srgb, var(--orange) 25%, var(--ink));
+}
+
+/* The red accent is too faint on the tan background for focus outlines */
+:root[data-palette="woolhalla"]:not([data-theme="dark"]) :focus-visible {
+	outline-color: var(--ink);
+}
+
 /* ==========================================================================
 	Base
 	========================================================================== */
@@ -191,6 +231,15 @@ h3 {
 	border-radius: var(--radius);
 	aspect-ratio: 16 / 10;
 	max-width: 100%;
+}
+
+/* Short placeholder for images or videos that are still to come */
+.ph--pending {
+	aspect-ratio: auto;
+	min-height: 72px;
+	padding: 16px;
+	border: 1px dashed var(--line);
+	background: var(--surface);
 }
 
 /* A real image in a placeholder's spot fills it without stretching */
@@ -858,6 +907,12 @@ img.ph {
 	width: 100%;
 	height: auto;
 	border-radius: var(--radius);
+}
+
+@media (max-width: 560px) {
+	.gallery {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* Cover video on a project page */
