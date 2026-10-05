@@ -2,7 +2,7 @@
 title: Seldom & Shade
 order: 1
 summary: "A Seldom & Shade egy arcade twin-stick akciójáték, amelyben egyszerre irányítod Seldomot, a szellemet, és kutyáját, Shade-et, mindkettőt egy-egy joystickkal. Egy lidérces mezőn haladsz, kikerülöd és elpusztítod az ellenségeket úgy, hogy a két karakter közötti, földöntúlian erős kötelékbe (a „pórázba”) csalogatod őket. De vigyázz! Néhány ellenfeled képes elvágni ezt a köteléket!"
-category: tech-design
+category: game-design
 year: 2025
 role: Egyéni fejlesztő
 tools: ["Unreal Engine", "Miro"]
