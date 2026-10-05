@@ -11,6 +11,15 @@ skills: ["Tervezési dokumentáció", "Tervezés és tesztelés", "Technikai ter
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
 video: 7bEQdVEKjgE
+screenshots:
+  - src: /assets/images/seldom-and-shade/screenshot-1.webp
+    caption: "Seldom és Shade, akiket egy világító kék póráz köt össze, a közelben egy ellenséggel"
+  - src: /assets/images/seldom-and-shade/screenshot-2.webp
+    caption: "Seldom piros ellenségek gyűrűjében, a képernyő szélén nyilak mutatják a képen kívüli ellenségeket"
+  - src: /assets/images/seldom-and-shade/screenshot-3.webp
+    caption: "A Seldom és Shade között kifeszített póráz egy 13-szoros kombó közben"
+  - src: /assets/images/seldom-and-shade/screenshot-4.webp
+    caption: "Záróképernyő a pontszám részleteivel és a ranglistával"
 design_docs:
   - src: /assets/images/seldom-and-shade/high-concept.png
     caption: Design high concept (alapkoncepció)
@@ -59,12 +68,7 @@ Ezt a játékot a második év A blokkjára készítettem a Breda University of 
 
 Meglepő módon a szokatlan irányítás egyáltalán nem lett olyan zavaró, mint amire számítottam, és a játék pontosan olyan lett, amilyennek egy arcade játéknak lennie kell: az emberek lelkesen játszottak, újra és újra visszaültek, hogy új rekordot döntsenek, és közben jól szórakoztak.
 
-<div class="gallery gallery--grid">
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-1.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-1.webp' | relative_url }}" alt="Seldom és Shade, akiket egy világító kék póráz köt össze, a közelben egy ellenséggel" loading="lazy"></a>
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-2.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-2.webp' | relative_url }}" alt="Seldom piros ellenségek gyűrűjében, a képernyő szélén nyilak mutatják a képen kívüli ellenségeket" loading="lazy"></a>
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-3.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-3.webp' | relative_url }}" alt="A Seldom és Shade között kifeszített póráz egy 13-szoros kombó közben" loading="lazy"></a>
-	<a href="{{ '/assets/images/seldom-and-shade/screenshot-4.webp' | relative_url }}"><img src="{{ '/assets/images/seldom-and-shade/screenshot-4.webp' | relative_url }}" alt="Záróképernyő a pontszám részleteivel és a ranglistával" loading="lazy"></a>
-</div>
+{% include album.html items=page.screenshots ratio="16 / 9" %}
 
 ## Tervezési dokumentáció
 
