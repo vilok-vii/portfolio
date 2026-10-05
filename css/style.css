@@ -455,30 +455,6 @@ h3 {
 	color: var(--muted);
 }
 
-.hero__focus {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.hero__focus li {
-	padding: 4px 14px;
-	border: 1px solid var(--line);
-	border-radius: 999px;
-	background: var(--surface);
-	font-size: 14px;
-}
-
-.hero__actions {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 12px;
-	margin-top: 8px;
-}
-
 /* Selected work (the curated portfolio) */
 .work {
 	scroll-margin-top: var(--header-h);
@@ -517,12 +493,6 @@ h3 {
 
 .more .btn {
 	margin-top: 8px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
-	}
 }
 
 /* ==========================================================================

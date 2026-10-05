@@ -9,15 +9,6 @@ layout: default
 			<p class="hero__hello">{{ t.home.hello }}</p>
 			<h1 id="hero-title">{{ t.home.title_before }}<span class="hero__accent">{{ t.home.title_role }}</span>{{ t.home.title_after }}</h1>
 			<p class="hero__lead">{{ t.home.lead }}</p>
-			<ul class="hero__focus" aria-label="{{ t.home.focus_label }}">
-				{%- for item in t.home.focus %}
-				<li>{{ item }}</li>
-				{%- endfor %}
-			</ul>
-			<div class="hero__actions">
-				<a class="btn btn--solid" href="#work">{{ t.home.cta_work }} &darr;</a>
-				<a class="btn" href="{{ '/' | append: page.lang | append: '/about/' | relative_url }}">{{ t.home.cta_about }}</a>
-			</div>
 		</section>
 
 		<section class="work" id="work" aria-labelledby="work-title">
