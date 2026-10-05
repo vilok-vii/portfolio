@@ -420,36 +420,113 @@ h3 {
 	color: var(--muted);
 }
 
-.entries {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-	gap: 24px;
-}
-
-.entry {
+/* Intro at the top of the home page: who I am and what I do */
+.hero {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
-	padding: 20px;
+	align-items: flex-start;
+	gap: 18px;
+	min-height: min(calc(85vh - var(--header-h)), 760px);
+	justify-content: center;
+	padding-block: clamp(24px, 6vw, 64px);
+}
+
+.hero__hello {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--accent);
+}
+
+.hero h1 {
+	max-width: 20ch;
+	font-size: clamp(36px, 6vw, 64px);
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+}
+
+.hero__accent {
+	background: linear-gradient(transparent 62%, var(--tint-orange) 62%);
+	padding-inline: 0.06em;
+}
+
+.hero__lead {
+	max-width: 56ch;
+	font-size: clamp(17px, 2vw, 20px);
+	color: var(--muted);
+}
+
+.hero__focus {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hero__focus li {
+	padding: 4px 14px;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: var(--surface);
+	font-size: 14px;
+}
+
+.hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 8px;
+}
+
+/* Selected work (the curated portfolio) */
+.work {
+	scroll-margin-top: var(--header-h);
+	padding-top: 24px;
+}
+
+.work__head {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 24px;
+	max-width: 60ch;
+}
+
+.work__head h2 {
+	font-size: clamp(28px, 4vw, 40px);
+}
+
+/* Link to all projects at the bottom of the home page */
+.more {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	margin-top: 24px;
+	padding: clamp(32px, 6vw, 56px) 24px;
 	background: var(--surface);
 	border: 1px solid var(--line);
 	border-radius: var(--radius);
 	text-align: center;
-	text-decoration: none;
-	transition: border-color 0.2s;
 }
 
-.entry h2 {
-	font-size: 22px;
+.more h2 {
+	font-size: clamp(24px, 3vw, 32px);
 }
 
-.entry__more {
-	font-weight: 600;
-	margin-top: auto;
+.more .btn {
+	margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 /* ==========================================================================
-	Portfolio (curated, scrollable)
+	Portfolio showcase (home page)
 	========================================================================== */
 .showcase {
 	display: flex;
@@ -481,7 +558,7 @@ h3 {
 	min-width: 0;
 }
 
-.showcase__body h2 {
+.showcase__body h3 {
 	font-size: clamp(24px, 3vw, 32px);
 }
 
@@ -752,7 +829,6 @@ h3 {
 /* ==========================================================================
 	Palette accents on placeholders: cycle through the three tints
 	========================================================================== */
-.entry:nth-child(2) .ph,
 .card:nth-child(3n + 2) .ph,
 .showcase__item:nth-child(3n + 2) .ph,
 .gallery .ph:nth-child(2) {
@@ -766,7 +842,6 @@ h3 {
 	background: var(--tint-red);
 }
 
-.chip:hover,
-.entry:hover {
+.chip:hover {
 	border-color: var(--accent);
 }
