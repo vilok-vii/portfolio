@@ -19,6 +19,7 @@ nav:
 footer: "© 2026 Vilmos Horváth"
 
 categories:
+  tech-design: Technical Game Design
   game-design: Game Design
   ui-ux: UI/UX
   creative: Creative
@@ -71,6 +72,7 @@ about:
 project:
   back: All projects
   cover: Cover image / video
+  video: Gameplay video
   image: Image
   role: Role
   year: Year

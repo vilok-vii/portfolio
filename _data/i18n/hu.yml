@@ -19,6 +19,7 @@ nav:
 footer: "© 2026 Horváth Vilmos"
 
 categories:
+  tech-design: Technikai játéktervezés
   game-design: Játéktervezés
   ui-ux: UI/UX
   creative: Kreatív
@@ -71,6 +72,7 @@ about:
 project:
   back: Összes projekt
   cover: Borítókép / videó
+  video: Játékmenet videó
   image: Kép
   role: Szerep
   year: Év
