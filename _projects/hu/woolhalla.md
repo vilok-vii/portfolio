@@ -10,6 +10,7 @@ responsibilities: ["UI vizuális identitás", "UI implementáció", "Core loop"]
 skills: ["Figma", "Photoshop", "Unreal Engine"]
 featured: true
 image: /assets/images/woolhalla/cover.jpg
+thumbnail: /assets/images/woolhalla/card.png
 video: iODmqBy-M4w
 play_url: https://buas.itch.io/woolhalla
 wireframes:

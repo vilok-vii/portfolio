@@ -21,7 +21,7 @@ layout: default
 {%- for p in projects %}
 				<article class="showcase__item">
 					<a class="showcase__media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
-						{% if p.image %}<img class="ph" src="{{ p.image | relative_url }}" alt="">{% else %}<div class="ph">{{ t.home.image }}</div>{% endif %}
+						{% assign thumb = p.thumbnail | default: p.image %}{% if thumb %}<img class="ph" src="{{ thumb | relative_url }}" alt="">{% else %}<div class="ph">{{ t.home.image }}</div>{% endif %}
 					</a>
 					<div class="showcase__body">
 						<span class="label">{{ t.categories[p.category] }} · {{ p.role }} · {{ p.year }}</span>
