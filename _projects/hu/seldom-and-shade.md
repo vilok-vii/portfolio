@@ -10,6 +10,7 @@ responsibilities: ["Moment-to-moment játékmenet", "3C (karakter, kamera, irán
 skills: ["Tervezési dokumentáció", "Tervezés és tesztelés", "Technikai tervezés", "Unreal Engine"]
 featured: true
 image: /assets/images/seldom-and-shade/screenshot-3.webp
+thumbnail: /assets/images/seldom-and-shade/card.webp
 video: 7bEQdVEKjgE
 screenshots:
   - src: /assets/images/seldom-and-shade/screenshot-1.webp
