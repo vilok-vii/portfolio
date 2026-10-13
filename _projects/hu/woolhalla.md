@@ -99,7 +99,6 @@ assets:
       - src: /assets/images/woolhalla/asset-text-graph.webp
         alt: "A szöveg-material node-gráfja, a betűtípus signed distance fieldje alapján"
         no_arrow: true
-palette: woolhalla
 ---
 
 ## Áttekintés

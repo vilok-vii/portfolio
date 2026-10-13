@@ -74,8 +74,6 @@ progress:
     caption: "6. A refined HUD and level layout"
   - src: /assets/images/seldom-and-shade/progress-7.jpg
     caption: "7. Multiplier pickups and arrows at the screen edge for off-screen enemies"
-palette: seldom-and-shade
-theme_default: dark
 ---
 
 ## Overview

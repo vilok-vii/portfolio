@@ -99,7 +99,6 @@ assets:
       - src: /assets/images/woolhalla/asset-text-graph.webp
         alt: "The text material's node graph, based on the font's signed distance field"
         no_arrow: true
-palette: woolhalla
 ---
 
 ## Overview
