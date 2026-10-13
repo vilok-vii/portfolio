@@ -74,8 +74,6 @@ progress:
     caption: "6. Finomított HUD és pályaelrendezés"
   - src: /assets/images/seldom-and-shade/progress-7.jpg
     caption: "7. Szorzó pickupok és nyilak a képernyő szélén a képen kívüli ellenségekhez"
-palette: seldom-and-shade
-theme_default: dark
 ---
 
 ## Áttekintés
