@@ -45,6 +45,16 @@ At the top of `css/style.css`:
 - Navigation, buttons, headings and other interface text: edit `_data/text.yml`.
 - A project's text: edit its file in `_projects/`.
 
+## Tooltips
+
+Hovering (or tabbing to) a word can show a small custom window. The name in the home intro uses it; its text is `name_tip` in `_data/text.yml`. To add one elsewhere:
+
+```
+<span class="tip" tabindex="0" aria-describedby="my-tip">word<span class="tip__box" role="tooltip" id="my-tip">Tooltip text</span></span>
+```
+
+Give each tooltip its own `id`. Escape closes an open tooltip.
+
 ## Adding a project
 
 1. Copy a file in `_projects/` and give it a new name, e.g. `my-game.md`. The file name becomes the URL: `/projects/my-game/`.

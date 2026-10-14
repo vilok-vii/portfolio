@@ -12,6 +12,17 @@
 	}
 })();
 
+// Tooltips (.tip): Escape hides an open one until the pointer or focus leaves it
+document.querySelectorAll(".tip").forEach((tip) => {
+	const show = () => tip.classList.remove("tip--dismissed");
+	tip.addEventListener("mouseleave", show);
+	tip.addEventListener("blur", show);
+});
+document.addEventListener("keydown", (e) => {
+	if (e.key !== "Escape") return;
+	document.querySelectorAll(".tip:hover, .tip:focus").forEach((tip) => tip.classList.add("tip--dismissed"));
+});
+
 // Dark mode toggle. Light is the default; the choice is remembered.
 // (A small script in the page head applies a saved choice before the page draws.)
 (function () {
