@@ -10,6 +10,7 @@
 
 	const WIDTH = 4;
 	const MOVE_THRESHOLD = 4; // px before a right-press counts as drawing
+	const MENU_GRACE = 700; // ms after a line during which the menu stays blocked
 
 	const root = document.documentElement;
 	const canvas = document.createElement("canvas");
@@ -23,6 +24,7 @@
 	let stroke = null; // the stroke being drawn
 	let start = null; // where the right button went down
 	let moved = false; // whether the current right-press has drawn anything
+	let lastLineEnd = -Infinity; // when the last line was finished
 	let colorIndex = 0;
 	let frame = 0;
 
@@ -76,6 +78,12 @@
 			return;
 		}
 		e.preventDefault();
+		// Keep receiving the release even if it happens outside the window
+		try {
+			root.setPointerCapture(e.pointerId);
+		} catch (err) {
+			// Not supported: the release is still caught inside the window
+		}
 		start = { x: e.clientX, y: e.clientY };
 		moved = false;
 		stroke = null;
@@ -96,19 +104,23 @@
 	});
 
 	function stop() {
+		if (stroke) lastLineEnd = performance.now();
 		start = null;
 		stroke = null;
 		root.classList.remove("is-doodling");
 	}
 	document.addEventListener("pointerup", stop);
+	document.addEventListener("pointercancel", stop);
 	window.addEventListener("blur", stop);
 
 	// Keep the menu out of the way while drawing. On Windows it opens when the
 	// button is released, so a click without dragging still gets it; elsewhere
-	// it opens on press, so it is held back unless Shift is down.
+	// it opens on press, so it is held back unless Shift is down. Shortly after
+	// a line it is always held back, since some mice send an extra click
+	// (a "bounce") as the button is let go.
 	document.addEventListener("contextmenu", (e) => {
 		if (e.shiftKey) return;
-		if (start || moved) e.preventDefault();
+		if (start || moved || performance.now() - lastLineEnd < MENU_GRACE) e.preventDefault();
 	});
 
 	window.addEventListener("scroll", redraw, { passive: true });
