@@ -538,7 +538,7 @@ img.ph {
 }
 
 .showcase__media .ph {
-	border: 8px solid #fff;
+	border: 16px solid #fff;
 	border-radius: 0;
 	box-shadow: 0 14px 22px -6px rgba(0, 0, 0, 0.35);
 }
