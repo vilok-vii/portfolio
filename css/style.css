@@ -530,11 +530,26 @@ img.ph {
 	display: block;
 	text-decoration: none;
 	/* Tilted like a photo: left-side images lean left, right-side ones lean right */
-	transform: rotate(-4deg);
+	--tilt: -4deg;
+	transform: rotate(var(--tilt));
+	transition: transform 0.2s ease;
 }
 
 .showcase__item:nth-child(even) .showcase__media {
-	transform: rotate(4deg);
+	--tilt: 4deg;
+}
+
+/* Enlarge slightly on hover */
+@media (hover: hover) {
+	.showcase__media:hover {
+		transform: rotate(var(--tilt)) scale(1.05);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.showcase__media {
+		transition: none;
+	}
 }
 
 .showcase__media .ph {
