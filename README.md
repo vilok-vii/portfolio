@@ -38,6 +38,7 @@ js/doodle.js          Drawing with the right mouse button
 At the top of `css/style.css`:
 
 - `--red`, `--orange`, `--cream`, `--teal`, `--ink`: the palette. All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site.
+- `--header-bg`, `--header-text`: colour of the header bar and its text (teal with dark text; a deeper teal in dark mode).
 - `--grain-opacity`: strength of the film-grain texture (`assets/images/noise.png`) laid over the page. `0` turns it off.
 - Dark-mode colours are in the `:root[data-theme="dark"]` block just below. The site starts in light mode; visitors switch with the moon/sun button in the header, and their choice is remembered.
 
@@ -58,7 +59,7 @@ Give each tooltip its own `id`. A line break in the text (`\n` in `_data/text.ym
 
 ## Doodling
 
-With a mouse, visitors can hold the right button and drag anywhere to draw (`js/doodle.js`). Drawings scroll with the page and stay until it is reloaded or left. A right-click without dragging still opens the browser menu where the browser allows it (Windows); Shift + right-click always does. Touch screens are left out. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
+With a mouse, visitors can hold the right button and drag anywhere to draw (`js/doodle.js`). Drawings scroll with the page and pass under the header. They stay until the page is reloaded or left, or until the eraser button that appears in the bottom left corner clears them. A right-click without dragging still opens the browser menu where the browser allows it (Windows); Shift + right-click always does. Touch screens are left out. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
 
 ## Adding a project
 

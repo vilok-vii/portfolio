@@ -24,6 +24,10 @@
 	--tint-teal: color-mix(in srgb, var(--teal) 40%, var(--cream));
 	--placeholder: var(--tint-orange);
 
+	/* Header bar */
+	--header-bg: var(--teal);
+	--header-text: var(--ink);
+
 	/* Film grain over the whole page (0 = off) */
 	--grain-opacity: 0.1;
 
@@ -45,6 +49,8 @@
 	--tint-red: color-mix(in srgb, var(--red) 45%, #1f1612);
 	--tint-orange: color-mix(in srgb, var(--orange) 40%, #1f1612);
 	--tint-teal: color-mix(in srgb, var(--teal) 38%, #1f1612);
+	--header-bg: color-mix(in srgb, var(--teal) 38%, #1f1612);
+	--header-text: var(--cream);
 	--grain-opacity: 0.08;
 	color-scheme: dark;
 }
@@ -185,12 +191,20 @@ img.ph {
 /* ==========================================================================
 	Navigation
 	========================================================================== */
+/* Coloured bar; it also sits above drawings (.doodle), which pass under it */
 .site-header {
+	/* Colours inside the header, derived from the header bar colours */
+	--text: var(--header-text);
+	--muted: color-mix(in srgb, var(--header-text) 78%, var(--header-bg));
+	--line: color-mix(in srgb, var(--header-text) 28%, var(--header-bg));
+	--accent: var(--header-text);
 	position: sticky;
 	top: 0;
-	z-index: 10;
-	background: var(--bg);
+	z-index: 50;
+	background: var(--header-bg);
+	color: var(--text);
 	border-bottom: 1px solid var(--line);
+	box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.25);
 }
 
 .site-header__inner {
@@ -312,7 +326,7 @@ img.ph {
 		z-index: 30;
 		width: min(80vw, 320px);
 		padding: 16px 24px;
-		background: var(--surface);
+		background: var(--header-bg);
 		box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
 		transform: translateX(100%);
 		visibility: hidden;
@@ -1391,4 +1405,53 @@ html.is-doodling * {
 
 html.is-doodling * {
 	user-select: none;
+}
+
+/* Eraser: clears all drawings; shows up once something is drawn */
+.doodle-eraser {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	z-index: 45;
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 1px solid var(--line);
+	border-radius: 50%;
+	background: var(--surface);
+	color: var(--text);
+	box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.doodle-eraser.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: none;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+	.doodle-eraser:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+}
+
+.doodle-eraser:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.doodle-eraser,
+	.doodle-eraser.is-visible {
+		transition: none;
+	}
 }

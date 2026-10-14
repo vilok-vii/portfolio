@@ -1,5 +1,6 @@
 // Doodling: hold the right mouse button and drag anywhere on the page to draw.
-// Drawings stay (and scroll with the page) until it is reloaded or left.
+// Drawings stay (and scroll with the page) until it is reloaded or left,
+// or until the eraser button in the bottom left corner clears them.
 // The browser's right-click menu: a right-click without dragging still opens
 // it where the browser allows (Windows); Shift + right-click always does.
 // To remove the feature: delete this file, its script tag in
@@ -18,6 +19,15 @@
 	canvas.setAttribute("aria-hidden", "true");
 	document.body.appendChild(canvas);
 	const ctx = canvas.getContext("2d");
+
+	// Eraser button in the bottom left corner; shows up once something is drawn
+	const eraser = document.createElement("button");
+	eraser.type = "button";
+	eraser.className = "doodle-eraser";
+	eraser.title = "Erase drawings";
+	eraser.setAttribute("aria-label", "Erase drawings");
+	eraser.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 20.5H20M3.8 14.6l9.8-9.8a2 2 0 0 1 2.8 0l3.3 3.3a2 2 0 0 1 0 2.8l-7.6 7.6a3 3 0 0 1-2.1.9H8.4a3 3 0 0 1-2.1-.9l-2.5-2.5a1 1 0 0 1 0-1.4zM9 9.4l5.6 5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+	document.body.appendChild(eraser);
 
 	// Strokes are kept in page coordinates, so they scroll with the content
 	const strokes = [];
@@ -98,6 +108,7 @@
 			stroke = { color: nextColor(), points: [{ x: start.x + scrollX, y: start.y + scrollY }] };
 			strokes.push(stroke);
 			root.classList.add("is-doodling");
+			eraser.classList.add("is-visible");
 		}
 		stroke.points.push(point);
 		redraw();
@@ -121,6 +132,12 @@
 	document.addEventListener("contextmenu", (e) => {
 		if (e.shiftKey) return;
 		if (start || moved || performance.now() - lastLineEnd < MENU_GRACE) e.preventDefault();
+	});
+
+	eraser.addEventListener("click", () => {
+		strokes.length = 0;
+		eraser.classList.remove("is-visible");
+		redraw();
 	});
 
 	window.addEventListener("scroll", redraw, { passive: true });
