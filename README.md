@@ -38,8 +38,10 @@ js/palette-tool.js    Live colour tool, only after ?palette
 
 At the top of `css/style.css`:
 
-- `--orange`, `--sand`, `--green`, `--forest`, `--ink`, `--cream`: the palette (from [Color Hunt](https://colorhunt.co/palette/d98327ece8af4a943e186049), plus a dark ink for text and the original cream as the page background). All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site. Text accents use forest green; orange (`--deco`) is for decorations like bullets and highlights, since it is too light for text on the light background.
-- `--header-bg`, `--header-text`, `--header-accent`: colour of the header bar, its text and the current-page underline (yellow sand with dark text and a green underline; deep green in dark mode).
+- `--blue`, `--yellow`, `--red`: the three colours the site revolves around. Blue is the accent (buttons, borders, focus rings; text accents use a deeper blue, `--accent-strong`, since plain blue is too faint as text), yellow is the header, red (`--deco`) is for decorations like bullets, the highlight and drawings.
+- `--cream`, `--ink`: neutral page background and text colour.
+- All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site.
+- `--header-bg`, `--header-text`, `--header-accent`: colour of the header bar, its text and the current-page underline (yellow with dark text and a red underline; a dark muted yellow in dark mode).
 - `--grain-opacity`: strength of the film-grain texture (`assets/images/noise.png`) laid over the page. `0` turns it off.
 - Dark-mode colours are in the `:root[data-theme="dark"]` block just below. The site starts in light mode; visitors switch with the moon/sun button in the header, and their choice is remembered.
 

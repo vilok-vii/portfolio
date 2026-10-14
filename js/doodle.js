@@ -38,12 +38,12 @@
 	let colorIndex = 0;
 	let frame = 0;
 
-	// Each stroke takes the next colour from the palette (accent follows the theme)
+	// Each stroke takes the next colour from the palette
 	function nextColor() {
-		const names = ["--orange", "--green", "--accent"];
+		const names = ["--red", "--blue", "--yellow"];
 		const value = getComputedStyle(root).getPropertyValue(names[colorIndex % names.length]).trim();
 		colorIndex++;
-		return value || "#d98327";
+		return value || "#a00d39";
 	}
 
 	function draw() {
