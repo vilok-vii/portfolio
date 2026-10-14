@@ -22,7 +22,10 @@ categories:
   creative: Creative
 
 home:
-  hello: "Hello! I'm Vilmos"
+  # "Hello! I'm Vilmos"; the name shows a tooltip on hover
+  hello_before: "Hello! I'm "
+  hello_name: Vilmos
+  name_tip: "Pronounced VIL-mosh"
   # The headline is split in three so the middle part can be highlighted
   title_before: "I'm a "
   title_role: UI/UX designer
