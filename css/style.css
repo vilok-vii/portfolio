@@ -1,29 +1,31 @@
 /* ==========================================================================
 	Colors
 	Palette first; everything else is derived from it. Change the five
-	palette values (orange, sand, green, forest, ink) to experiment.
+	palette values (orange, sand, green, forest, ink, cream) to experiment.
 	========================================================================== */
 :root {
-	/* Palette: colorhunt.co/palette/d98327ece8af4a943e186049, plus a dark ink */
+	/* Palette: colorhunt.co/palette/d98327ece8af4a943e186049, plus a dark ink
+		and the site's original cream for the page background */
 	--orange: #d98327;
 	--sand: #ece8af;
 	--green: #4a943e;
 	--forest: #186049;
 	--ink: #1c2a20;
+	--cream: #fff1d1;
 
-	--bg: var(--sand);
-	--surface: color-mix(in srgb, var(--sand) 45%, #fff);
+	--bg: var(--cream);
+	--surface: color-mix(in srgb, var(--cream) 45%, #fff);
 	--text: var(--ink);
-	--muted: color-mix(in srgb, var(--ink) 72%, var(--sand));
-	--line: color-mix(in srgb, var(--ink) 16%, var(--sand));
-	/* Orange is too light for text on sand, so text accents use forest green */
+	--muted: color-mix(in srgb, var(--ink) 72%, var(--cream));
+	--line: color-mix(in srgb, var(--ink) 16%, var(--cream));
+	/* Orange is too light for text on the light background, so text accents use forest green */
 	--accent: var(--forest);
 	--accent-text: var(--sand);
 
 	/* Soft fills for placeholders and tags */
-	--tint-orange: color-mix(in srgb, var(--orange) 45%, var(--sand));
-	--tint-green: color-mix(in srgb, var(--green) 35%, var(--sand));
-	--tint-forest: color-mix(in srgb, var(--forest) 25%, var(--sand));
+	--tint-orange: color-mix(in srgb, var(--orange) 45%, var(--cream));
+	--tint-green: color-mix(in srgb, var(--green) 35%, var(--cream));
+	--tint-forest: color-mix(in srgb, var(--forest) 25%, var(--cream));
 	--placeholder: var(--tint-orange);
 	/* Decorations that need no text contrast: bullets, highlights, drawings */
 	--deco: var(--orange);
