@@ -38,12 +38,11 @@
 	// The colours that can be changed: the palette first, then a few roles
 	// that normally follow the palette but can be set on their own
 	const FIELDS = [
-		{ name: "--orange", label: "Orange" },
-		{ name: "--sand", label: "Sand" },
-		{ name: "--green", label: "Green" },
-		{ name: "--forest", label: "Forest" },
-		{ name: "--ink", label: "Ink (text)" },
+		{ name: "--blue", label: "Blue" },
+		{ name: "--yellow", label: "Yellow" },
+		{ name: "--red", label: "Red" },
 		{ name: "--cream", label: "Cream (page)" },
+		{ name: "--ink", label: "Ink (text)" },
 		{ name: "--header-bg", label: "Header", role: true },
 		{ name: "--header-text", label: "Header text", role: true },
 		{ name: "--accent", label: "Accent (links, buttons)", role: true },
