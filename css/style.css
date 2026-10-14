@@ -534,28 +534,38 @@ img.ph {
 
 .showcase__item {
 	display: grid;
-	/* Image 40%, text 60% of the card, whichever side the image is on */
+	/* Image 40%, text 60% of the card, whichever side the image is on.
+		The View project button sits below the image. */
 	grid-template-columns: 2fr 3fr;
-	gap: clamp(24px, 4vw, 48px);
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"media body"
+		"action body";
+	gap: 20px clamp(24px, 4vw, 48px);
 	align-items: start;
 	padding-block: 48px;
 	border-top: 1px solid var(--line);
 }
 
 .showcase__media {
+	grid-area: media;
 	display: block;
 	text-decoration: none;
 }
 
-.showcase__item:nth-child(even) {
-	grid-template-columns: 3fr 2fr;
+.showcase__action {
+	grid-area: action;
 }
 
-.showcase__item:nth-child(even) .showcase__media {
-	order: 2;
+.showcase__item:nth-child(even) {
+	grid-template-columns: 3fr 2fr;
+	grid-template-areas:
+		"body media"
+		"body action";
 }
 
 .showcase__body {
+	grid-area: body;
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
@@ -587,13 +597,15 @@ img.ph {
 }
 
 @media (max-width: 760px) {
+	/* Stacked: image, text, then the button */
 	.showcase__item,
 	.showcase__item:nth-child(even) {
 		grid-template-columns: 1fr;
-	}
-
-	.showcase__item:nth-child(even) .showcase__media {
-		order: 0;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"media"
+			"body"
+			"action";
 	}
 }
 
