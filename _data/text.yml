@@ -25,7 +25,8 @@ home:
   # "Hello! I'm Vilmos"; the name shows a tooltip on hover
   hello_before: "Hello! I'm "
   hello_name: Vilmos
-  name_tip: "Pronounced VIL-mosh"
+  # \n starts a new line in the tooltip
+  name_tip: "Pronounced VIL-mosh.\nBut friends call me Vilko :)"
   # The headline is split in three so the middle part can be highlighted
   title_before: "I'm a "
   title_role: UI/UX designer

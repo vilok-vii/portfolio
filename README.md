@@ -53,7 +53,7 @@ Hovering (or tabbing to) a word can show a small custom window. The name in the 
 <span class="tip" tabindex="0" aria-describedby="my-tip">word<span class="tip__box" role="tooltip" id="my-tip">Tooltip text</span></span>
 ```
 
-Give each tooltip its own `id`. Escape closes an open tooltip.
+Give each tooltip its own `id`. A line break in the text (`\n` in `_data/text.yml`) starts a new line in the tooltip. Escape closes an open tooltip.
 
 ## Adding a project
 

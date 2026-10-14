@@ -505,6 +505,8 @@ img.ph {
 	font-weight: 400;
 	line-height: 1.4;
 	text-align: center;
+	/* Line breaks in the text are kept */
+	white-space: pre-line;
 	pointer-events: none;
 	opacity: 0;
 	visibility: hidden;
