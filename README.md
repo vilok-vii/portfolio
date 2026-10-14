@@ -30,6 +30,7 @@ assets/images/        Images (noise.png = grain texture)
 js/projects.js        Search, filters and sorting on the Projects page
 js/site.js            Mobile menu, dark mode toggle, tooltips
 js/doodle.js          Drawing with the right mouse button
+js/palette-tool.js    Live colour tool, only after ?palette
 404.html              Not-found page; forwards old /en/ and /hu/ links
 ```
 
@@ -41,6 +42,16 @@ At the top of `css/style.css`:
 - `--header-bg`, `--header-text`, `--header-accent`: colour of the header bar, its text and the current-page underline (yellow sand with dark text and a green underline; deep green in dark mode).
 - `--grain-opacity`: strength of the film-grain texture (`assets/images/noise.png`) laid over the page. `0` turns it off.
 - Dark-mode colours are in the `:root[data-theme="dark"]` block just below. The site starts in light mode; visitors switch with the moon/sun button in the header, and their choice is remembered.
+
+## Trying out colours (palette tool)
+
+Open any page with `?palette` at the end of the address (for example `https://vilok-vii.github.io/portfolio/?palette`). A round palette button appears in the bottom right corner; it opens a panel with a colour picker and a hex field for each palette colour, plus the header, accent and decoration colours. Changes show live and are kept in your browser while you move between pages. Visitors never see the tool.
+
+- **Copy** puts the changed colours on the clipboard as CSS lines, ready to paste over the values at the top of `css/style.css` (or send them to whoever edits the site).
+- **Reset** goes back to the site's real colours.
+- **Turn off** resets and hides the tool again (so does `?palette=off`).
+
+The tool lives in `js/palette-tool.js` and the "Palette tool" block at the end of `css/style.css`.
 
 ## Changing text
 
