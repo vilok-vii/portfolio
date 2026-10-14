@@ -178,6 +178,7 @@ h3 {
 /* A real image in a placeholder's spot fills it without stretching */
 img.ph {
 	width: 100%;
+	height: auto;
 	object-fit: cover;
 }
 
