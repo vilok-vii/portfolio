@@ -1,27 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Vilmos Horváth</title>
-	<link rel="alternate" hreflang="en" href="https://vilok-vii.github.io/portfolio/en/">
-	<link rel="alternate" hreflang="hu" href="https://vilok-vii.github.io/portfolio/hu/">
-	<script>
-		// Send visitors to their language: a saved choice first, otherwise the browser's language.
-		(function () {
-			var lang;
-			try {
-				lang = localStorage.getItem("lang");
-			} catch (e) {}
-			if (lang !== "en" && lang !== "hu") {
-				var prefs = navigator.languages || [navigator.language || ""];
-				lang = /^hu\b/i.test(prefs[0] || "") ? "hu" : "en";
-			}
-			location.replace(lang + "/");
-		})();
-	</script>
-</head>
-<body>
-	<p><a href="en/">English</a> · <a href="hu/">Magyar</a></p>
-</body>
-</html>
+---
+layout: home
+section: home
+---

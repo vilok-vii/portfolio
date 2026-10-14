@@ -1,17 +1,8 @@
-{%- assign t = site.data.i18n[page.lang] -%}
-{%- assign home_url = "/" | append: page.lang | append: "/" -%}
-{%- assign en_url = page.url | replace_first: "/hu/", "/en/" -%}
-{%- assign hu_url = page.url | replace_first: "/en/", "/hu/" -%}
-{%- if page.lang == "en" -%}
-	{%- assign other_lang = "hu" -%}
-	{%- assign other_url = hu_url -%}
-{%- else -%}
-	{%- assign other_lang = "en" -%}
-	{%- assign other_url = en_url -%}
-{%- endif -%}
+{%- assign t = site.data.text -%}
+{%- assign home_url = "/" -%}
 {%- assign v = site.time | date: "%s" -%}
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,9 +14,6 @@
 	</script>
 	<title>{% if page.title %}{{ page.title }} — {% endif %}{{ t.name }}</title>
 	<meta name="description" content="{{ page.summary | default: t.site_description }}">
-	<link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
-	<link rel="alternate" hreflang="hu" href="{{ hu_url | absolute_url }}">
-	<link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -47,7 +35,6 @@
 				</button>
 				<ul class="site-nav">
 					<li class="site-nav__tools">
-						<a class="lang-switch" href="{{ other_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-lang="{{ other_lang }}" title="{{ t.switch_to }}" aria-label="{{ t.switch_to }}">{{ t.switch_label }}</a>
 						<button type="button" class="theme-toggle" aria-pressed="false" aria-label="{{ t.nav.dark_mode }}" title="{{ t.nav.dark_mode }}">
 							<svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
 							<svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
