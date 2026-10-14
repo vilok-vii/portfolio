@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{%- assign t = site.data.i18n[page.lang] -%}
-{%- assign projects = site.projects | where: "lang", page.lang | sort: "order" -%}
+{%- assign t = site.data.text -%}
+{%- assign projects = site.projects | sort: "order" -%}
 {%- assign categories = projects | map: "category" | uniq -%}
 	<main class="container page" data-back-origin="projects">
 		<header class="page__head">

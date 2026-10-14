@@ -1,17 +1,5 @@
 // Scripts used on every page.
 
-// Remember the language a visitor picks with the language switch,
-// so the root address sends them to it next time (see /index.html).
-document.querySelectorAll(".lang-switch").forEach((link) => {
-	link.addEventListener("click", () => {
-		try {
-			localStorage.setItem("lang", link.dataset.lang);
-		} catch (e) {
-			// Storage blocked: the switch still works, it just isn't remembered
-		}
-	});
-});
-
 // Remember whether projects were opened from the home page or from All projects,
 // so the back link on a project page can lead to the same place (see project.js).
 (function () {

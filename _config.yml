@@ -2,34 +2,23 @@ title: Vilmos Horváth
 baseurl: "/portfolio"
 url: "https://vilok-vii.github.io"
 
-languages: ["en", "hu"]
-
 collections:
   projects:
     output: true
 
 defaults:
   - scope:
-      path: "_projects/en"
+      path: ""
       type: projects
     values:
-      lang: en
       layout: project
       section: projects
-      permalink: /en/projects/:name/
-      scripts: ["project.js"]
-  - scope:
-      path: "_projects/hu"
-      type: projects
-    values:
-      lang: hu
-      layout: project
-      section: projects
-      permalink: /hu/projects/:name/
+      permalink: /projects/:name/
       scripts: ["project.js"]
 
 exclude:
   - README.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
   - vendor

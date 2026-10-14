@@ -7,6 +7,14 @@ permalink: /404.html
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
+		// Old links from when the site had /en/ and /hu/ versions: send them to the same page without the prefix
+		(function () {
+			var base = "{{ '/' | relative_url }}";
+			var rest = location.pathname.slice(base.length);
+			if (location.pathname.indexOf(base) === 0 && /^(en|hu)(\/|$)/.test(rest)) {
+				location.replace(base + rest.replace(/^(en|hu)\/?/, "") + location.hash);
+			}
+		})();
 		try {
 			if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark";
 		} catch (e) {}
@@ -18,8 +26,7 @@ permalink: /404.html
 	<main class="container page">
 		<div class="welcome">
 			<h1>Page not found</h1>
-			<p lang="hu">Az oldal nem található.</p>
-			<p><a href="{{ '/en/' | relative_url }}">Go to the home page</a> · <a href="{{ '/hu/' | relative_url }}" lang="hu">Ugrás a főoldalra</a></p>
+			<p><a href="{{ '/' | relative_url }}">Go to the home page</a></p>
 		</div>
 	</main>
 </body>

@@ -1,9 +1,6 @@
-# English interface text. Keys must match hu.yml.
-language_name: English
+# Interface text (nav, buttons, labels, …).
 name: Vilmos Horváth
 tagline: Game UI/UX Designer
-switch_to: Magyar
-switch_label: HU
 
 site_description: Portfolio of Vilmos Horváth.
 
@@ -25,12 +22,12 @@ categories:
   creative: Creative
 
 home:
-  hello: "Hi, I'm Vilmos Horváth"
+  hello: "Hello! I'm Vilmos"
   # The headline is split in three so the middle part can be highlighted
-  title_before: "Headline placeholder: "
-  title_role: your role
-  title_after: " and what you do."
-  lead: "Placeholder: one or two sentences on what you do and for whom."
+  title_before: "I'm a "
+  title_role: UI/UX designer
+  title_after: " for videogames!"
+  lead: "Currently I'm looking for an internship for 2027."
   work_title: Selected work
   work_intro: "Placeholder: a short line about the selection below."
   image: Project image

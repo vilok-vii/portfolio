@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{%- assign t = site.data.i18n[page.lang] -%}
-{%- assign projects = site.projects | where: "lang", page.lang | sort: "order" -%}
+{%- assign t = site.data.text -%}
+{%- assign projects = site.projects | sort: "order" -%}
 {%- for p in projects -%}
 	{%- if p.url == page.url -%}
 		{%- assign i = forloop.index0 -%}
@@ -13,7 +13,7 @@ layout: default
 {%- if i > 0 %}{% assign prev = projects[prev_i] %}{% endif -%}
 {%- assign next = projects[next_i] -%}
 	<main class="container page">
-		<a href="{{ '/' | append: page.lang | append: '/projects/' | relative_url }}" class="back" data-home-href="{{ '/' | append: page.lang | append: '/' | relative_url }}#work" data-home-label="{{ t.project.back_home }}">&larr; <span>{{ t.project.back }}</span></a>
+		<a href="{{ '/projects/' | relative_url }}" class="back" data-home-href="{{ '/' | relative_url }}#work" data-home-label="{{ t.project.back_home }}">&larr; <span>{{ t.project.back }}</span></a>
 
 		<header class="page__head page__head--wide">
 			<span class="label">{{ t.categories[page.category] }} · {{ page.year }}</span>
