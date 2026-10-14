@@ -32,9 +32,6 @@ home:
   work_intro: "Placeholder: a short line about the selection below."
   image: Project image
   view_project: View project
-  more_title: Want to see more?
-  more_text: "Browse all %total% projects. Search and filter by category, year or tool."
-  more_cta: All projects
 
 projects:
   title: Projects

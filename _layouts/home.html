@@ -3,7 +3,6 @@ layout: default
 ---
 {%- assign t = site.data.text -%}
 {%- assign projects = site.projects | where: "featured", true | sort: "order" -%}
-{%- assign all_projects = site.projects -%}
 	<main class="container page page--home" data-back-origin="home">
 		<section class="hero" aria-labelledby="hero-title">
 			<p class="hero__hello">{{ t.home.hello }}</p>
@@ -56,11 +55,5 @@ layout: default
 				</article>
 {%- endfor %}
 			</div>
-		</section>
-
-		<section class="more" aria-labelledby="more-title">
-			<h2 id="more-title">{{ t.home.more_title }}</h2>
-			<p class="muted">{{ t.home.more_text | replace: "%total%", all_projects.size }}</p>
-			<a class="btn btn--solid" href="{{ '/projects/' | relative_url }}">{{ t.home.more_cta }} &rarr;</a>
 		</section>
 	</main>

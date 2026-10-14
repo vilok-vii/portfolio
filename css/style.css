@@ -502,28 +502,6 @@ img.ph {
 	font-size: clamp(28px, 4vw, 40px);
 }
 
-/* Link to all projects at the bottom of the home page */
-.more {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 12px;
-	margin-top: 24px;
-	padding: clamp(32px, 6vw, 56px) 24px;
-	background: var(--surface);
-	border: 1px solid var(--line);
-	border-radius: var(--radius);
-	text-align: center;
-}
-
-.more h2 {
-	font-size: clamp(24px, 3vw, 32px);
-}
-
-.more .btn {
-	margin-top: 8px;
-}
-
 /* ==========================================================================
 	Portfolio showcase (home page)
 	========================================================================== */
