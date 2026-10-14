@@ -38,7 +38,7 @@ js/palette-tool.js    Live colour tool, only after ?palette
 
 At the top of `css/style.css`:
 
-- `--blue`, `--yellow`, `--red`: the three colours the site revolves around. Blue is the accent (buttons, borders, focus rings; text accents use a deeper blue, `--accent-strong`, since plain blue is too faint as text), yellow is the header, red (`--deco`) is for decorations like bullets, the highlight and drawings.
+- `--blue`, `--yellow`, `--red`: the three colours the site revolves around. Blue is the accent (buttons, borders, focus rings; text accents use a deeper blue, `--accent-strong`, since plain blue is too faint as text), yellow is the header, red (`--deco`) is for decorations like bullets, placeholders and drawings.
 - `--cream`, `--ink`: neutral page background and text colour.
 - All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site.
 - `--header-bg`, `--header-text`, `--header-accent`: colour of the header bar, its text and the current-page underline (yellow with dark text and a red underline; a dark muted yellow in dark mode).

@@ -22,15 +22,13 @@
 	--accent-strong: color-mix(in srgb, var(--blue) 60%, var(--ink));
 	--accent-text: var(--ink);
 
-	/* Soft fills for placeholders, tags and the highlight */
+	/* Soft fills for placeholders and tags */
 	--tint-yellow: color-mix(in srgb, var(--yellow) 40%, var(--cream));
 	--tint-blue: color-mix(in srgb, var(--blue) 30%, var(--cream));
 	--tint-red: color-mix(in srgb, var(--red) 22%, var(--cream));
 	--placeholder: var(--tint-yellow);
-	/* Red: decorations (bullets, highlight, drawings) */
+	/* Red: decorations (bullets, placeholders, drawings) */
 	--deco: var(--red);
-	/* Marker stroke behind "UI/UX designer" in the intro */
-	--highlight: color-mix(in srgb, var(--red) 65%, var(--cream));
 
 	/* Header bar: yellow, with a red underline for the current page */
 	--header-bg: var(--yellow);
@@ -60,7 +58,6 @@
 	--tint-blue: color-mix(in srgb, var(--blue) 35%, #181716);
 	--tint-red: color-mix(in srgb, var(--red) 55%, #181716);
 	--deco: color-mix(in srgb, var(--red) 65%, var(--cream));
-	--highlight: color-mix(in srgb, var(--red) 75%, #181716);
 	--header-bg: color-mix(in srgb, var(--yellow) 30%, #181716);
 	--header-text: var(--cream);
 	--header-accent: var(--yellow);
@@ -590,11 +587,6 @@ img.ph {
 	.tip:focus .tip__box {
 		transition: none;
 	}
-}
-
-.hero__accent {
-	background: linear-gradient(transparent 62%, var(--highlight) 62%);
-	padding-inline: 0.06em;
 }
 
 .hero__lead {
