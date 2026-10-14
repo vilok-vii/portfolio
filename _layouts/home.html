@@ -25,13 +25,32 @@ layout: default
 					</a>
 					<div class="showcase__body">
 						<span class="label">{{ t.categories[p.category] }} · {{ p.role }} · {{ p.year }}</span>
-						<h3>{{ p.title }}</h3>
+						<h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
 						<p class="muted">{{ p.summary }}</p>
-						<ul class="tags">
-							{%- for tool in p.tools %}
-							<li>{{ tool }}</li>
-							{%- endfor %}
-						</ul>
+						{%- if p.responsibilities or p.skills %}
+						<div class="showcase__focus">
+							{%- if p.responsibilities %}
+							<section>
+								<h4 class="label">{{ t.project.responsibilities }}</h4>
+								<ul>
+									{%- for item in p.responsibilities %}
+									<li>{{ item }}</li>
+									{%- endfor %}
+								</ul>
+							</section>
+							{%- endif %}
+							{%- if p.skills %}
+							<section>
+								<h4 class="label">{{ t.project.skills }}</h4>
+								<ul>
+									{%- for item in p.skills %}
+									<li>{{ item }}</li>
+									{%- endfor %}
+								</ul>
+							</section>
+							{%- endif %}
+						</div>
+						{%- endif %}
 						<div><a class="btn" href="{{ p.url | relative_url }}">{{ t.home.view_project }}</a></div>
 					</div>
 				</article>

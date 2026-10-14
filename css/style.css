@@ -560,6 +560,26 @@ img.ph {
 	font-size: clamp(24px, 3vw, 32px);
 }
 
+.showcase__body h3 a {
+	text-decoration: none;
+}
+
+.showcase__body h3 a:hover {
+	color: var(--accent);
+}
+
+/* Key responsibilities and relevant skills on the card (bullets styled with .project-focus below) */
+.showcase__focus {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+	gap: 16px;
+}
+
+.showcase__focus h4 {
+	margin: 0 0 8px;
+	font-weight: 400;
+}
+
 @media (max-width: 760px) {
 	.showcase__item {
 		grid-template-columns: 1fr;
@@ -787,7 +807,8 @@ img.ph {
 	font-weight: 400;
 }
 
-.project-focus ul {
+.project-focus ul,
+.showcase__focus ul {
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
@@ -796,12 +817,14 @@ img.ph {
 	padding: 0;
 }
 
-.project-focus li {
+.project-focus li,
+.showcase__focus li {
 	position: relative;
 	padding-left: 18px;
 }
 
-.project-focus li::before {
+.project-focus li::before,
+.showcase__focus li::before {
 	content: "";
 	position: absolute;
 	left: 0;
