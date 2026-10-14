@@ -550,6 +550,22 @@ img.ph {
 	transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
+/* Opened below the word instead (no room above, see site.js) */
+.tip--below .tip__box {
+	top: calc(100% + 12px);
+	bottom: auto;
+	transform: translate(-50%, -6px);
+}
+
+.tip--below .tip__box::after {
+	top: auto;
+	bottom: 100%;
+	border: 0;
+	border-left: 1px solid var(--line);
+	border-top: 1px solid var(--line);
+	transform: translate(-50%, 5px) rotate(45deg);
+}
+
 .tip.tip--dismissed .tip__box {
 	opacity: 0;
 	visibility: hidden;

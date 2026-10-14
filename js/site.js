@@ -12,9 +12,20 @@
 	}
 })();
 
-// Tooltips (.tip): Escape hides an open one until the pointer or focus leaves it
+// Tooltips (.tip): Escape hides an open one until the pointer or focus leaves it.
+// A tooltip opens below its word when the header would cover it above.
 document.querySelectorAll(".tip").forEach((tip) => {
+	const box = tip.querySelector(".tip__box");
+	const header = document.querySelector(".site-header");
+	const place = () => {
+		if (!box) return;
+		const limit = header ? header.getBoundingClientRect().bottom : 0;
+		const above = tip.getBoundingClientRect().top - box.offsetHeight - 12;
+		tip.classList.toggle("tip--below", above < limit + 8);
+	};
 	const show = () => tip.classList.remove("tip--dismissed");
+	tip.addEventListener("mouseenter", place);
+	tip.addEventListener("focus", place);
 	tip.addEventListener("mouseleave", show);
 	tip.addEventListener("blur", show);
 });
