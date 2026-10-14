@@ -30,9 +30,10 @@
 	/* Decorations that need no text contrast: bullets, highlights, drawings */
 	--deco: var(--orange);
 
-	/* Header bar */
-	--header-bg: var(--forest);
-	--header-text: var(--sand);
+	/* Header bar: yellow, with green for the current page underline */
+	--header-bg: var(--sand);
+	--header-text: var(--ink);
+	--header-accent: var(--forest);
 
 	/* Film grain over the whole page (0 = off) */
 	--grain-opacity: 0.1;
@@ -59,6 +60,7 @@
 	--tint-forest: color-mix(in srgb, var(--forest) 60%, #141c16);
 	--header-bg: color-mix(in srgb, var(--forest) 60%, #141c16);
 	--header-text: var(--sand);
+	--header-accent: var(--sand);
 	--grain-opacity: 0.08;
 	color-scheme: dark;
 }
@@ -205,7 +207,7 @@ img.ph {
 	--text: var(--header-text);
 	--muted: color-mix(in srgb, var(--header-text) 78%, var(--header-bg));
 	--line: color-mix(in srgb, var(--header-text) 28%, var(--header-bg));
-	--accent: var(--header-text);
+	--accent: var(--header-accent);
 	position: sticky;
 	top: 0;
 	z-index: 50;

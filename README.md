@@ -38,7 +38,7 @@ js/doodle.js          Drawing with the right mouse button
 At the top of `css/style.css`:
 
 - `--orange`, `--sand`, `--green`, `--forest`, `--ink`, `--cream`: the palette (from [Color Hunt](https://colorhunt.co/palette/d98327ece8af4a943e186049), plus a dark ink for text and the original cream as the page background). All other colours (backgrounds, lines, tints, buttons) are derived from these, so changing them restyles the whole site. Text accents use forest green; orange (`--deco`) is for decorations like bullets and highlights, since it is too light for text on the light background.
-- `--header-bg`, `--header-text`: colour of the header bar and its text (forest green with sand text; a deeper green in dark mode).
+- `--header-bg`, `--header-text`, `--header-accent`: colour of the header bar, its text and the current-page underline (yellow sand with dark text and a green underline; deep green in dark mode).
 - `--grain-opacity`: strength of the film-grain texture (`assets/images/noise.png`) laid over the page. `0` turns it off.
 - Dark-mode colours are in the `:root[data-theme="dark"]` block just below. The site starts in light mode; visitors switch with the moon/sun button in the header, and their choice is remembered.
 
