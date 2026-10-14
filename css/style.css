@@ -519,7 +519,7 @@ img.ph {
 	grid-template-areas:
 		"media body"
 		"action body";
-	gap: 20px clamp(24px, 4vw, 48px);
+	gap: 32px clamp(24px, 4vw, 48px);
 	align-items: start;
 	padding-block: 48px;
 	border-top: 1px solid var(--line);
@@ -529,6 +529,18 @@ img.ph {
 	grid-area: media;
 	display: block;
 	text-decoration: none;
+	/* Tilted like a photo: left-side images lean left, right-side ones lean right */
+	transform: rotate(-4deg);
+}
+
+.showcase__item:nth-child(even) .showcase__media {
+	transform: rotate(4deg);
+}
+
+.showcase__media .ph {
+	border: 8px solid #fff;
+	border-radius: 0;
+	box-shadow: 0 14px 22px -6px rgba(0, 0, 0, 0.35);
 }
 
 .showcase__action {
