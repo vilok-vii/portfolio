@@ -29,7 +29,7 @@ css/style.css         All styles; palette and grain at the top
 assets/images/        Images (noise.png = grain texture)
 js/projects.js        Search, filters and sorting on the Projects page
 js/site.js            Mobile menu, dark mode toggle, tooltips
-js/doodle.js          Drawing on empty background with the mouse
+js/doodle.js          Drawing with the right mouse button
 404.html              Not-found page; forwards old /en/ and /hu/ links
 ```
 
@@ -58,7 +58,7 @@ Give each tooltip its own `id`. A line break in the text (`\n` in `_data/text.ym
 
 ## Doodling
 
-With a mouse, visitors can press and drag on empty background to draw strokes that fade away (`js/doodle.js`). Pressing on text, images, links or buttons works as usual. Touch screens are left out, since dragging scrolls there. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
+With a mouse, visitors can hold the right button and drag anywhere to draw (`js/doodle.js`). Drawings scroll with the page and stay until it is reloaded or left. A right-click without dragging still opens the browser menu where the browser allows it (Windows); Shift + right-click always does. Touch screens are left out. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
 
 ## Adding a project
 

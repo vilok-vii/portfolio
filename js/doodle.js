@@ -1,16 +1,15 @@
-// Doodling: with a mouse, press and drag on empty background to draw.
-// Strokes fade away after a moment. Pressing on content (text, images,
-// links, buttons, the header) works as usual and never starts a stroke.
+// Doodling: hold the right mouse button and drag anywhere on the page to draw.
+// Drawings stay (and scroll with the page) until it is reloaded or left.
+// The browser's right-click menu: a right-click without dragging still opens
+// it where the browser allows (Windows); Shift + right-click always does.
 // To remove the feature: delete this file, its script tag in
 // _layouts/default.html and the "Doodling" block in css/style.css.
 (function () {
-	// Mouse only: on touch screens dragging scrolls the page
+	// Mouse only: touch screens have no right button
 	if (!window.matchMedia("(pointer: fine)").matches) return;
 
-	const LIFE = 1400; // ms a stroke stays visible
-	const WIDTH = 5;
-	const CONTENT = "a, button, input, select, textarea, label, summary, dialog, img, video, iframe, svg, " +
-		"h1, h2, h3, h4, h5, h6, p, li, dt, dd, span, figure, figcaption, .ph, .tags, .site-header, .tip";
+	const WIDTH = 4;
+	const MOVE_THRESHOLD = 4; // px before a right-press counts as drawing
 
 	const root = document.documentElement;
 	const canvas = document.createElement("canvas");
@@ -19,23 +18,13 @@
 	document.body.appendChild(canvas);
 	const ctx = canvas.getContext("2d");
 
-	let segments = [];
-	let last = null;
-	let color = "";
+	// Strokes are kept in page coordinates, so they scroll with the content
+	const strokes = [];
+	let stroke = null; // the stroke being drawn
+	let start = null; // where the right button went down
+	let moved = false; // whether the current right-press has drawn anything
 	let colorIndex = 0;
 	let frame = 0;
-
-	function resize() {
-		const dpr = window.devicePixelRatio || 1;
-		canvas.width = Math.round(innerWidth * dpr);
-		canvas.height = Math.round(innerHeight * dpr);
-		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-		draw();
-	}
-
-	function isBlank(target) {
-		return target instanceof Element && !target.closest(CONTENT);
-	}
 
 	// Each stroke takes the next colour from the palette
 	function nextColor() {
@@ -46,53 +35,83 @@
 	}
 
 	function draw() {
-		const now = performance.now();
-		segments = segments.filter((s) => now - s.t < LIFE);
+		frame = 0;
 		ctx.clearRect(0, 0, innerWidth, innerHeight);
 		ctx.lineCap = "round";
-		for (const s of segments) {
-			const left = 1 - (now - s.t) / LIFE;
-			ctx.globalAlpha = left;
-			ctx.lineWidth = WIDTH * (0.4 + 0.6 * left);
+		ctx.lineJoin = "round";
+		ctx.lineWidth = WIDTH;
+		for (const s of strokes) {
+			const pts = s.points;
 			ctx.strokeStyle = s.color;
 			ctx.beginPath();
-			ctx.moveTo(s.x0, s.y0);
-			ctx.lineTo(s.x1, s.y1);
+			ctx.moveTo(pts[0].x - scrollX, pts[0].y - scrollY);
+			// Smooth the line through the midpoints between samples
+			for (let i = 1; i < pts.length - 1; i++) {
+				const mx = (pts[i].x + pts[i + 1].x) / 2 - scrollX;
+				const my = (pts[i].y + pts[i + 1].y) / 2 - scrollY;
+				ctx.quadraticCurveTo(pts[i].x - scrollX, pts[i].y - scrollY, mx, my);
+			}
+			const end = pts[pts.length - 1];
+			ctx.lineTo(end.x - scrollX, end.y - scrollY);
 			ctx.stroke();
 		}
-		ctx.globalAlpha = 1;
-		frame = segments.length ? requestAnimationFrame(draw) : 0;
 	}
 
-	function start() {
+	function redraw() {
 		if (!frame) frame = requestAnimationFrame(draw);
 	}
 
+	function resize() {
+		const dpr = window.devicePixelRatio || 1;
+		canvas.width = Math.round(innerWidth * dpr);
+		canvas.height = Math.round(innerHeight * dpr);
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		redraw();
+	}
+
 	document.addEventListener("pointerdown", (e) => {
-		if (e.pointerType !== "mouse" || e.button !== 0 || !isBlank(e.target)) return;
-		e.preventDefault(); // no text selection while drawing
-		last = { x: e.clientX, y: e.clientY };
-		color = nextColor();
-		root.classList.add("is-doodling");
+		if (e.pointerType !== "mouse") return;
+		if (e.button !== 2 || e.shiftKey) {
+			moved = false;
+			return;
+		}
+		e.preventDefault();
+		start = { x: e.clientX, y: e.clientY };
+		moved = false;
+		stroke = null;
 	});
 
 	document.addEventListener("pointermove", (e) => {
-		if (last) {
-			segments.push({ x0: last.x, y0: last.y, x1: e.clientX, y1: e.clientY, t: performance.now(), color });
-			last = { x: e.clientX, y: e.clientY };
-			start();
-		} else if (e.pointerType === "mouse") {
-			// Pencil cursor over empty background, as a hint
-			root.classList.toggle("can-doodle", isBlank(e.target));
+		if (!start || !(e.buttons & 2)) return;
+		const point = { x: e.clientX + scrollX, y: e.clientY + scrollY };
+		if (!stroke) {
+			if (Math.hypot(e.clientX - start.x, e.clientY - start.y) < MOVE_THRESHOLD) return;
+			moved = true;
+			stroke = { color: nextColor(), points: [{ x: start.x + scrollX, y: start.y + scrollY }] };
+			strokes.push(stroke);
+			root.classList.add("is-doodling");
 		}
+		stroke.points.push(point);
+		redraw();
 	});
 
 	function stop() {
-		last = null;
+		start = null;
+		stroke = null;
 		root.classList.remove("is-doodling");
 	}
 	document.addEventListener("pointerup", stop);
 	window.addEventListener("blur", stop);
+
+	// Keep the menu out of the way while drawing. On Windows it opens when the
+	// button is released, so a click without dragging still gets it; elsewhere
+	// it opens on press, so it is held back unless Shift is down.
+	document.addEventListener("contextmenu", (e) => {
+		if (e.shiftKey) return;
+		if (start || moved) e.preventDefault();
+	});
+
+	window.addEventListener("scroll", redraw, { passive: true });
 	window.addEventListener("resize", resize);
 	resize();
 })();
