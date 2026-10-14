@@ -8,7 +8,7 @@
 	--blue: #33a7c1;
 	--yellow: #eab034;
 	--red: #a00d39;
-	--cream: #faf7f0;
+	--cream: #fff1d1;
 	--ink: #23211f;
 
 	--bg: var(--cream);
@@ -1426,7 +1426,7 @@ img.ph {
 /* Pencil cursor while drawing */
 html.is-doodling,
 html.is-doodling * {
-	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 21l1.5-5.5L16 4l4 4L8.5 19.5z' fill='%23faf7f0' stroke='%2323211f' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M3 21l1.5-5.5 4 4z' fill='%2323211f'/%3E%3C/svg%3E") 3 21, crosshair;
+	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 21l1.5-5.5L16 4l4 4L8.5 19.5z' fill='%23fff1d1' stroke='%2323211f' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M3 21l1.5-5.5 4 4z' fill='%2323211f'/%3E%3C/svg%3E") 3 21, crosshair;
 }
 
 html.is-doodling * {
