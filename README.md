@@ -6,7 +6,7 @@ Portfolio built with [Jekyll](https://jekyllrb.com/), which GitHub Pages builds 
 
 | Address | Page |
 | --- | --- |
-| `/` | Home: intro (who I am, what I do), selected work, link to all projects |
+| `/` | Home: intro (who I am, what I do), selected work |
 | `/portfolio/` | Old address; redirects to the selected work on the home page |
 | `/projects/` | Searchable, filterable list of all projects |
 | `/projects/<slug>/` | Individual project page |
