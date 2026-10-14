@@ -28,7 +28,8 @@ about/, projects/     Tiny files that pick a layout for each page
 css/style.css         All styles; palette and grain at the top
 assets/images/        Images (noise.png = grain texture)
 js/projects.js        Search, filters and sorting on the Projects page
-js/site.js            Mobile menu, dark mode toggle
+js/site.js            Mobile menu, dark mode toggle, tooltips
+js/doodle.js          Drawing on empty background with the mouse
 404.html              Not-found page; forwards old /en/ and /hu/ links
 ```
 
@@ -54,6 +55,10 @@ Hovering (or tabbing to) a word can show a small custom window. The name in the 
 ```
 
 Give each tooltip its own `id`. A line break in the text (`\n` in `_data/text.yml`) starts a new line in the tooltip. Escape closes an open tooltip.
+
+## Doodling
+
+With a mouse, visitors can press and drag on empty background to draw strokes that fade away (`js/doodle.js`). Pressing on text, images, links or buttons works as usual. Touch screens are left out, since dragging scrolls there. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
 
 ## Adding a project
 
