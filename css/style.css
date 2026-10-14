@@ -1,32 +1,36 @@
 /* ==========================================================================
 	Colors
 	Palette first; everything else is derived from it. Change the five
-	palette values to experiment with the look.
+	palette values (orange, sand, green, forest, ink) to experiment.
 	========================================================================== */
 :root {
-	--red: #df301c;
-	--orange: #ff9100;
-	--cream: #fff1d1;
-	--teal: #00b7cd;
-	--ink: #2b1b14;
+	/* Palette: colorhunt.co/palette/d98327ece8af4a943e186049, plus a dark ink */
+	--orange: #d98327;
+	--sand: #ece8af;
+	--green: #4a943e;
+	--forest: #186049;
+	--ink: #1c2a20;
 
-	--bg: var(--cream);
-	--surface: color-mix(in srgb, var(--cream) 45%, #fff);
+	--bg: var(--sand);
+	--surface: color-mix(in srgb, var(--sand) 45%, #fff);
 	--text: var(--ink);
-	--muted: #6f5646;
-	--line: color-mix(in srgb, var(--ink) 16%, var(--cream));
-	--accent: var(--red);
-	--accent-text: #fff;
+	--muted: color-mix(in srgb, var(--ink) 72%, var(--sand));
+	--line: color-mix(in srgb, var(--ink) 16%, var(--sand));
+	/* Orange is too light for text on sand, so text accents use forest green */
+	--accent: var(--forest);
+	--accent-text: var(--sand);
 
 	/* Soft fills for placeholders and tags */
-	--tint-red: color-mix(in srgb, var(--red) 30%, var(--cream));
-	--tint-orange: color-mix(in srgb, var(--orange) 45%, var(--cream));
-	--tint-teal: color-mix(in srgb, var(--teal) 40%, var(--cream));
+	--tint-orange: color-mix(in srgb, var(--orange) 45%, var(--sand));
+	--tint-green: color-mix(in srgb, var(--green) 35%, var(--sand));
+	--tint-forest: color-mix(in srgb, var(--forest) 25%, var(--sand));
 	--placeholder: var(--tint-orange);
+	/* Decorations that need no text contrast: bullets, highlights, drawings */
+	--deco: var(--orange);
 
 	/* Header bar */
-	--header-bg: var(--teal);
-	--header-text: var(--ink);
+	--header-bg: var(--forest);
+	--header-text: var(--sand);
 
 	/* Film grain over the whole page (0 = off) */
 	--grain-opacity: 0.1;
@@ -41,16 +45,18 @@
 
 /* Dark mode: only when the visitor turns it on with the toggle */
 :root[data-theme="dark"] {
-	--bg: #1f1612;
-	--surface: #2a1e18;
-	--text: var(--cream);
-	--muted: #c4ae95;
-	--line: #43332a;
-	--tint-red: color-mix(in srgb, var(--red) 45%, #1f1612);
-	--tint-orange: color-mix(in srgb, var(--orange) 40%, #1f1612);
-	--tint-teal: color-mix(in srgb, var(--teal) 38%, #1f1612);
-	--header-bg: color-mix(in srgb, var(--teal) 38%, #1f1612);
-	--header-text: var(--cream);
+	--bg: #141c16;
+	--surface: #1c271f;
+	--text: var(--sand);
+	--muted: color-mix(in srgb, var(--sand) 72%, #141c16);
+	--line: #2e3d32;
+	--accent: color-mix(in srgb, var(--green) 75%, var(--sand));
+	--accent-text: var(--ink);
+	--tint-orange: color-mix(in srgb, var(--orange) 40%, #141c16);
+	--tint-green: color-mix(in srgb, var(--green) 40%, #141c16);
+	--tint-forest: color-mix(in srgb, var(--forest) 60%, #141c16);
+	--header-bg: color-mix(in srgb, var(--forest) 60%, #141c16);
+	--header-text: var(--sand);
 	--grain-opacity: 0.08;
 	color-scheme: dark;
 }
@@ -733,7 +739,7 @@ img.ph {
 .tags li {
 	font-size: 13px;
 	padding: 2px 10px;
-	background: color-mix(in srgb, var(--teal) 16%, var(--bg));
+	background: color-mix(in srgb, var(--green) 18%, var(--bg));
 	border-radius: 999px;
 	color: var(--text);
 }
@@ -963,7 +969,7 @@ img.ph {
 	width: 7px;
 	height: 7px;
 	border-radius: 50%;
-	background: var(--accent);
+	background: var(--deco);
 }
 
 .project-body {
@@ -1387,14 +1393,14 @@ img.ph {
 .card:nth-child(3n + 2) .ph,
 .showcase__item:nth-child(3n + 2) .ph,
 .gallery .ph:nth-child(2) {
-	background: var(--tint-teal);
+	background: var(--tint-green);
 }
 
 .card:nth-child(3n) .ph,
 .showcase__item:nth-child(3n) .ph,
 .gallery .ph:nth-child(3),
 .about .ph {
-	background: var(--tint-red);
+	background: var(--tint-forest);
 }
 
 .chip:hover {
@@ -1416,7 +1422,7 @@ img.ph {
 /* Pencil cursor while drawing */
 html.is-doodling,
 html.is-doodling * {
-	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 21l1.5-5.5L16 4l4 4L8.5 19.5z' fill='%23fff1d1' stroke='%232b1b14' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M3 21l1.5-5.5 4 4z' fill='%232b1b14'/%3E%3C/svg%3E") 3 21, crosshair;
+	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 21l1.5-5.5L16 4l4 4L8.5 19.5z' fill='%23ece8af' stroke='%231c2a20' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M3 21l1.5-5.5 4 4z' fill='%231c2a20'/%3E%3C/svg%3E") 3 21, crosshair;
 }
 
 html.is-doodling * {
