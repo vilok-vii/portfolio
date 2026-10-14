@@ -555,6 +555,7 @@ img.ph {
 
 .showcase__action {
 	grid-area: action;
+	justify-self: center;
 }
 
 .showcase__item:nth-child(even) {
