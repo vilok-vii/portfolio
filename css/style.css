@@ -992,8 +992,34 @@ img.ph {
 	}
 }
 
+/* Numbered steps (_includes/steps.html): text with full-width images below */
+.steps {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	margin-block: 16px;
+}
+
+.steps__item {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.steps__item h3 {
+	font-size: 18px;
+}
+
+.steps img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+}
+
 /* Image viewer: gallery images open over the page */
-.gallery a {
+.gallery a,
+.steps a {
 	cursor: zoom-in;
 }
 

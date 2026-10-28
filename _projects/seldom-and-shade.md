@@ -60,20 +60,33 @@ playtests:
   - src: /assets/images/seldom-and-shade/playtest-2.png
     caption: "Playtest 2"
 progress:
-  - src: /assets/images/seldom-and-shade/progress-1.jpg
-    caption: "1. Greybox on the template's level, with placeholder characters, the first leash and enemies"
-  - src: /assets/images/seldom-and-shade/progress-2.jpg
-    caption: "2. A new ground texture, with the leash crackling red"
-  - src: /assets/images/seldom-and-shade/progress-3.jpg
-    caption: "3. The first ghost and dog characters and glowing red enemies"
-  - src: /assets/images/seldom-and-shade/progress-4.jpg
-    caption: "4. A darker look, red obstacles and a score counter"
-  - src: /assets/images/seldom-and-shade/progress-5.jpg
-    caption: "5. The new HUD with timer, score, combo and distance, and stone obstacles"
-  - src: /assets/images/seldom-and-shade/progress-6.jpg
-    caption: "6. A refined HUD and level layout"
-  - src: /assets/images/seldom-and-shade/progress-7.jpg
-    caption: "7. Multiplier pickups and arrows at the screen edge for off-screen enemies"
+  - title: Template and leash
+    text: "I started from a twin-stick shooter template provided by the teaching staff. Since the player controls two characters at once, I reworked the movement so that each joystick drives one character. I then removed the template's gun system and replaced it with my own weapon: the leash that connects the two characters."
+    images:
+      - src: /assets/images/seldom-and-shade/progress-1.jpg
+        caption: "Greybox on the template's level, with placeholder characters, the first leash and enemies"
+  - title: Textures and effects
+    text: "Next, I added grungy textures and visual effects. Besides setting the mood, they make the important objects on screen, such as the characters, the leash and the enemies, stand out clearly against the background."
+    images:
+      - src: /assets/images/seldom-and-shade/progress-2.jpg
+        caption: "A new ground texture, with the leash crackling red"
+  - title: Health feedback and danger
+    text: "A character can take two hits within a certain time window before going down. I added visual feedback that tells players when they are down to their last health. I also coloured everything that can cut the leash bright red and gave the enemies spiky shapes, so that danger reads at a glance."
+    images:
+      - src: /assets/images/seldom-and-shade/progress-3.jpg
+        caption: "The first ghost and dog characters and glowing red enemies"
+      - src: /assets/images/seldom-and-shade/progress-4.jpg
+        caption: "Spiky enemies and bright red obstacles that cut the leash"
+  - title: HUD and multiplier
+    text: "I added a simple HUD that shows the game mode's information to the player. To keep players moving around the level, I introduced a yellow multiplier pickup that helps them reach a higher score. I also changed the walls from red to grey: they do not damage the player and only cut the leash, so they should not look as threatening as the enemies."
+    images:
+      - src: /assets/images/seldom-and-shade/progress-5.jpg
+        caption: "The new HUD with timer, score, combo and distance, and grey stone obstacles"
+  - title: Final polish
+    text: "Finally, I added a cooldown bar under the multiplier to show when the collected points will be added to the total score. I toned down the brightness of the leash so that the characters' damaged state stands out better. I also added direction indicators at the edge of the screen for all enemies and the multiplier, which made players less afraid of approaching the edge."
+    images:
+      - src: /assets/images/seldom-and-shade/progress-7.jpg
+        caption: "The multiplier's cooldown bar and arrows at the screen edge for off-screen enemies"
 ---
 
 ## Overview
@@ -92,9 +105,9 @@ Seldom & Shade was later chosen as one of the example games for the next year's 
 
 ## Development progress
 
-The game went through several versions during the block, from a greybox on the template's level to the final look. The screenshots below follow the versions in order.
+The game went through several versions during the block, from a greybox on the template's level to the final look.
 
-{% include album.html items=page.progress ratio="16 / 9" %}
+{% include steps.html items=page.progress %}
 
 ## Unreal Engine
 
