@@ -643,11 +643,11 @@ img.ph {
 	top: 0;
 	/* Above the first project's text column; never so far right that the bubble sticks out */
 	left: min(65%, 100% - 330px);
-	z-index: 2;
 	width: 75px;
 	height: 135px;
-	/* The line runs along the bottom of the blue jacket: 17 sprite rows of 5px from the top */
-	transform: translateY(-84px);
+	/* The line runs along the bottom of the blue jacket: 17 sprite rows of 5px from the top.
+		(No transform or z-index here, so the bubble can rise above the drawings on its own.) */
+	margin-top: -84px;
 	cursor: help;
 }
 
@@ -660,6 +660,7 @@ img.ph {
 .buddy img {
 	position: absolute;
 	inset: 0;
+	z-index: 2;
 	image-rendering: pixelated;
 }
 
@@ -682,9 +683,11 @@ img.ph {
 	}
 }
 
-/* The bubble image is drawn behind the text; its tail points at the head */
+/* The bubble image is drawn behind the text; its tail points at the head.
+	It sits above right-click drawings (.doodle, z-index 40), below the header. */
 .buddy__bubble {
 	position: absolute;
+	z-index: 42;
 	bottom: calc(100% - 30px);
 	left: 56px;
 	display: grid;
