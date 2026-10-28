@@ -10,12 +10,18 @@ layout: default
 				<p>{{ t.about.bio_1 }}</p>
 				<p>{{ t.about.bio_2 }}</p>
 				<h2 class="label">{{ t.about.skills }}</h2>
-				<ul class="tags">
-					<li>{{ t.about.skill }}</li>
-					<li>{{ t.about.skill }}</li>
-					<li>{{ t.about.skill }}</li>
-					<li>{{ t.about.skill }}</li>
-				</ul>
+				<div class="skills">
+					{%- for group in t.about.skill_groups %}
+					<section>
+						<h3>{{ group.title }}</h3>
+						<ul class="tags">
+							{%- for item in group.items %}
+							<li>{{ item }}</li>
+							{%- endfor %}
+						</ul>
+					</section>
+					{%- endfor %}
+				</div>
 				<h2 class="label">{{ t.about.contact }}</h2>
 				<p>{{ t.about.email }}</p>
 			</div>
