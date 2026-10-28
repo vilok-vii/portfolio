@@ -91,7 +91,7 @@ progress:
 
 ## Overview
 
-I made this game for Block A of Year 2 during my studies at Breda University of Applied Sciences. As I was specializing in technical design, my task was to build on top of a twin-stick shooter template. I wanted to make something unique, with a clean and simple design, so I settled on a game where the player controls two characters at the same time, one with each joystick.
+I made this game for Block A of Year 2 during my studies at Breda University of Applied Sciences. As I was specialising in technical design, my task was to build on top of a twin-stick shooter template. I wanted to make something unique, with a clean and simple design, so I settled on a game where the player controls two characters at the same time, one with each joystick.
 
 Surprisingly, the unconventional controls did not turn out to be as jarring as I had anticipated, and the game turned out to be exactly what an arcade game should be: people were excited to play, kept jumping back in to reach a new high score, and had fun in the meantime.
 
