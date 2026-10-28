@@ -1294,7 +1294,9 @@ img.ph {
 	border-color: var(--accent);
 }
 
-/* Arrows sit over the left and right edges of the image (the layer has the image's shape, not the caption's) */
+/* Previous/next: wide click zones over the left and right edges of the image,
+	so a near miss turns the page instead of opening the large view.
+	The layer has the image's shape, not the caption's. */
 .album__arrows {
 	position: absolute;
 	top: 0;
@@ -1302,35 +1304,56 @@ img.ph {
 	right: 0;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	aspect-ratio: var(--album-ratio, 16 / 10);
-	padding-inline: 12px;
 	pointer-events: none;
 }
 
 .album__nav {
-	display: grid;
-	flex: 0 0 auto;
-	place-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: max(20%, 64px);
+	padding: 0 12px;
+	border: 0;
+	border-radius: var(--radius) 0 0 var(--radius);
+	background: none;
+	color: var(--text);
 	pointer-events: auto;
-	box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	transition: background 0.15s ease;
+}
+
+.album__nav[data-step="1"] {
+	justify-content: flex-end;
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.album__nav:hover {
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.18), transparent);
+}
+
+.album__nav[data-step="1"]:hover {
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.18), transparent);
+}
+
+.album__nav-icon {
+	display: grid;
+	place-items: center;
 	width: 40px;
 	height: 40px;
-	padding: 0;
 	border: 1px solid var(--line);
 	border-radius: 50%;
 	background: var(--surface);
-	color: var(--text);
-	cursor: pointer;
+	box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.35);
 }
 
-.album__nav:hover:not(:disabled) {
+.album__nav:hover .album__nav-icon,
+.album__nav:focus-visible .album__nav-icon {
 	border-color: var(--accent);
 }
 
 .album__nav:disabled {
-	opacity: 0;
-	pointer-events: none;
+	visibility: hidden;
 }
 
 .pager {
