@@ -2,12 +2,16 @@
 	Numbered steps: a title and text per step, with its images full width below each other.
 	Usage in a project file: {% include steps.html items=page.progress %}
 	where progress is a front-matter list of { title, text, images: [{ src, caption }] }.
+	A step can have a short looping clip instead: video: { src, poster, caption } (an .mp4 without sound).
 {%- endcomment -%}
 <div class="steps">
 	{%- for step in include.items %}
 	<section class="steps__item">
 		<h3>{{ forloop.index }}. {{ step.title }}</h3>
 		<p>{{ step.text }}</p>
+		{%- if step.video %}
+		<video src="{{ step.video.src | relative_url }}"{% if step.video.poster %} poster="{{ step.video.poster | relative_url }}"{% endif %} autoplay muted loop playsinline aria-label="{{ step.video.caption | escape }}"></video>
+		{%- endif %}
 		{%- for image in step.images %}
 		<a href="{{ image.src | relative_url }}" data-caption="{{ image.caption | escape }}"><img src="{{ image.src | relative_url }}" alt="{{ image.caption | escape }}" loading="lazy"></a>
 		{%- endfor %}
