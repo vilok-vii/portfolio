@@ -642,12 +642,13 @@ img.ph {
 	position: absolute;
 	top: 0;
 	/* Above the first project's text column; never so far right that the bubble sticks out */
-	left: min(65%, 100% - 330px);
-	width: 75px;
-	height: 135px;
-	/* The line runs along the bottom of the blue jacket: 17 sprite rows of 5px from the top.
+	left: min(65%, 100% - 340px);
+	width: 85px;
+	height: 145px;
+	/* The line runs along the bottom of the blue jacket: 18 sprite rows of 5px from the top
+		(including the 1px black outline).
 		(No transform or z-index here, so the bubble can rise above the drawings on its own.) */
-	margin-top: -84px;
+	margin-top: -89px;
 	cursor: help;
 }
 
@@ -688,8 +689,8 @@ img.ph {
 .buddy__bubble {
 	position: absolute;
 	z-index: 42;
-	bottom: calc(100% - 30px);
-	left: 56px;
+	bottom: calc(100% - 35px);
+	left: 61px;
 	display: grid;
 	place-items: center;
 	width: 270px;
