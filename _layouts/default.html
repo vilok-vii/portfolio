@@ -55,7 +55,6 @@
 	</footer>
 	<script src="{{ '/js/site.js' | relative_url }}?v={{ v }}"></script>
 	<script src="{{ '/js/doodle.js' | relative_url }}?v={{ v }}"></script>
-	<script src="{{ '/js/palette-tool.js' | relative_url }}?v={{ v }}"></script>
 {%- for script in page.scripts %}
 	<script src="{{ '/js/' | append: script | relative_url }}?v={{ v }}"></script>
 {%- endfor %}
