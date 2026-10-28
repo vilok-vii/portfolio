@@ -84,6 +84,22 @@ Surprisingly, the unconventional controls did not turn out to be as jarring as I
 
 {% include album.html items=page.screenshots ratio="16 / 9" %}
 
+## Technical design
+
+Placeholder: the idea behind the push-and-pull playstyle.
+
+Seldom & Shade was later chosen as one of the example games for the next year's students.
+
+## Development progress
+
+The game went through several versions during the block, from a greybox on the template's level to the final look. The screenshots below follow the versions in order.
+
+{% include album.html items=page.progress ratio="16 / 9" %}
+
+## Unreal Engine
+
+The game was made in Unreal Engine 5. Placeholder: what you changed and added compared to the twin-stick shooter template.
+
 ## Design documentation
 
 Using a given template, I documented the game's high concept, then created individual feature specs for every feature I made. Here you can see the filled-out pitch template, the core loop and a few feature specs.
@@ -99,19 +115,3 @@ Using a given template, I documented the game's high concept, then created indiv
 For example, players played defensively, as opposed to my intention. When they stretched the leash, their characters ended up too close to the edge of the screen, where an enemy could kill them unexpectedly. My solution was to add arrows on the edge of the screen that indicate nearby off-screen enemies.
 
 {% include album.html items=page.playtests ratio="4 / 3" %}
-
-## Development progress
-
-The game went through several versions during the block, from a greybox on the template's level to the final look. The screenshots below follow the versions in order.
-
-{% include album.html items=page.progress ratio="16 / 9" %}
-
-## Technical design
-
-Placeholder: the idea behind the push-and-pull playstyle.
-
-Seldom & Shade was later chosen as one of the example games for the next year's students.
-
-## Unreal Engine
-
-The game was made in Unreal Engine 5. Placeholder: what you changed and added compared to the twin-stick shooter template.
