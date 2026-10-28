@@ -77,8 +77,8 @@ document.querySelectorAll(".album").forEach((album) => {
 	mark();
 });
 
-// Image viewer: gallery and album images open over the page instead of on their own.
-// Arrows (and the arrow keys) step through the images of the same gallery or album.
+// Image viewer: gallery, album and step images open over the page instead of on their own.
+// Arrows (and the arrow keys) step through the images of the same gallery, album or step list.
 (function () {
 	const dialog = document.querySelector(".lightbox");
 	if (!dialog || typeof dialog.showModal !== "function") return;
@@ -108,7 +108,7 @@ document.querySelectorAll(".album").forEach((album) => {
 		dialog.classList.toggle("lightbox--tall", tall);
 	});
 
-	document.querySelectorAll(".gallery, .album__track, .icon-grid").forEach((container) => {
+	document.querySelectorAll(".gallery, .album__track, .icon-grid, .steps").forEach((container) => {
 		const links = [...container.querySelectorAll("a")].filter((a) => a.querySelector("img"));
 		links.forEach((link, i) => {
 			link.addEventListener("click", (e) => {

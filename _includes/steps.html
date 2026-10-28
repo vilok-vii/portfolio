@@ -1,0 +1,16 @@
+{%- comment -%}
+	Numbered steps: a title and text per step, with its images full width below each other.
+	Usage in a project file: {% include steps.html items=page.progress %}
+	where progress is a front-matter list of { title, text, images: [{ src, caption }] }.
+{%- endcomment -%}
+<div class="steps">
+	{%- for step in include.items %}
+	<section class="steps__item">
+		<h3>{{ forloop.index }}. {{ step.title }}</h3>
+		<p>{{ step.text }}</p>
+		{%- for image in step.images %}
+		<a href="{{ image.src | relative_url }}" data-caption="{{ image.caption | escape }}"><img src="{{ image.src | relative_url }}" alt="{{ image.caption | escape }}" loading="lazy"></a>
+		{%- endfor %}
+	</section>
+	{%- endfor %}
+</div>
