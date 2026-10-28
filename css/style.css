@@ -762,10 +762,10 @@ img.ph {
 	--tilt: 4deg;
 }
 
-/* Enlarge slightly on hover */
+/* Enlarge slightly on hover and lean a bit further the way it already leans */
 @media (hover: hover) {
 	.showcase__media:hover {
-		transform: rotate(var(--tilt)) scale(1.05);
+		transform: rotate(calc(var(--tilt) * 1.5)) scale(1.05);
 	}
 }
 
