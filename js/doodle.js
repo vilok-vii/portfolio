@@ -1,9 +1,10 @@
 // Doodling: hold the right mouse button and drag anywhere on the page to draw.
 // Drawings stay (and scroll with the page) until it is reloaded or left,
 // or until the eraser button in the bottom left corner clears them.
-// A line started on a home page project image sticks to that image: it is
-// kept in the image's own coordinates and drawn through the image's current
-// transform, so it tilts and grows with the image on hover, like ink on paper.
+// The parts of a line drawn on a home page project image stick to that image:
+// they are kept in the image's own coordinates, drawn through its current
+// transform (so they tilt and grow with it on hover, like ink on paper) and cut
+// off at its edges. The parts drawn beside it stay on the page and pass under it.
 // The browser's right-click menu: a right-click without dragging still opens
 // it where the browser allows (Windows); Shift + right-click always does.
 // To remove the feature: delete this file, its script tag in
@@ -73,6 +74,38 @@
 		return { x: local.x, y: local.y };
 	}
 
+	// The surface under a pointer position, going by where it is drawn right now
+	function surfaceAt(clientX, clientY) {
+		const page = new DOMPoint(clientX + scrollX, clientY + scrollY);
+		for (const el of document.querySelectorAll(SURFACES)) {
+			const p = page.matrixTransform(surfaceMatrix(el).inverse());
+			if (p.x >= 0 && p.y >= 0 && p.x <= el.offsetWidth && p.y <= el.offsetHeight) return el;
+		}
+		return null;
+	}
+
+	// Starts a piece of the current line on a surface (or on the page when null)
+	function startPiece(surface, color, from, to) {
+		stroke = { color, surface, points: [] };
+		// On a surface, keep the line as wide on screen as on the page right now
+		if (surface) {
+			const m = surfaceMatrix(surface);
+			stroke.scale = Math.hypot(m.a, m.b);
+		}
+		// Both ends of the crossing segment, so the pieces meet exactly at the edge
+		stroke.points.push(toStroke(stroke, from.x, from.y), toStroke(stroke, to.x, to.y));
+		strokes.push(stroke);
+	}
+
+	// Outline of a surface as it is drawn right now, in page coordinates
+	function addSurfaceOutline(path, el, toPage) {
+		const corners = [[0, 0], [el.offsetWidth, 0], [el.offsetWidth, el.offsetHeight], [0, el.offsetHeight]]
+			.map(([x, y]) => new DOMPoint(x, y).matrixTransform(toPage));
+		path.moveTo(corners[0].x, corners[0].y);
+		for (const c of corners.slice(1)) path.lineTo(c.x, c.y);
+		path.closePath();
+	}
+
 	// Each stroke takes the next colour from the palette
 	function nextColor() {
 		const names = ["--red", "--blue", "--yellow"];
@@ -90,6 +123,14 @@
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
 		const matrices = new Map();
+		const surfaces = [...document.querySelectorAll(SURFACES)];
+		// Page lines are cut out where the images are drawn now, so the images cover them
+		let outside = null;
+		if (surfaces.length && strokes.some((s) => !s.surface)) {
+			outside = new Path2D();
+			outside.rect(scrollX, scrollY, innerWidth, innerHeight);
+			for (const el of surfaces) addSurfaceOutline(outside, el, surfaceMatrix(el));
+		}
 		for (const s of strokes) {
 			// Page strokes only scroll; surface strokes also follow their surface's transform
 			// (the line width too, so the ink grows with the image)
@@ -98,7 +139,16 @@
 				if (!matrices.has(s.surface)) matrices.set(s.surface, view.multiply(surfaceMatrix(s.surface)));
 				m = matrices.get(s.surface);
 			}
+			ctx.save();
 			ctx.setTransform(m);
+			// Surface lines stop at the image's edges; page lines go around the images
+			if (s.surface) {
+				ctx.beginPath();
+				ctx.rect(0, 0, s.surface.offsetWidth, s.surface.offsetHeight);
+				ctx.clip();
+			} else if (outside) {
+				ctx.clip(outside, "evenodd");
+			}
 			ctx.lineWidth = WIDTH / (s.scale || 1);
 			const pts = s.points;
 			ctx.strokeStyle = s.color;
@@ -113,6 +163,7 @@
 			const end = pts[pts.length - 1];
 			ctx.lineTo(end.x, end.y);
 			ctx.stroke();
+			ctx.restore();
 		}
 		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 		if (animating) redraw();
@@ -142,28 +193,30 @@
 		} catch (err) {
 			// Not supported: the release is still caught inside the window
 		}
-		start = { x: e.clientX, y: e.clientY, surface: e.target.closest && e.target.closest(SURFACES) };
+		start = { x: e.clientX, y: e.clientY };
 		moved = false;
 		stroke = null;
 	});
 
+	let last = null; // previous pointer position of the line being drawn
 	document.addEventListener("pointermove", (e) => {
 		if (!start || !(e.buttons & 2)) return;
+		const here = { x: e.clientX, y: e.clientY };
+		const surface = surfaceAt(here.x, here.y);
 		if (!stroke) {
-			if (Math.hypot(e.clientX - start.x, e.clientY - start.y) < MOVE_THRESHOLD) return;
+			if (Math.hypot(here.x - start.x, here.y - start.y) < MOVE_THRESHOLD) return;
 			moved = true;
-			stroke = { color: nextColor(), surface: start.surface || null, points: [] };
-			// On a surface, keep the line as wide on screen as on the page right now
-			if (stroke.surface) {
-				const m = surfaceMatrix(stroke.surface);
-				stroke.scale = Math.hypot(m.a, m.b);
-			}
-			stroke.points.push(toStroke(stroke, start.x, start.y));
-			strokes.push(stroke);
+			startPiece(surfaceAt(start.x, start.y), nextColor(), start, here);
 			root.classList.add("is-doodling");
 			eraser.classList.add("is-visible");
+		} else if (surface !== stroke.surface) {
+			// Crossed an image's edge: finish this piece and go on in a new one, same colour
+			stroke.points.push(toStroke(stroke, here.x, here.y));
+			startPiece(surface, stroke.color, last, here);
+		} else {
+			stroke.points.push(toStroke(stroke, here.x, here.y));
 		}
-		stroke.points.push(toStroke(stroke, e.clientX, e.clientY));
+		last = here;
 		redraw();
 	});
 
