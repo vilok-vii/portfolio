@@ -36,10 +36,12 @@ document.querySelectorAll(".album").forEach((album) => {
 	const track = album.querySelector(".album__track");
 	const items = [...album.querySelectorAll(".album__item")];
 	const bar = album.querySelector(".album__bar");
+	const arrows = album.querySelector(".album__arrows");
 	const thumbs = [...album.querySelectorAll(".album__thumb")];
 	const [prev, next] = album.querySelectorAll(".album__nav");
 	if (items.length < 2) return;
 	bar.hidden = false;
+	arrows.hidden = false;
 
 	let current = 0;
 	const go = (i) => {

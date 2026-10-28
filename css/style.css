@@ -1196,12 +1196,16 @@ img.ph {
 	}
 }
 
-/* Image album: one image at a time, arrows and thumbnails below */
+/* Image album: one image at a time, arrows on its sides and thumbnails below */
 .album {
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
 	margin-block: 16px;
+}
+
+.album__stage {
+	position: relative;
 }
 
 .album__track {
@@ -1247,15 +1251,8 @@ img.ph {
 	color: var(--muted);
 }
 
-.album__bar {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-}
-
 .album__thumbs {
 	display: flex;
-	flex: 1;
 	gap: 8px;
 	min-width: 0;
 	overflow-x: auto;
@@ -1265,7 +1262,7 @@ img.ph {
 
 .album__thumb {
 	flex: 0 0 auto;
-	width: 88px;
+	width: 136px;
 	aspect-ratio: 16 / 10;
 	padding: 0;
 	border: 2px solid transparent;
@@ -1274,6 +1271,12 @@ img.ph {
 	overflow: hidden;
 	opacity: 0.6;
 	cursor: pointer;
+}
+
+@media (max-width: 560px) {
+	.album__thumb {
+		width: 100px;
+	}
 }
 
 .album__thumb img {
@@ -1291,10 +1294,26 @@ img.ph {
 	border-color: var(--accent);
 }
 
+/* Arrows sit over the left and right edges of the image (the layer has the image's shape, not the caption's) */
+.album__arrows {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	aspect-ratio: var(--album-ratio, 16 / 10);
+	padding-inline: 12px;
+	pointer-events: none;
+}
+
 .album__nav {
 	display: grid;
 	flex: 0 0 auto;
 	place-items: center;
+	pointer-events: auto;
+	box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.35);
 	width: 40px;
 	height: 40px;
 	padding: 0;
@@ -1310,8 +1329,8 @@ img.ph {
 }
 
 .album__nav:disabled {
-	opacity: 0.35;
-	cursor: default;
+	opacity: 0;
+	pointer-events: none;
 }
 
 .pager {
