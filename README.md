@@ -27,6 +27,7 @@ index.html            Home page (picks the home layout)
 about/, projects/     Tiny files that pick a layout for each page
 css/style.css         All styles; palette and grain at the top
 assets/images/        Images (noise.png = grain texture)
+assets/images/buddy/  Pixel character on the home page (idle and talking frames, speech bubble; drawn at 5x/6x)
 assets/files/         Downloads; the Resume link in the navigation opens Vilmos_Horvath_Resume.pdf
 js/site.js            Mobile menu, dark mode toggle, tooltips
 js/doodle.js          Drawing with the right mouse button
