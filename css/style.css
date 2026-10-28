@@ -746,9 +746,9 @@ img.ph {
 .tags li {
 	font-size: 13px;
 	padding: 2px 10px;
-	background: var(--blue);
+	background: color-mix(in srgb, var(--blue) 18%, var(--bg));
 	border-radius: 999px;
-	color: var(--accent-text);
+	color: var(--text);
 }
 
 /* ==========================================================================
