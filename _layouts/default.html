@@ -43,6 +43,7 @@
 					<li><a href="{{ home_url | relative_url }}"{% if page.section == "home" %} aria-current="page"{% endif %}>{{ t.nav.home }}</a></li>
 					<li><a href="{{ home_url | append: 'projects/' | relative_url }}"{% if page.section == "projects" %} aria-current="page"{% endif %}>{{ t.nav.projects }}</a></li>
 					<li><a href="{{ home_url | append: 'about/' | relative_url }}"{% if page.section == "about" %} aria-current="page"{% endif %}>{{ t.nav.about }}</a></li>
+					<li><a href="{{ '/assets/files/Vilmos_Horvath_Resume.pdf' | relative_url }}" target="_blank" rel="noopener">{{ t.nav.resume }}</a></li>
 				</ul>
 			</nav>
 			<div class="menu-backdrop" hidden></div>
