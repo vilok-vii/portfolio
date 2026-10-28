@@ -1,6 +1,6 @@
 # Vilmos Horváth — Portfolio
 
-Portfolio built with [Jekyll](https://jekyllrb.com/), which GitHub Pages builds automatically on every push. Currently placeholders only.
+Portfolio built with [Jekyll](https://jekyllrb.com/), which GitHub Pages builds automatically on every push.
 
 ## URLs
 
