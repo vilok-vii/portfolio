@@ -71,7 +71,7 @@ progress:
       - src: /assets/images/seldom-and-shade/progress-2.jpg
         caption: "A new ground texture, with the leash crackling red"
   - title: Health feedback and danger
-    text: "A character can take two hits within a certain time window before going down. I added visual feedback that tells players when they are down to their last health. I also coloured everything that can cut the leash bright red and gave the enemies spiky shapes, so that danger reads at a glance."
+    text: "Seldom can take two hits within a certain time window before going down. I added visual feedback that tells players when they are down to their last health. I also coloured everything that can cut the leash bright red and gave the enemies spiky shapes, so that danger reads at a glance."
     images:
       - src: /assets/images/seldom-and-shade/progress-3.jpg
         caption: "The first ghost and dog characters and glowing red enemies"
