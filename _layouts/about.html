@@ -23,7 +23,13 @@ layout: default
 					{%- endfor %}
 				</div>
 				<h2 class="label">{{ t.about.contact }}</h2>
-				<p>{{ t.about.email }}</p>
+				<ul class="contact">
+					<li><a href="mailto:{{ t.about.email }}">{{ t.about.email }}</a></li>
+					{%- for phone in t.about.phones %}
+					<li><a href="tel:{{ phone | remove: ' ' }}">{{ phone }}</a></li>
+					{%- endfor %}
+					<li>{{ t.about.location }}</li>
+				</ul>
 			</div>
 		</div>
 	</main>

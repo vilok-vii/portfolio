@@ -59,7 +59,10 @@ about:
     - title: Soft skills
       items: [Teamwork, Time Management, Communication]
   contact: Contact
-  email: email@example.com
+  # Contact details, taken from the resume
+  email: horvath.vilko@gmail.com
+  phones: ["+31 6 31266537", "+36 70 606 0087"]
+  location: Breda, Netherlands
 
 project:
   back: All projects
