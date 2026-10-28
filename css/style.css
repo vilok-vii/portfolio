@@ -1511,6 +1511,22 @@ img.ph {
 	pointer-events: none;
 }
 
+/* Ink on a home page project image: a canvas inside the image, so it moves with it.
+	The images sit above the page drawings (but below the header), so lines drawn
+	beside an image pass under it. */
+.doodle-surface {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.showcase__media {
+	position: relative;
+	z-index: 41;
+}
+
 /* Pencil cursor while drawing */
 html.is-doodling,
 html.is-doodling * {
