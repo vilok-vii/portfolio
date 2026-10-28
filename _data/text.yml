@@ -52,10 +52,10 @@ about:
   skills: Skills
   # Skill groups, taken from the resume
   skill_groups:
+    - title: Design
+      items: [UI/UX Design, Game Design, Design Documentation]
     - title: Software
       items: [Unreal Engine, Godot, Photoshop, Illustrator, Microsoft Suite]
-    - title: Design
-      items: [Game Design, UI/UX Design, Design Documentation]
     - title: Soft skills
       items: [Teamwork, Time Management, Communication]
   contact: Contact
