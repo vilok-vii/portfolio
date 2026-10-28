@@ -47,8 +47,8 @@ projects:
 about:
   title: About
   portrait: Portrait of Vilmos Horváth
-  bio_1: "Bio placeholder: who you are, your background and what drives your work."
-  bio_2: "Second paragraph placeholder: studies, experience or what you are looking for next."
+  bio_1: "Hello! I'm Vilmos, a UI/UX designer for video games, specializing in Unreal Engine and with experience in Godot. I'm currently studying at Breda University of Applied Sciences, and I'm looking for an internship in UI/UX or general game design for 2027."
+  bio_2: "If I'm not working on games, you can probably find me somewhere outside or doing some kind of arts and crafts. Recently, I've been learning how to whittle!"
   skills: Skills
   # Skill groups, taken from the resume
   skill_groups:
