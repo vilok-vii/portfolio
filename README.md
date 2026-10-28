@@ -8,7 +8,7 @@ Portfolio built with [Jekyll](https://jekyllrb.com/), which GitHub Pages builds 
 | --- | --- |
 | `/` | Home: intro (who I am, what I do), selected work |
 | `/portfolio/` | Old address; redirects to the selected work on the home page |
-| `/projects/` | Searchable, filterable list of all projects |
+| `/projects/` | List of all projects, newest first |
 | `/projects/<slug>/` | Individual project page |
 | `/about/` | About |
 
@@ -27,7 +27,6 @@ index.html            Home page (picks the home layout)
 about/, projects/     Tiny files that pick a layout for each page
 css/style.css         All styles; palette and grain at the top
 assets/images/        Images (noise.png = grain texture)
-js/projects.js        Search, filters and sorting on the Projects page
 js/site.js            Mobile menu, dark mode toggle, tooltips
 js/doodle.js          Drawing with the right mouse button
 js/palette-tool.js    Live colour tool, only after ?palette
@@ -90,7 +89,7 @@ With a mouse, visitors can hold the right button and drag anywhere to draw (`js/
 	- `play_url`: optional link to a playable build (e.g. itch.io); shows a Play button next to the title
 3. Write the project text below the front matter in Markdown.
 
-Filter options on the Projects page are built from the projects automatically.
+The Projects page lists projects newest year first, then by `order`.
 
 ## Preview locally (optional)
 

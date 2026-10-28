@@ -14,7 +14,7 @@
 		link.querySelector("span").textContent = link.dataset.homeLabel;
 	}
 	// Coming straight from that page: go back in history instead, so the
-	// visitor returns to the same scroll position (and filters on All projects).
+	// visitor returns to the same scroll position.
 	link.addEventListener("click", (e) => {
 		const target = new URL(link.href, location.href);
 		let from = null;
