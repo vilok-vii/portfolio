@@ -642,6 +642,8 @@ img.ph {
 
 .showcase__media {
 	grid-area: media;
+	/* Vertically centred next to the text */
+	align-self: center;
 	display: block;
 	text-decoration: none;
 	/* Tilted like a photo: left-side images lean left, right-side ones lean right */
