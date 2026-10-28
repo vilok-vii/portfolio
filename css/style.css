@@ -646,8 +646,8 @@ img.ph {
 	z-index: 2;
 	width: 75px;
 	height: 135px;
-	/* The line runs just under the hips: 18 sprite rows of 5px from the top */
-	transform: translateY(-89px);
+	/* The line runs along the bottom of the blue jacket: 17 sprite rows of 5px from the top */
+	transform: translateY(-84px);
 	cursor: help;
 }
 
