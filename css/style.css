@@ -746,9 +746,9 @@ img.ph {
 .tags li {
 	font-size: 13px;
 	padding: 2px 10px;
-	background: color-mix(in srgb, var(--blue) 18%, var(--bg));
+	background: var(--blue);
 	border-radius: 999px;
-	color: var(--text);
+	color: var(--accent-text);
 }
 
 /* ==========================================================================
@@ -813,11 +813,6 @@ img.ph {
 	margin-bottom: 8px;
 	font-size: 15px;
 	font-weight: 600;
-}
-
-.skills .tags li {
-	background: var(--blue);
-	color: var(--accent-text);
 }
 
 @media (max-width: 760px) {
