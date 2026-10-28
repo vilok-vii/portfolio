@@ -815,6 +815,11 @@ img.ph {
 	font-weight: 600;
 }
 
+.skills .tags li {
+	background: var(--blue);
+	color: var(--accent-text);
+}
+
 @media (max-width: 760px) {
 	.about {
 		grid-template-columns: 1fr;
