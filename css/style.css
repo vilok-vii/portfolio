@@ -1010,7 +1010,8 @@ img.ph {
 	font-size: 18px;
 }
 
-.steps img {
+.steps img,
+.steps video {
 	display: block;
 	width: 100%;
 	height: auto;

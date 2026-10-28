@@ -73,7 +73,7 @@ With a mouse, visitors can hold the right button and drag anywhere to draw (`js/
 	- `year`, `tools`, `featured` (`true` = also shown under Portfolio on the home page)
 	- `responsibilities`, `skills`: optional lists (Key responsibilities, Relevant skills) shown below the facts row on the project page and on the Portfolio cards on the home page
 	- Image album: list images in the front matter (e.g. `design_docs:` with `- src:` and `caption:` per image) and put `{% include album.html items=page.design_docs %}` where it should appear in the text
-	- Numbered steps with images below each other: list them in the front matter (e.g. `progress:` with `- title:`, `text:` and `images:` per step) and put `{% include steps.html items=page.progress %}` in the text
+	- Numbered steps with images below each other: list them in the front matter (e.g. `progress:` with `- title:`, `text:` and `images:` per step) and put `{% include steps.html items=page.progress %}` in the text. A step can show a short silent looping clip instead, with `video:` (`src`, `poster`, `caption`)
 	- `image`: optional cover/thumbnail path, e.g. `/assets/images/my-game/cover.jpg`
 	- `thumbnail`: optional image for the project cards on the home and projects pages; falls back to `image` when left out
 	- `video`: optional YouTube video ID (the part after `youtu.be/`), shown instead of the cover image on the project page; `image` is still used for cards

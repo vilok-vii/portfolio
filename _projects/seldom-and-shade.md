@@ -62,31 +62,34 @@ playtests:
 progress:
   - title: Template and leash
     text: "I started from a twin-stick shooter template provided by the teaching staff. Since the player controls two characters at once, I reworked the movement so that each joystick drives one character. I then removed the template's gun system and replaced it with my own weapon: the leash that connects the two characters."
-    images:
-      - src: /assets/images/seldom-and-shade/progress-1.jpg
-        caption: "Greybox on the template's level, with placeholder characters, the first leash and enemies"
+    video:
+      src: /assets/images/seldom-and-shade/progress-1.mp4
+      poster: /assets/images/seldom-and-shade/progress-1-poster.jpg
+      caption: "The greybox on the template's level, with the first leash and placeholder enemies"
   - title: Textures and effects
     text: "Next, I added grungy textures and visual effects. Besides setting the mood, they make the important objects on screen, such as the characters, the leash and the enemies, stand out clearly against the background."
-    images:
-      - src: /assets/images/seldom-and-shade/progress-2.jpg
-        caption: "A new ground texture, with the leash crackling red"
+    video:
+      src: /assets/images/seldom-and-shade/progress-2.mp4
+      poster: /assets/images/seldom-and-shade/progress-2-poster.jpg
+      caption: "Grungy ground textures and the crackling leash effect"
   - title: Health feedback and danger
     text: "Seldom can take two hits within a certain time window before going down. I added visual feedback that tells players when they are down to their last health. I also coloured everything that can cut the leash bright red and gave the enemies spiky shapes, so that danger reads at a glance."
-    images:
-      - src: /assets/images/seldom-and-shade/progress-3.jpg
-        caption: "The first ghost and dog characters and glowing red enemies"
-      - src: /assets/images/seldom-and-shade/progress-4.jpg
-        caption: "Spiky enemies and bright red obstacles that cut the leash"
+    video:
+      src: /assets/images/seldom-and-shade/progress-3.mp4
+      poster: /assets/images/seldom-and-shade/progress-3-poster.jpg
+      caption: "Spiky red enemies and bright red obstacles that cut the leash"
   - title: HUD and multiplier
     text: "I added a simple HUD that shows the game mode's information to the player. To keep players moving around the level, I introduced a yellow multiplier pickup that helps them reach a higher score. I also changed the walls from red to grey: they do not damage the player and only cut the leash, so they should not look as threatening as the enemies."
-    images:
-      - src: /assets/images/seldom-and-shade/progress-5.jpg
-        caption: "The new HUD with timer, score, combo and distance, and grey stone obstacles"
+    video:
+      src: /assets/images/seldom-and-shade/progress-4.mp4
+      poster: /assets/images/seldom-and-shade/progress-4-poster.jpg
+      caption: "The new HUD and grey stone walls, with the multiplier climbing"
   - title: Final polish
     text: "Finally, I added a cooldown bar under the multiplier to show when the collected points will be added to the total score. I toned down the brightness of the leash so that the characters' damaged state stands out better. I also added direction indicators at the edge of the screen for all enemies and the multiplier, which made players less afraid of approaching the edge."
-    images:
-      - src: /assets/images/seldom-and-shade/progress-7.jpg
-        caption: "The multiplier's cooldown bar and arrows at the screen edge for off-screen enemies"
+    video:
+      src: /assets/images/seldom-and-shade/progress-5.mp4
+      poster: /assets/images/seldom-and-shade/progress-5-poster.jpg
+      caption: "Collecting multiplier pickups, with the cooldown bar under the multiplier"
 ---
 
 ## Overview
