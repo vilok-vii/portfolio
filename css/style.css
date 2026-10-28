@@ -755,7 +755,7 @@ img.ph {
 	transition: transform 0.2s ease;
 }
 
-.showcase__item:nth-child(even) .showcase__media {
+.showcase__item:nth-of-type(even) .showcase__media {
 	--tilt: 4deg;
 }
 
@@ -778,7 +778,7 @@ img.ph {
 	box-shadow: 0 14px 22px -6px rgba(0, 0, 0, 0.35);
 }
 
-.showcase__item:nth-child(even) {
+.showcase__item:nth-of-type(even) {
 	grid-template-columns: 3fr 2fr;
 	grid-template-areas: "body media";
 }
@@ -818,7 +818,7 @@ img.ph {
 @media (max-width: 760px) {
 	/* Stacked: image, then text */
 	.showcase__item,
-	.showcase__item:nth-child(even) {
+	.showcase__item:nth-of-type(even) {
 		grid-template-columns: 1fr;
 		grid-template-areas:
 			"media"
@@ -1484,13 +1484,13 @@ img.ph {
 	Palette accents on placeholders: cycle through the three tints
 	========================================================================== */
 .card:nth-child(3n + 2) .ph,
-.showcase__item:nth-child(3n + 2) .ph,
+.showcase__item:nth-of-type(3n + 2) .ph,
 .gallery .ph:nth-child(2) {
 	background: var(--tint-blue);
 }
 
 .card:nth-child(3n) .ph,
-.showcase__item:nth-child(3n) .ph,
+.showcase__item:nth-of-type(3n) .ph,
 .gallery .ph:nth-child(3),
 .about .ph {
 	background: var(--tint-red);
