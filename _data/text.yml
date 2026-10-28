@@ -40,22 +40,7 @@ home:
 
 projects:
   title: Projects
-  intro: All projects. Search, filter and sort to find what you are looking for.
-  search: Search
-  search_placeholder: Title, tool, keyword…
-  year: Year
-  all_years: All years
-  tool: Tool
-  all_tools: All tools
-  sort: Sort
-  sort_newest: Newest first
-  sort_oldest: Oldest first
-  sort_az: A–Z
-  category: Category
-  all_categories: All
-  count: "{shown} of {total} projects"
-  clear: Clear filters
-  empty: No projects match these filters.
+  intro: You can find all my work here.
   thumbnail: Thumbnail
 
 about:
