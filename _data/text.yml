@@ -35,6 +35,9 @@ home:
   lead: "I'm currently looking for an internship in 2027."
   work_title: Portfolio
   work_intro: "Take a look at my best work!"
+  # Little character on the line above the first project; says this on hover
+  buddy_label: A little character with a hint
+  buddy_says: "Are you bothered by the empty space on this website? You can draw anywhere with right click!"
   image: Project image
   all_projects: View all projects
 
