@@ -81,8 +81,8 @@ With a mouse, visitors can hold the right button and drag anywhere to draw (`js/
 	- `title`, `summary`, `role`: text shown on cards and the project page
 	- `order`: position in lists and previous/next links (1 = first)
 	- `category`: `tech-design`, `game-design`, `ui-ux` or `creative` (labels come from `_data/text.yml`; add new ones there)
-	- `year`, `tools`, `featured` (`true` = also shown under Selected work on the home page)
-	- `responsibilities`, `skills`: optional lists (Key responsibilities, Relevant skills) shown below the facts row on the project page and on the Selected work cards on the home page
+	- `year`, `tools`, `featured` (`true` = also shown under Portfolio on the home page)
+	- `responsibilities`, `skills`: optional lists (Key responsibilities, Relevant skills) shown below the facts row on the project page and on the Portfolio cards on the home page
 	- Image album: list images in the front matter (e.g. `design_docs:` with `- src:` and `caption:` per image) and put `{% include album.html items=page.design_docs %}` where it should appear in the text
 	- `image`: optional cover/thumbnail path, e.g. `/assets/images/my-game/cover.jpg`
 	- `thumbnail`: optional image for the project cards on the home and projects pages; falls back to `image` when left out
