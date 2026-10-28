@@ -49,7 +49,7 @@ about:
   portrait: Portrait of Vilmos Horváth
   # The name (home.hello_name) sits between these two and shows the same tooltip as on the home page
   bio_1_before: "Hello! I'm "
-  bio_1_after: ", a UI/UX designer for video games, specializing in Unreal Engine and with experience in Godot. I'm currently studying at Breda University of Applied Sciences, and I'm looking for an internship in UI/UX or general game design for 2027."
+  bio_1_after: ", a UI/UX designer for video games, specialising in Unreal Engine and with experience in Godot. I'm currently studying at Breda University of Applied Sciences, and I'm looking for an internship in UI/UX or general game design for 2027."
   bio_2: "If I'm not working on games, you can probably find me somewhere outside or doing some kind of arts and crafts. Recently, I've been learning how to whittle!"
   skills: Skills
   # Skill groups, taken from the resume
