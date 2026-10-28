@@ -2,9 +2,10 @@
 // Drawings stay (and scroll with the page) until it is reloaded or left,
 // or until the eraser button in the bottom left corner clears them.
 // The parts of a line drawn on a home page project image stick to that image:
-// they are kept in the image's own coordinates, drawn through its current
-// transform (so they tilt and grow with it on hover, like ink on paper) and cut
-// off at its edges. The parts drawn beside it stay on the page and pass under it.
+// they are drawn on a small canvas inside the image, so the browser tilts and
+// grows them with it on hover (like ink on paper) with no delay, and they stop
+// at its edges. The images sit above the page drawings, so the parts drawn
+// beside an image pass under it.
 // The browser's right-click menu: a right-click without dragging still opens
 // it where the browser allows (Windows); Shift + right-click always does.
 // To remove the feature: delete this file, its script tag in
@@ -36,14 +37,15 @@
 
 	// Strokes are kept in page coordinates, so they scroll with the content;
 	// strokes on a surface are kept in that surface's untransformed coordinates
+	// and drawn on the surface's own canvas
 	const strokes = [];
+	const surfaceCanvases = new Map(); // surface element -> its canvas
 	let stroke = null; // the stroke being drawn
 	let start = null; // where the right button went down
 	let moved = false; // whether the current right-press has drawn anything
 	let lastLineEnd = -Infinity; // when the last line was finished
 	let colorIndex = 0;
 	let frame = 0;
-	let animating = 0; // surfaces with strokes whose transform is changing
 
 	// Page position of an element's untransformed box (offsets ignore transforms)
 	function boxPosition(el) {
@@ -97,15 +99,6 @@
 		strokes.push(stroke);
 	}
 
-	// Outline of a surface as it is drawn right now, in page coordinates
-	function addSurfaceOutline(path, el, toPage) {
-		const corners = [[0, 0], [el.offsetWidth, 0], [el.offsetWidth, el.offsetHeight], [0, el.offsetHeight]]
-			.map(([x, y]) => new DOMPoint(x, y).matrixTransform(toPage));
-		path.moveTo(corners[0].x, corners[0].y);
-		for (const c of corners.slice(1)) path.lineTo(c.x, c.y);
-		path.closePath();
-	}
-
 	// Each stroke takes the next colour from the palette
 	function nextColor() {
 		const names = ["--red", "--blue", "--yellow"];
@@ -114,59 +107,76 @@
 		return value || "#a00d39";
 	}
 
+	// Traces a stroke as a smooth line through the midpoints between samples
+	function trace(c, pts) {
+		c.beginPath();
+		c.moveTo(pts[0].x, pts[0].y);
+		for (let i = 1; i < pts.length - 1; i++) {
+			const mx = (pts[i].x + pts[i + 1].x) / 2;
+			const my = (pts[i].y + pts[i + 1].y) / 2;
+			c.quadraticCurveTo(pts[i].x, pts[i].y, mx, my);
+		}
+		const end = pts[pts.length - 1];
+		c.lineTo(end.x, end.y);
+	}
+
+	// A surface's canvas, made on first use. It covers the surface's box and is drawn
+	// at twice the screen resolution so the ink stays sharp when the image grows.
+	function surfaceCanvas(el) {
+		let c = surfaceCanvases.get(el);
+		if (!c) {
+			c = document.createElement("canvas");
+			c.className = "doodle-surface";
+			c.setAttribute("aria-hidden", "true");
+			el.appendChild(c);
+			surfaceCanvases.set(el, c);
+		}
+		const ratio = (window.devicePixelRatio || 1) * 2;
+		const w = Math.round(el.offsetWidth * ratio);
+		const h = Math.round(el.offsetHeight * ratio);
+		if (c.width !== w || c.height !== h) {
+			c.width = w;
+			c.height = h;
+		}
+		return { c, ratio };
+	}
+
 	function draw() {
 		frame = 0;
 		const dpr = window.devicePixelRatio || 1;
-		const view = new DOMMatrix().scale(dpr).translate(-scrollX, -scrollY);
 		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 		ctx.clearRect(0, 0, innerWidth, innerHeight);
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
-		const matrices = new Map();
-		const surfaces = [...document.querySelectorAll(SURFACES)];
-		// Page lines are cut out where the images are drawn now, so the images cover them
-		let outside = null;
-		if (surfaces.length && strokes.some((s) => !s.surface)) {
-			outside = new Path2D();
-			outside.rect(scrollX, scrollY, innerWidth, innerHeight);
-			for (const el of surfaces) addSurfaceOutline(outside, el, surfaceMatrix(el));
-		}
+		ctx.lineWidth = WIDTH;
+		ctx.translate(-scrollX, -scrollY);
+		// Page strokes on the page canvas
 		for (const s of strokes) {
-			// Page strokes only scroll; surface strokes also follow their surface's transform
-			// (the line width too, so the ink grows with the image)
-			let m = view;
-			if (s.surface) {
-				if (!matrices.has(s.surface)) matrices.set(s.surface, view.multiply(surfaceMatrix(s.surface)));
-				m = matrices.get(s.surface);
-			}
-			ctx.save();
-			ctx.setTransform(m);
-			// Surface lines stop at the image's edges; page lines go around the images
-			if (s.surface) {
-				ctx.beginPath();
-				ctx.rect(0, 0, s.surface.offsetWidth, s.surface.offsetHeight);
-				ctx.clip();
-			} else if (outside) {
-				ctx.clip(outside, "evenodd");
-			}
-			ctx.lineWidth = WIDTH / (s.scale || 1);
-			const pts = s.points;
+			if (s.surface) continue;
 			ctx.strokeStyle = s.color;
-			ctx.beginPath();
-			ctx.moveTo(pts[0].x, pts[0].y);
-			// Smooth the line through the midpoints between samples
-			for (let i = 1; i < pts.length - 1; i++) {
-				const mx = (pts[i].x + pts[i + 1].x) / 2;
-				const my = (pts[i].y + pts[i + 1].y) / 2;
-				ctx.quadraticCurveTo(pts[i].x, pts[i].y, mx, my);
-			}
-			const end = pts[pts.length - 1];
-			ctx.lineTo(end.x, end.y);
+			trace(ctx, s.points);
 			ctx.stroke();
-			ctx.restore();
 		}
-		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-		if (animating) redraw();
+		// Surface strokes on each surface's canvas, in the surface's own coordinates
+		const surfaces = new Set(surfaceCanvases.keys());
+		for (const s of strokes) if (s.surface) surfaces.add(s.surface);
+		for (const el of surfaces) {
+			const { c, ratio } = surfaceCanvas(el);
+			const sc = c.getContext("2d");
+			sc.setTransform(1, 0, 0, 1, 0, 0);
+			sc.clearRect(0, 0, c.width, c.height);
+			sc.setTransform(ratio, 0, 0, ratio, 0, 0);
+			sc.lineCap = "round";
+			sc.lineJoin = "round";
+			for (const s of strokes) {
+				if (s.surface !== el) continue;
+				// As wide on screen as a page line was when it was drawn
+				sc.lineWidth = WIDTH / (s.scale || 1);
+				sc.strokeStyle = s.color;
+				trace(sc, s.points);
+				sc.stroke();
+			}
+		}
 	}
 
 	function redraw() {
@@ -242,28 +252,9 @@
 
 	eraser.addEventListener("click", () => {
 		strokes.length = 0;
-		animating = 0;
 		eraser.classList.remove("is-visible");
 		redraw();
 	});
-
-	// While a surface with strokes is changing its transform (the hover zoom),
-	// redraw every frame so the strokes move with it
-	const hasStrokes = (el) => strokes.some((s) => s.surface === el);
-	document.addEventListener("transitionrun", (e) => {
-		if (e.propertyName === "transform" && hasStrokes(e.target)) {
-			animating++;
-			redraw();
-		}
-	});
-	const settle = (e) => {
-		if (e.propertyName === "transform" && hasStrokes(e.target) && animating > 0) {
-			animating--;
-			redraw();
-		}
-	};
-	document.addEventListener("transitionend", settle);
-	document.addEventListener("transitioncancel", settle);
 
 	window.addEventListener("scroll", redraw, { passive: true });
 	window.addEventListener("resize", resize);
