@@ -697,7 +697,6 @@ img.ph {
 	height: 150px;
 	padding: 20px 34px 54px;
 	background: url("../assets/images/buddy/bubble.png") no-repeat;
-	image-rendering: pixelated;
 	color: #23211f;
 	font-size: 13px;
 	font-weight: 500;
