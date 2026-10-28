@@ -62,7 +62,7 @@ Give each tooltip its own `id`. It opens above its word, or below when the heade
 
 ## Doodling
 
-With a mouse, visitors can hold the right button and drag anywhere to draw (`js/doodle.js`). Drawings scroll with the page and pass under the header. They stay until the page is reloaded or left, or until the eraser button that appears in the bottom left corner clears them. A right-click without dragging still opens the browser menu where the browser allows it (Windows); Shift + right-click always does. Touch screens are left out. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
+With a mouse, visitors can hold the right button and drag anywhere to draw (`js/doodle.js`). Drawings scroll with the page and pass under the header. A line started on a project image on the home page sticks to that image and grows and tilts with it on hover. They stay until the page is reloaded or left, or until the eraser button that appears in the bottom left corner clears them. A right-click without dragging still opens the browser menu where the browser allows it (Windows); Shift + right-click always does. Touch screens are left out. To remove it: delete `js/doodle.js`, its `<script>` line in `_layouts/default.html` and the "Doodling" block at the end of `css/style.css`.
 
 ## Adding a project
 
