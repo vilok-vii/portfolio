@@ -1,6 +1,6 @@
 ---
 title: Seldom & Shade
-order: 1
+order: 2
 summary: "Seldom & Shade is an arcade twin-stick action game where you play as Seldom, the ghost, and his dog, Shade, at the same time, with one joystick each. You navigate a nightmarish field, evading and destroying enemies by luring them into the ethereally strong bond between the two characters (the 'leash'). But beware! Some of your foes have the means to cut this bond!"
 category: game-design
 year: 2025
