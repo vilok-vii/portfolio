@@ -1,6 +1,6 @@
 ---
 title: Woolhalla
-order: 2
+order: 1
 summary: "Immerse yourself in a handcrafted clay world, where everything is created through clayforming and ingenious handmade techniques. You are a legendary viking who is an expert at repairing ships. Boats from across the seas come to you with plenty of damage, and it is your job to fix 'em! Gather your materials, refine them through exciting minigames, and lose yourself in this miniature world!"
 category: game-design
 year: 2026
