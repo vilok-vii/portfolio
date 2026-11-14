@@ -11,6 +11,7 @@ Portfolio built with [Jekyll](https://jekyllrb.com/), which GitHub Pages builds 
 | `/projects/` | List of all projects, newest first |
 | `/projects/<slug>/` | Individual project page |
 | `/about/` | About |
+| `/chimera/` | CHIMERA, a voice synthesizer that speaks and sings Hungarian (a built copy; see below) |
 
 Old links that start with `/en/` or `/hu/` are forwarded to the same page without the prefix (see `404.html`).
 
@@ -32,7 +33,22 @@ assets/files/         Downloads; the Resume link in the navigation opens Vilmos_
 js/site.js            Mobile menu, dark mode toggle, tooltips
 js/doodle.js          Drawing with the right mouse button
 404.html              Not-found page; forwards old /en/ and /hu/ links
+chimera/              Built CHIMERA web app (Hungarian), copied from the chimera-vocal-synth fork
 ```
+
+## CHIMERA
+
+`chimera/` is a build product, not edited by hand. To update it, in a checkout of
+`vilok-vii/chimera-vocal-synth` (Rust with the `wasm32-unknown-unknown` target, and Bun):
+
+```sh
+CHIMERA_BASE=/portfolio/chimera/ bun run build
+rm -rf ../portfolio/chimera && cp -r dist ../portfolio/chimera
+rm -rf ../portfolio/chimera/data && find ../portfolio/chimera -name '*.map' -delete
+```
+
+The English pronouncing dictionary (`data/`) and source maps are left out: the site reads
+Hungarian from its spelling.
 
 ## Colours and grain
 
